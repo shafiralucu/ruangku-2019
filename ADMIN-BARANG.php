@@ -242,6 +242,14 @@
   </div>
 
 
+<div class="w3-container" id="containerRuang">
+            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
+            style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Ruangan</a>
+            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
+            style="width:auto; margin-top: 11%; margin-left: 16%;" href="#">DELETE Ruangan</a>
+            <br> 
+            <br>
+
 <br><br><br><br>
   <div class="w3-container" id="containerRuang">
 
@@ -327,7 +335,7 @@
             Whiteboard <br>
             Jumlah: 10pcs<br>
             Price: 75.000/hour <br>
-            Status Alat:<p id="statusRuangan">Booked</p>
+            Status Alat:<p id="statusRuangan">Available</p>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">EDIT</a>
           </center>
@@ -337,36 +345,65 @@
   </div>
 
   <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
-      <div class="w3-center"><br>
-        <span onclick="document.getElementById('id01').style.display='none'"
-          class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+            <div class="w3-center"><br>
+                <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
 
-      </div>
+            </div>
 
-      <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="/action_page.php">
 
-        <br>
-        <label><b>Nama Alat</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
-        <label><b>Jumlah</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="jumlah">
-        <label><b>Tarif</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="tarif">
-        <br>
-        <br>
-        <br>
+                <br>
+                <label><b>Nama Ruangan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
+                <label><b>Kapasitas</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
+                <label><b>Fasilitas</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Facility" name="fasilitas">
+                <label><b>Tarif</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
+                <br>
+                <br>
+                <br>
 
-        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">UPDATE</button>
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
+                </div>
+            </form>
+
         </div>
-      </form>
+
 
     </div>
 
+    <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
-  </div>
+            <div class="w3-center"><br>
+                <span onclick="document.getElementById('id02').style.display='none'"
+                    class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+
+            </div>
+
+            <form class="w3-container" action="/action_page.php">
+
+                <br>
+                <label><b>Nama Ruangan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Ruangan yang dihapus" name="nama">
+                <br>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
 
   <div class="w3-container w3-black">
     <h5>Ruangku. Collaborate to create. </h5>

@@ -230,7 +230,7 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border " id="menu">
-        <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button">Transaksi</a>
+        <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button">TRANSAKSI</a>
         <a href="OPERATOR-RUANGAN.php" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
         <a href="OPERATOR-ALAT.php" class="w3-bar-item w3-button">LIST BARANG</a>
         <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
@@ -265,7 +265,7 @@
             <tr>
                 <td>
                     <center>
-                        B Class Room (Large) <br>
+                        Tuition Room (Large) <br>
                         Kapasitas: 15pax<br>
                         Fasilitas: AC, Snack and Drink, Projector <br>
                         Price: 500.000/hour <br>
@@ -274,7 +274,7 @@
                 </center>
                 <td>
                     <center>
-                        B Class Room (Small) <br>
+                        Tuition Room (Small) <br>
                         Kapasitas: 6pax<br>
                         Fasilitas: AC. Snack and Drink, Projector <br>
                         Price: 400.000/hour <br>
