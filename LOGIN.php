@@ -21,7 +21,8 @@
 							
 		<div class="register-info-box">
             <h1>Ruangku</h1>
-			<h2>Visi dan Misi</h2>
+			<h5>YOU'LL KNOW AT FIRST</h5>
+            <h1>THE RIGHT PLACE TO BE</h1>
 			<label id="label-login" for="log-login-show">Check our details</label>
 			<input type="radio" name="active-log-panel" id="log-login-show">
 		</div>
@@ -38,7 +39,10 @@
                 </form>
 			</div>
 			<div class="register-show">
-				<h2>Visi Misi Ruangku</h2>
+				<h5>More than just the best place to work, though, this is collaborative movement. We believe that entrepreneur can help each other and offices can use the comforts of home.</h5>
+                <img src="images/01.png" style="float: left; width: 50%;">
+                <img src="images/02.png" style="width: 50%; float: left;">
+                <img src="images/03.png" style="width: 50%; margin-left: 30%;">
                 
                 </form>
 			</div>
