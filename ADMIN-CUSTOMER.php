@@ -265,9 +265,7 @@
                 <th>No. Handphone</th>
                 <th>Alamat</th>
                 <th>Ruangan</th>
-                <th>Tanggal Transaksi</th>
-                <th>Durasi</th>
-                <th>Total Transaksi</th>
+                <th>E-mail</th>
               </tr>
             </thead>
             <tr>
@@ -276,9 +274,7 @@
               <td>087743553397</td>
               <td>Jl. Rancabentang I No. 10a</td>
               <td>Executive Room (Large)</td>
-              <td>2019-01-11</td>
-              <td>2 jam</td>
-              <td>150.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>2</td>
@@ -286,9 +282,7 @@
               <td>081224541830</td>
               <td>Jl. Rancabentang I No. 10D</td>
               <td>Glass Room (Large)</td>
-              <td>2019-10-17</td>
-              <td>3 jam</td>
-              <td>280.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>3</td>
@@ -296,9 +290,7 @@
               <td>081506836583</td>
               <td>Jl. Bukit Jarian No. 12</td>
               <td>Standard Room (Large)</td>
-              <td>2019-10-13</td>
-              <td>1 jam</td>
-              <td>80.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>4</td>
@@ -306,9 +298,7 @@
               <td>085639986247</td>
               <td>Jl. Bukit Resik No. 28</td>
               <td>Library Room (Large)</td>
-              <td>2019-02-12</td>
-              <td>12 jam</td>
-              <td>170.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>5</td>
@@ -316,9 +306,7 @@
               <td>0811234221</td>
               <td>Jl. Rancabulan 1 No. 20</td>
               <td>Library Room (Small)</td>
-              <td>2019-02-24</td>
-              <td>3 jam</td>
-              <td>120.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>6</td>
@@ -326,9 +314,7 @@
               <td>08975462135</td>
               <td>Jl. Bukit Indah 14 No. 203</td>
               <td>Public Room</td>
-              <td>2019-02-24</td>
-              <td>All Day</td>
-              <td>100.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>7</td>
@@ -336,9 +322,7 @@
               <td>08122355567</td>
               <td>Jl. Jurang No. 3</td>
               <td>Public Room</td>
-              <td>2019-02-24</td>
-              <td>All Day</td>
-              <td>100.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>8</td>
@@ -346,9 +330,7 @@
               <td>0812232345</td>
               <td>Jl. Sukajadi No. 34</td>
               <td>Public Room</td>
-              <td>2019-02-24</td>
-              <td>All Day</td>
-              <td>100.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>9</td>
@@ -356,9 +338,7 @@
               <td>0812232345</td>
               <td>Jl. Cimahi No. 1233</td>
               <td>Glass Room</td>
-              <td>2019-02-26</td>
-              <td>5 jam</td>
-              <td>600.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>10</td>
@@ -366,9 +346,7 @@
               <td>08122343235</td>
               <td>Jl. Sadang Serang No. 3313</td>
               <td>Standard Room</td>
-              <td>2019-02-26</td>
-              <td>2 jam</td>
-              <td>400.000</td>
+              <td></td>
             </tr>
           </table>
     </div>
@@ -427,16 +405,8 @@
 
             <form class="w3-container" action="/action_page.php">
                 <br>
-                <label><b>ID</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter ID" name="id" required>
                 <label><b>Nama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
-                <label><b>No.Handphone</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="nohp">
-                <label><b>Tanggal transaksi</b></label>
-                <input class="w3-input w3-border" type="date" name="tanggaltransaksi">
-                <label><b>Total Transaksi</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Customer yang dihapus" name="nama">
                 <br>
                 <br>
                 <br>

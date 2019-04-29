@@ -277,6 +277,7 @@
           <th>Nama</th>
           <th>No. Handphone</th>
           <th>Alamat</th>
+          <th>E-mail</th>
           <th>Ruangan</th>
           <th>Tanggal Transaksi</th>
           <th>Durasi</th>
@@ -288,6 +289,7 @@
         <td>Shafira</td>
         <td>087743553397</td>
         <td>Jl. Rancabentang I No. 10a</td>
+        <td></td>
         <td>Executive Room (Large)</td>
         <td>2019-01-11</td>
         <td>2 jam</td>
@@ -298,6 +300,7 @@
         <td>Giovanni</td>
         <td>081224541830</td>
         <td>Jl. Rancabentang I No. 10D</td>
+        <td></td>
         <td>Glass Room (Large)</td>
         <td>2019-10-17</td>
         <td>3 jam</td>
@@ -308,6 +311,7 @@
         <td>Alif</td>
         <td>081506836583</td>
         <td>Jl. Bukit Jarian No. 12</td>
+        <td></td>
         <td>Standard Room (Large)</td>
         <td>2019-10-13</td>
         <td>1 jam</td>
@@ -318,6 +322,7 @@
         <td>Hashrul</td>
         <td>085639986247</td>
         <td>Jl. Bukit Resik No. 28</td>
+        <td></td>
         <td>Library Room (Large)</td>
         <td>2019-02-12</td>
         <td>12 jam</td>
@@ -328,6 +333,7 @@
         <td>Timothy</td>
         <td>0811234221</td>
         <td>Jl. Rancabulan 1 No. 20</td>
+        <td></td>
         <td>Library Room (Small)</td>
         <td>2019-02-24</td>
         <td>3 jam</td>
@@ -338,6 +344,7 @@
         <td>Naofal</td>
         <td>08975462135</td>
         <td>Jl. Bukit Indah 14 No. 203</td>
+        <td></td>
         <td>Public Room</td>
         <td>2019-02-24</td>
         <td>All Day</td>
@@ -348,6 +355,7 @@
         <td>Samuel</td>
         <td>08122355567</td>
         <td>Jl. Jurang No. 3</td>
+        <td></td>
         <td>Public Room</td>
         <td>2019-02-24</td>
         <td>All Day</td>
@@ -358,6 +366,7 @@
         <td>Jaya</td>
         <td>0812232345</td>
         <td>Jl. Sukajadi No. 34</td>
+        <td></td>
         <td>Public Room</td>
         <td>2019-02-24</td>
         <td>All Day</td>
@@ -368,6 +377,7 @@
         <td>Alwan</td>
         <td>0812232345</td>
         <td>Jl. Cimahi No. 1233</td>
+        <td></td>
         <td>Glass Room</td>
         <td>2019-02-26</td>
         <td>5 jam</td>
@@ -378,6 +388,7 @@
         <td>Audi</td>
         <td>08122343235</td>
         <td>Jl. Sadang Serang No. 3313</td>
+        <td></td>
         <td>Standard Room</td>
         <td>2019-02-26</td>
         <td>2 jam</td>

@@ -152,7 +152,7 @@
 
     @font-face {
       font-family: texts;
-      src: url("fonts/Helvetica.ttf");
+      src: url("fonts/Renner_ 400 Book.ttf");
     }
 
     @font-face {
@@ -269,11 +269,11 @@
     </div>
   </div>
 
-  <div class="w3-container">
-    <img src="images/checked.png" style="margin-left:46%; margin-top: 12%;">
-    <h1 style="margin-left:33%;">ORDER COMPLETED !
-    <h5>Back to MENU
-</div>
+  <div class="w3-container w3-center" style="margin-top: 10%;">
+    <img src="images/checked.png">
+    <h1>ORDER COMPLETED</h1> <br>
+    <a href="OPERATOR-TRANSAKSI1.php">Kembali ke halaman utama
+  </div>
 
   <div class="w3-container w3-black w3-bottom">
     <h5>Ruangku. Collaborate to create. </h5>
