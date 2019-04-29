@@ -284,7 +284,7 @@
             Public Room <br>
             Kapasitas: - <br>
             Fasilitas: AC <br>
-            Price: 50.0000/day/person <br><br>
+            Price: 50.000/day/person <br><br>
           </center>
         </td>
       </tr>

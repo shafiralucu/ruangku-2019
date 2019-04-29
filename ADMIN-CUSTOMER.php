@@ -254,9 +254,9 @@
             style="width:auto; margin-top: 11%; margin-left: 4%;" href="#">INSERT CUSTOMER</a>
         <br><br>
         <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 17%;" href="#">UPDATE CUSTOMER</a>
+            style="width:auto; margin-top: 11%; margin-left: 19%;" href="#">UPDATE CUSTOMER</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 30.5%;" href="#">DELETE CUSTOMER</a>
+            style="width:auto; margin-top: 11%; margin-left: 34.5%;" href="#">DELETE CUSTOMER</a>
         <table class="w3-table-all w3-center w3-hoverable" id="tabelcust" style="font-family: texts; font-size: 20px;">
             <thead>
               <tr class="w3-light-grey">

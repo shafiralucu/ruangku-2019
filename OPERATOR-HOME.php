@@ -51,7 +51,7 @@
                     <div class="w3-display-middle w3-large w3-center" id = "title" >
                         <p id ="title1">Ruangku.com</p>
                         <p id = "title2"ss>SERVICED OFFICE | COWORKING | VIRTUAL OFFICE | MEETING ROOM</p>
-                        <button class="w3-button w3-border w3-border-white" id ="signInButton" onclick="location.href='LOGIN-ALIF.php'">LOGIN</button>
+                        <button class="w3-button w3-border w3-border-white" id ="signInButton" onclick="location.href='LOGIN.php'">LOGIN</button>
                     </div>       
     </body>
 </html>
