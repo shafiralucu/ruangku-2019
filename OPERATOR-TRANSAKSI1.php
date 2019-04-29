@@ -508,7 +508,7 @@
 
       </div>
 
-      <form class="w3-container" action="/action_page.php">
+      <form class="w3-container" action="Model/insertTransaksiOP.php" method="POST">
         <div class="w3-section">
           <label><b>Tanggal Transaksi</b></label> <br>
           <p id="date"></p>
@@ -521,15 +521,17 @@
           <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="nohp" required>
           <label><b>Alamat</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Address" name="address" required>
+          <label><b>Durasi</b></label>
+          <input class="w3-input w3-border" type="text" placeholder="Enter Durasi" name="durasi" required>
           <br>
 
-
-          <label><b>Waktu Mulai</b></label>
-          <input type="time" id="mulai" name="mulai" min="9:00" max="22:00" required>
-          <label><b>Waktu Akhir</b></label>
-          <input type="time" id="akhir" name="akhir" min="9:00" max="22:00" required>
-          <br>
-          <br>
+          <label class="heading">Sewa Alat:</label> <br>
+          <input type="checkbox" name="Laptop" value="laptop">Laptop <br>
+          <input type="checkbox" name="Microphone 2pcs" value="microphone">Microphone (2pcs) <br>
+          <input type="checkbox" name="Proyektor"value="proyektor">Proyektor <br>
+          <input type="checkbox" name="Spidol 2pcs" value="radio">Spidol (2pcs) <br>
+          <input type="checkbox" name="Speaker" value="speaker">Speaker <br>
+          <input type="checkbox" name="Whiteboard" value="whiteboard">Whiteboard <br>
 
 
           <center>
@@ -539,15 +541,12 @@
             <br>
           </center>
 
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Booking</button>
+      </div>
 
         </div>
       </form>
-
-      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-        <form action="OPERATOR-COMPLETE.php">
-        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Booking</button>
-  </form>
-      </div>
 
     </div>
   </div>
