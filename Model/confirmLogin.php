@@ -26,7 +26,7 @@
             }
             else if($res == "admin"){
                 header('Location: ../ADMIN-RUANGAN1.php');
-                
+            
             }
 		}
 	
