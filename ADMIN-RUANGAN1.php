@@ -1,3 +1,20 @@
+<?php 
+	require "Model/Connector.php";
+	$query = "SELECT * from ruang";
+
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+			$query .= " WHERE name LIKE '%$name%'";
+		}
+	}
+
+	$result = $db->executeSelectQuery($query);
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -235,9 +252,9 @@
         <a href="ADMIN-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
         <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
         <div class="search-container">
-            <form action="/action_page.php">
+            <form action="ADMIN-RUANGAN1.php" method="GET">
                 <input type="text" placeholder="Search.." name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
+                <button type="submit" name="btnSearch"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
@@ -346,6 +363,16 @@
                 </td>
             </tr>
 
+            <?php
+			foreach ($result as $key => $row) {
+				echo "<tr>";
+				echo "<td>".$row['namaRuang']."</td>";
+				echo "<td>".$row['kapasitas']."</td>";
+                echo "<td>".$row['fasilitas']."</td>";
+                echo "<td>".$row['tarif']."</td>";
+				echo "</tr>";
+			}
+		?>
         </table>
         <br>
         <div class="w3-container w3-center">
