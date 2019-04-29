@@ -2,7 +2,7 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>RUANGAN1 - ADMIN</title>
+<title>RUANGAN2 - ADMIN</title>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -169,7 +169,7 @@
 
 
         h2 {
-            font-family: texts2;
+            font-family: navBarFont;
             font-size: 30px;
             color: white;
             margin-top: 40px;
@@ -243,6 +243,7 @@
     </div>
 
     
+
     <br>
     <br>
 
@@ -256,102 +257,99 @@
             <br>
 
         <table class="w3-table w3-bordered w3-center">
-            <tr>
 
-                <th>
-                    <center><img src="images/1.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-                <th>
-                    <center><img src="images/2.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-                <th>
-                    <center><img src="images/3.png" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
+            <tr>
+                <td>
+                    <center><img src="images/7.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/8.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/9.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
             </tr>
             <tr>
                 <td>
                     <center>
-                        Executive Room (Large)<br>
-                        Kapasitas: 20pax <br>
-                        Fasilitas: AC, Proyektor, Free Drinks and Snack <br>
+                        A Class Room (Small) <br>
+                        Kapasitas: 6pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector <br>
                         Price: 400.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-
-                <td>
-                    <center>
-                        Executive Room (Medium)<br>
-                        Kapasitas: 16pax <br>
-                        Fasilitas: AC, Proyektor <br>
-                        Price:300.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        Public Room <br>
-                        Kapasitas: - <br>
-                        Fasilitas: AC <br>
-                        Price: 50.0000/day/person <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center><img src="images/4.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-                <td>
-                    <center><img src="images/5.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-                <td>
-                    <center><img src="images/6.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center>
-                        Standard Room (Small) <br>
-                        Kapasitas: 4pax<br>
-                        Fasilitas: AC <br>
-                        Price: 200.000/hour <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                 </td>
                 </center>
                 <td>
                     <center>
-                        Standard Room (Large) <br>
-                        Kapasitas: 18pax<br>
-                        Fasilitas: AC, Tv <br>
-                        Price: 300.000/hour <br><br>
+                        A Class Room (Large) <br>
+                        Kapasitas: 15pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector <br>
+                        Price: 450.000/hour <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
-
                     </center>
                 </td>
                 <td>
                     <center>
-                        Standard Room (Medium) <br>
-                        Kapasitas: 10pax<br>
-                        Fasilitas: AC <br>
-                        Price: 250.000/hour <br><br>
+                        A Class Public Room <br>
+                        Kapasitas: -<br>
+                        Fasilitas: AC, Snack and Drink <br>
+                        Price: 80.000/day/person <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                     </center>
                 </td>
             </tr>
-
+            <tr>
+                <td>
+                    <center><img src="images/10.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/11.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/12.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        Public Room <br>
+                        Kapasitas: - <br>
+                        Fasilitas: AC, Cafeteria<br>
+                        Price: 60.000/day/person <br><br>
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                            style="width:auto;" href="#">Edit</a>
+                </td>
+                </center>
+                <td>
+                    <center>
+                        Glass Room <br>
+                        Kapasitas: 4pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector, Tv <br>
+                        Price: 400.000/hour <br><br>
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                            style="width:auto;" href="#">Edit</a>
+                    </center>
+                </td>
+                <td>
+                    <center>
+                        Executive Room <br>
+                        Kapasitas: 12pax<br>
+                        Fasilitas: AC, Snack and Drink, Tv <br>
+                        Price: 800.000/hour <br><br>
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                            style="width:auto;" href="#">Edit</a>
+                    </center>
+                </td>
+            </tr>
         </table>
         <br>
         <div class="w3-container w3-center">
             <div class="w3-bar">
-                <a href="ADMIN-RUANGAN1.html" class="w3-button w3-grey">1</a>
-                <a href="ADMIN-RUANGAN2.html" class="w3-button">2</a>
+                <a href="ADMIN-RUANGAN1.html" class="w3-button">1</a>
+                <a href="ADMIN-RUANGAN2.html" class="w3-button w3-grey">2</a>
                 <a href="ADMIN-RUANGAN3.html" class="w3-button">3</a>
             </div>
 

@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>BARANG - ADMIN</title>
+<title>BARANG - MANAJER</title>
 
 <head>
   <style>
@@ -168,7 +168,7 @@
 
 
     h2 {
-      font-family: navBarFont;
+      font-family: texts;
       font-size: 30px;
       color: #373737;
       margin-top: 40px;
@@ -229,9 +229,10 @@
 
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border" id="menu">
-    <a href="ADMIN-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
-    <a href="ADMIN-RUANGAN1.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-    <a href="ADMIN-BARANG.html" class="w3-bar-item w3-button w3-dark-grey">LIST BARANG</a>
+    <a href="MANAJER-RUANGAN.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
+    <a href="MANAJER-BARANG.html" class="w3-bar-item w3-button w3-dark-grey">LIST BARANG</a>
+    <a href="MANAJER-CUSTOMER.html" class="w3-bar-item w3-button">TRANSAKSI RUANGAN</a>
+    <a href="MANAJER-ALAT.html" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
     <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
@@ -306,7 +307,7 @@
           <center>
             Spidol (2pcs)<br>
             Jumlah: 10set<br>
-            Price: 20.000/hour <br>
+            Price: 200.000/hour <br>
             Status Alat:<p id="statusRuangan">Available</p>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">EDIT</a>

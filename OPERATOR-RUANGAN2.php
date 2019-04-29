@@ -2,7 +2,7 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>RUANGAN1 - ADMIN</title>
+<title>RUANGAN2 - OPERATOR</title>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -169,7 +169,7 @@
 
 
         h2 {
-            font-family: texts2;
+            font-family: navBarFont;
             font-size: 30px;
             color: white;
             margin-top: 40px;
@@ -230,129 +230,118 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border " id="menu">
-        <a href="ADMIN-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
-        <a href="ADMIN-RUANGAN1.html" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
-        <a href="ADMIN-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
-        <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+        <a href="OPERATOR-TRANSAKSI1.html" class="w3-bar-item w3-button">Transaksi</a>
+        <a href="OPERATOR-RUANGAN.html" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
+        <a href="OPERATOR-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
+        <a href="OPERATOR-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
+        <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float:right;">LOGOUT</a>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
+
+        <!-- <a href="#" class="w3-bar-item w3-button" style="float: right; margin-left:30%;">LOGOUT</a> -->
     </div>
 
-    
+
+
     <br>
     <br>
 
 
     <div class="w3-container" id="containerRuang">
-            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Ruangan</a>
-            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 16%;" href="#">DELETE Ruangan</a>
-            <br> 
-            <br>
 
         <table class="w3-table w3-bordered w3-center">
-            <tr>
 
-                <th>
-                    <center><img src="images/1.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-                <th>
-                    <center><img src="images/2.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-                <th>
-                    <center><img src="images/3.png" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-            </tr>
             <tr>
                 <td>
-                    <center>
-                        Executive Room (Large)<br>
-                        Kapasitas: 20pax <br>
-                        Fasilitas: AC, Proyektor, Free Drinks and Snack <br>
-                        Price: 400.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-
-                <td>
-                    <center>
-                        Executive Room (Medium)<br>
-                        Kapasitas: 16pax <br>
-                        Fasilitas: AC, Proyektor <br>
-                        Price:300.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
+                    <center><img src="images/7.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
                 </td>
                 <td>
-                    <center>
-                        Public Room <br>
-                        Kapasitas: - <br>
-                        Fasilitas: AC <br>
-                        Price: 50.0000/day/person <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center><img src="images/4.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                    <center><img src="images/8.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
                 </td>
                 <td>
-                    <center><img src="images/5.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-                <td>
-                    <center><img src="images/6.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                    <center><img src="images/9.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
                 </td>
             </tr>
             <tr>
                 <td>
                     <center>
-                        Standard Room (Small) <br>
-                        Kapasitas: 4pax<br>
-                        Fasilitas: AC <br>
-                        Price: 200.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
+                        A Class Room (Small) <br>
+                        Kapasitas: 6pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector <br>
+                        Price: 400.000/hour <br>
+                        <br>
                 </td>
                 </center>
                 <td>
                     <center>
-                        Standard Room (Large) <br>
-                        Kapasitas: 18pax<br>
-                        Fasilitas: AC, Tv <br>
-                        Price: 300.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-
+                        A Class Room (Large) <br>
+                        Kapasitas: 15pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector <br>
+                        Price: 450.000/hour <br>
+                        <br>
                     </center>
                 </td>
                 <td>
                     <center>
-                        Standard Room (Medium) <br>
-                        Kapasitas: 10pax<br>
-                        Fasilitas: AC <br>
-                        Price: 250.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
+                        A Class Public Room <br>
+                        Kapasitas: -<br>
+                        Fasilitas: AC, Snack and Drink <br>
+                        Price: 80.000/day/person <br>
+                        <br>
                     </center>
                 </td>
             </tr>
-
+            <tr>
+                <td>
+                    <center><img src="images/10.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/11.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/12.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        Public Room <br>
+                        Kapasitas: - <br>
+                        Fasilitas: AC, Cafeteria<br>
+                        Price: 60.000/day/person <br>
+                        <br>
+                </td>
+                </center>
+                <td>
+                    <center>
+                        Glass Room <br>
+                        Kapasitas: 4pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector, Tv <br>
+                        Price: 400.000/hour <br>
+                        <br>
+                    </center>
+                </td>
+                <td>
+                    <center>
+                        Executive Room <br>
+                        Kapasitas: 12pax<br>
+                        Fasilitas: AC, Snack and Drink, Tv <br>
+                        Price: 800.000/hour <br>
+                        <br>
+                    </center>
+                </td>
+            </tr>
         </table>
         <br>
         <div class="w3-container w3-center">
             <div class="w3-bar">
-                <a href="ADMIN-RUANGAN1.html" class="w3-button w3-grey">1</a>
-                <a href="ADMIN-RUANGAN2.html" class="w3-button">2</a>
-                <a href="ADMIN-RUANGAN3.html" class="w3-button">3</a>
+                <a href="OPERATOR-RUANGAN.html" class="w3-button">1</a>
+                <a href="OPERATOR-RUANGAN2.html" class="w3-button w3-grey">2</a>
+                <a href="OPERATOR-RUANGAN3.html" class="w3-button">3</a>
             </div>
 
         </div>
@@ -361,37 +350,54 @@
 
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+    
+          <div class="w3-center"><br>
+            <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+        
+          </div>
+    
+          <form class="w3-container" action="/action_page.php">
+            <div class="w3-section">
+             <label><b>Tanggal Transaksi</b></label> <br>
+             <p id="date"></p>
 
-            <div class="w3-center"><br>
-                <span onclick="document.getElementById('id01').style.display='none'"
-                    class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+              <label><b>Nama</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama" required>
+              <label><b>Email</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="Enter Email" name="email" required>
+              <label><b>No.Handphone</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="nohp" required>
+              <label><b>Alamat</b></label>
+              <input class="w3-input w3-border" type="text" placeholder="Enter Address" name="address" required>
+              <br>
+
+              
+              <label><b>Waktu Mulai</b></label>
+              <input type="time" id="mulai" name="mulai" min="9:00" max="22:00" required>
+              <label><b>Waktu Akhir</b></label>
+              <input type="time" id="akhir" name="akhir" min="9:00" max="22:00" required>
+              <br>
+              <br>
+
+
+              <center> 
+                    <label><b>Total Transaksi: </b></label> 
+                    <br>
+                    <label id = "total" style="font-size: 30px">150.000</label>
+                    <br>
+              </center>
+              
 
             </div>
+          </form>
+    
+          <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Booking</button>
 
-            <form class="w3-container" action="/action_page.php">
-
-                <br>
-                <label><b>Nama Ruangan</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
-                <label><b>Kapasitas</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
-                <label><b>Fasilitas</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Facility" name="fasilitas">
-                <label><b>Tarif</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
-                <br>
-                <br>
-                <br>
-
-                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
-                </div>
-            </form>
-
+          </div>
+    
         </div>
-
-
-    </div>
+      </div>
 
     <div class="w3-container w3-black">
         <h5>Ruangku. Collaborate to create. </h5>
