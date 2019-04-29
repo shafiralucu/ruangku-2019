@@ -229,11 +229,11 @@
 
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border" id="menu">
-    <a href="OPERATOR-TRANSAKSI1.html" class="w3-bar-item w3-button">TRANSAKSI</a>
-    <a href="OPERATOR-RUANGAN.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-    <a href="OPERATOR-ALAT.html" class="w3-bar-item w3-button w3-dark-grey">LIST BARANG</a>
-    <a href="OPERATOR-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
-    <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+    <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button">TRANSAKSI</a>
+    <a href="OPERATOR-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+    <a href="OPERATOR-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">LIST BARANG</a>
+    <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
+    <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search.." name="search">

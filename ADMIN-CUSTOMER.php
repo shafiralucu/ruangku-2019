@@ -235,10 +235,10 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border" id="menu">
-        <a href="ADMIN-CUSTOMER.html" class="w3-bar-item w3-button w3-dark-grey">LIST CUSTOMER</a>
-        <a href="ADMIN-RUANGAN1.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-        <a href="ADMIN-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
-        <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+        <a href="ADMIN-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">LIST CUSTOMER</a>
+        <a href="ADMIN-RUANGAN1.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+        <a href="ADMIN-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
+        <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
