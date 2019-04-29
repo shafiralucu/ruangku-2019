@@ -21,28 +21,26 @@
 							
 		<div class="register-info-box">
             <h1>Ruangku</h1>
-			<h2>Don't have an account?</h2>
-			<p>Create yout account now</p>
-			<label id="label-login" for="log-login-show">Register</label>
+			<h2>Visi dan Misi</h2>
+			<label id="label-login" for="log-login-show">Check our details</label>
 			<input type="radio" name="active-log-panel" id="log-login-show">
 		</div>
 							
 		<div class="white-panel">
 			<div class="login-show">
+                <form action="Model/confirmLogin.php" method="POST">
 				<h2>LOGIN</h2>
-				<input type="text" placeholder="Username / ID Karyawan">
-				<input type="password" placeholder="Password">
-				<input type="button" value="Login" onclick="location.href='OPERATOR-TRANSAKSI1.html'">
+				<input type="text" name="nama" placeholder="Username / ID Karyawan">
+				<input type="password" name="pass" placeholder="Password">
+				<input type="submit" value="Login" name="btnLogin">
                 <br><br>
                 <a href="">Forgot password?</a>
+                </form>
 			</div>
 			<div class="register-show">
-				<h2>REGISTER</h2>
-                <input type="text" placeholder="Full Name">
-                <input type="text" placeholder="ID Karyawan">
-				<input type="password" placeholder="Password">
-				<input type="password" placeholder="Confirm Password">
-				<input type="button" value="Register">
+				<h2>Visi Misi Ruangku</h2>
+                
+                </form>
 			</div>
 		</div>
 	</div>
