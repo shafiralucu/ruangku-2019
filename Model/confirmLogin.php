@@ -17,15 +17,15 @@
             }
             
             if($res == "manager"){
-                header('Location: ../MANAJER-RUANGAN.html');
+                header('Location: ../MANAJER-RUANGAN.php');
                 
             }
             else if($res == "operator"){
-                header('Location: ../OPERATOR-RUANGAN.html');
+                header('Location: ../OPERATOR-RUANGAN.php');
                
             }
             else if($res == "admin"){
-                header('Location: ../ADMIN-RUANGAN1.html');
+                header('Location: ../ADMIN-RUANGAN1.php');
                 
             }
 		}
