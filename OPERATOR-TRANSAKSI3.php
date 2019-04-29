@@ -534,13 +534,13 @@
                     <br>
 
 
-                    <label><b>Waktu Mulai</b></label>
-                    <input type="time" id="mulai" name="mulai" min="9:00" max="22:00" required>
-                    <label><b>Waktu Akhir</b></label>
-                    <input type="time" id="akhir" name="akhir" min="9:00" max="22:00" required>
-                    <br>
-                    <br>
-
+                    <label class="heading">Sewa Alat:</label> <br>
+                    <input type="checkbox" name="Laptop" value="laptop">Laptop <br>
+                    <input type="checkbox" name="Microphone 2pcs" value="microphone">Microphone (2pcs) <br>
+                    <input type="checkbox" name="Proyektor"value="proyektor">Proyektor <br>
+                    <input type="checkbox" name="Spidol 2pcs" value="radio">Spidol (2pcs) <br>
+                    <input type="checkbox" name="Speaker" value="speaker">Speaker <br>
+                    <input type="checkbox" name="Whiteboard" value="whiteboard">Whiteboard <br>
 
                     <center>
                         <label><b>Total Transaksi: </b></label>
