@@ -415,7 +415,7 @@
             <tr>
                 <td>
                     <center>
-                        B Class Room (Large) <br>
+                        Tuition Room (Large) <br>
                         Kapasitas: 15pax<br>
                         Fasilitas: AC, Snack and Drink, Projector <br>
                         Price: 500.000/hour <br>
@@ -426,11 +426,11 @@
                 </center>
                 <td>
                     <center>
-                        B Class Room (Small) <br>
+                        Tuition Room (Small) <br>
                         Kapasitas: 6pax<br>
                         Fasilitas: AC. Snack and Drink, Projector <br>
                         Price: 400.000/hour <br>
-                        Status Ruangan:<p id="statusRuangan">Booked</p>
+                        Status Ruangan:<p id="statusRuangan">Available</p>
                         <a class="w3-btn w3-black"
                             onclick="document.getElementById('id01').style.display='block'" style="width:auto;"
                             href="#">Booking</a>
@@ -464,7 +464,7 @@
                     <center>
                         Library Room <br>
                         Kapasitas: 12pax <br>
-                        Fasilitas: AC, Library, Snack and Drink<br>
+                        Fasilitas: AC<br>
                         Price: 500.000/hour <br>
                         Status Ruangan:<p id="statusRuangan">Available</p>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"

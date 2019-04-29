@@ -407,9 +407,9 @@
           <center>
             Executive Room (Large)<br>
             Kapasitas: 20pax <br>
-            Fasilitas: AC, Proyektor, Free Drinks and Snack <br>
+            Fasilitas: AC, Proyektor, Snack and Drink <br>
             Price: 400.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Booked</p>
+            Status Ruangan:<p id="statusRuangan">Available</p>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">Booking</a>
           </center>
@@ -431,7 +431,7 @@
             Public Room <br>
             Kapasitas: - <br>
             Fasilitas: AC <br>
-            Price: 50.0000/day/person <br>
+            Price: 50.000/day/person <br>
             Status Ruangan:<p id="statusRuangan">Available</p>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">Booking</a>
@@ -479,7 +479,7 @@
             Kapasitas: 10pax<br>
             Fasilitas: AC <br>
             Price: 250.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Booked</p>
+            Status Ruangan:<p id="statusRuangan">Available</p>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">Booking</a>
           </center>
@@ -544,8 +544,9 @@
       </form>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <form action="OPERATOR-COMPLETE.php">
         <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Booking</button>
-
+  </form>
       </div>
 
     </div>

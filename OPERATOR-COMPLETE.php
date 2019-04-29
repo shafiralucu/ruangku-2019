@@ -177,7 +177,7 @@
 
 
     h2 {
-      font-family: navBarFont;
+      font-family: texts2;
       font-size: 30px;
       color: #373737;
       margin-top: 75px;
@@ -257,7 +257,7 @@
     <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button">TRANSAKSI</a>
     <a href="OPERATOR-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
     <a href="OPERATOR-ALAT.php" class="w3-bar-item w3-button">LIST BARANG</a>
-    <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">LIST CUSTOMER</a>
+    <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
@@ -269,122 +269,11 @@
     </div>
   </div>
 
-  <div class="w3-container" style="margin: 3%;">
-    <table class="w3-table-all w3-center w3-hoverable" id="tabelcust" style="font-family: texts; font-size: 20px;">
-      <thead>
-        <tr class="w3-light-grey">
-          <th>ID Pelanggan </th>
-          <th>Nama</th>
-          <th>No. Handphone</th>
-          <th>Alamat</th>
-          <th>Ruangan</th>
-          <th>Tanggal Transaksi</th>
-          <th>Durasi</th>
-          <th>Total Transaksi</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>1</td>
-        <td>Shafira</td>
-        <td>087743553397</td>
-        <td>Jl. Rancabentang I No. 10a</td>
-        <td>Executive Room (Large)</td>
-        <td>2019-01-11</td>
-        <td>2 jam</td>
-        <td>150.000</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Giovanni</td>
-        <td>081224541830</td>
-        <td>Jl. Rancabentang I No. 10D</td>
-        <td>Glass Room (Large)</td>
-        <td>2019-10-17</td>
-        <td>3 jam</td>
-        <td>280.000</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Alif</td>
-        <td>081506836583</td>
-        <td>Jl. Bukit Jarian No. 12</td>
-        <td>Standard Room (Large)</td>
-        <td>2019-10-13</td>
-        <td>1 jam</td>
-        <td>80.000</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Hashrul</td>
-        <td>085639986247</td>
-        <td>Jl. Bukit Resik No. 28</td>
-        <td>Library Room (Large)</td>
-        <td>2019-02-12</td>
-        <td>12 jam</td>
-        <td>170.000</td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Timothy</td>
-        <td>0811234221</td>
-        <td>Jl. Rancabulan 1 No. 20</td>
-        <td>Library Room (Small)</td>
-        <td>2019-02-24</td>
-        <td>3 jam</td>
-        <td>120.000</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Naofal</td>
-        <td>08975462135</td>
-        <td>Jl. Bukit Indah 14 No. 203</td>
-        <td>Public Room</td>
-        <td>2019-02-24</td>
-        <td>All Day</td>
-        <td>100.000</td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Samuel</td>
-        <td>08122355567</td>
-        <td>Jl. Jurang No. 3</td>
-        <td>Public Room</td>
-        <td>2019-02-24</td>
-        <td>All Day</td>
-        <td>100.000</td>
-      </tr>
-      <tr>
-        <td>8</td>
-        <td>Jaya</td>
-        <td>0812232345</td>
-        <td>Jl. Sukajadi No. 34</td>
-        <td>Public Room</td>
-        <td>2019-02-24</td>
-        <td>All Day</td>
-        <td>100.000</td>
-      </tr>
-      <tr>
-        <td>9</td>
-        <td>Alwan</td>
-        <td>0812232345</td>
-        <td>Jl. Cimahi No. 1233</td>
-        <td>Glass Room</td>
-        <td>2019-02-26</td>
-        <td>5 jam</td>
-        <td>600.000</td>
-      </tr>
-      <tr>
-        <td>10</td>
-        <td>Audi</td>
-        <td>08122343235</td>
-        <td>Jl. Sadang Serang No. 3313</td>
-        <td>Standard Room</td>
-        <td>2019-02-26</td>
-        <td>2 jam</td>
-        <td>400.000</td>
-      </tr>
-    </table>
-  </div>
+  <div class="w3-container">
+    <img src="images/checked.png" style="margin-left:46%; margin-top: 12%;">
+    <h1 style="margin-left:33%;">ORDER COMPLETED !
+    <h5>Back to MENU
+</div>
 
   <div class="w3-container w3-black w3-bottom">
     <h5>Ruangku. Collaborate to create. </h5>
