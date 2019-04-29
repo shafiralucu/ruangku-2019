@@ -28,6 +28,9 @@
                 header('Location: ../ADMIN-RUANGAN1.php');
             
             }
+            else {
+                header('Location: ../LOGIN.php');
+            }
 		}
 	
 ?>

@@ -9,6 +9,18 @@
             src: url("quicksand.otf");
         }
 
+        @font-face {
+            font-family: navBarFont;
+            src: url("fonts/Kiona-Regular.ttf");
+            font-style: bold;
+        }
+
+        body {
+            font-family: navBarFont;
+            color: pink;
+            background-image: url("images/contact2.jpg");
+        }
+
         .judul {
             float: right;
             text-align: center;
@@ -24,9 +36,7 @@
             font-size: 125%;
         }
 
-        body {
-            font-family: quicksand;
-        }
+        
 
         ul {
             text-decoration: none;
@@ -56,11 +66,6 @@
             transition: 0.5s;
         }
 
-        #produk {
-            font-size: 300%;
-            font-weight: bold;
-        }
-
         img {
             height: 2vw;
             float: left;
@@ -68,8 +73,8 @@
         }
 
         .contact {
-            margin-top: 3vw;
-            margin-left: 64vh;
+            margin-top: 5%;
+            margin-left: 30%;
             float: left;
             text-align: center;
         }
@@ -97,8 +102,9 @@
 </head>
 
 <body>
+    
     <div class="judul">
-        <h1>Contact Me</h1>
+        <h1>Contact us</h1>
         <h2>Say Hello!</h2>
     </div>
     <br>
@@ -108,39 +114,24 @@
             <fieldset style="width:120%">
                 <div class="isi">
                     <br>
-                    <input type="text" name="name" value="Your Name" required style="width: 70vh; height: 2.5vw">
+                    <input type="text" name="name" placeholder="Your Name" required style="width: 70vh; height: 2.5vw">
                     <br>
                     <br>
                     <br>
-                    <input type="text" name="email" value="Your Email" required style="width: 70vh; height: 2.5vw">
+                    <input type="text" name="email" placeholder="Your Email" required style="width: 70vh; height: 2.5vw">
                     <br>
                     <br>
                     <br>
-                    <input type="text" name="message" value="Your Message" required style="width: 70vh; height: 10vw">
+                    <input type="text" name="message" placeholder="Your Message" required style="width: 70vh; height: 10vw">
                     <br>
                     <br>
                     <br>
-                    <button class="button">SEND REQUEST</button>
+                    <button class="button" style="color:pink; margin-right: 6%;">SEND REQUEST</button>
                 </div>
             </fieldset>
         </div>
     </form>
 
-            <div class="icon">
-                <li>
-                    <a href="https://web.facebook.com/giovanni.anggasta.73">
-                        <img src="facebook.png">
-                </li>
-                <li>
-                    <a href="https://twitter.com/giogoonanggasta">
-                        <img src="twitter.png">
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/giogioanggasta/">
-                        <img src="instagram.png">
-                </li>
-        </ul>
-        </div>
 </body>
 
 </html>

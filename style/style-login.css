@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: quicksand;
-    src: url("quicksand.otf");
+    src: url("fonts/quicksand.otf");
 }
 
 body{
@@ -167,4 +167,21 @@ a:hover{
 
 h1{
     color: whitesmoke;
+}
+
+.button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 10%;
+    margin-top: 12%;
+    float: left;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: 0.5s;
 }

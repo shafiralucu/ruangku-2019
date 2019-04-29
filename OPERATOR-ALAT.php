@@ -150,7 +150,6 @@
       font-family: navBarFont;
       src: url("fonts/Kiona-Regular.ttf");
       font-style: bold;
-
     }
 
     h1 {

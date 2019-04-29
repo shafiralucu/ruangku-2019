@@ -42,8 +42,8 @@
 				<h5>More than just the best place to work, though, this is collaborative movement. We believe that entrepreneur can help each other and offices can use the comforts of home.</h5>
                 <img src="images/01.png" style="float: left; width: 50%;">
                 <img src="images/02.png" style="width: 50%; float: left;">
-                <img src="images/03.png" style="width: 50%; margin-left: 30%;">
-                
+                <img src="images/03.png" style="width: 50%; float: left;">
+                <button onclick="location.href = 'CONTACT.php'" class="button" style="color:pink; margin-right: 6%;">Contact us</button>
                 </form>
 			</div>
 		</div>

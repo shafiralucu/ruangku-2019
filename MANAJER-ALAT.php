@@ -259,7 +259,7 @@
 <form action="/action_page.php" style="float:left; margin-left:2%;">
   Tanggal :
   <input type="date" name="transaksi">
-</form>
+</form> <br><br>
 
     <div class = "w3-container w3-center">
       <img src = "images/graph3.jpg" style="width: 20%; height: 20%">
