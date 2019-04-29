@@ -2,7 +2,7 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>TRANSAKSI2 - OPERATOR</title>
+<title>RUANGAN2 - OPERATOR</title>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -230,11 +230,11 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border " id="menu">
-        <a href="OPERATOR-TRANSAKSI1.html" class="w3-bar-item w3-button w3-dark-grey">Transaksi</a>
-        <a href="OPERATOR-RUANGAN.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-        <a href="OPERATOR-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
-        <a href="OPERATOR-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
-        <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float:right;">LOGOUT</a>
+        <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button">Transaksi</a>
+        <a href="OPERATOR-RUANGAN.php" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
+        <a href="OPERATOR-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
+        <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
+        <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float:right;">LOGOUT</a>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
@@ -245,155 +245,7 @@
         <!-- <a href="#" class="w3-bar-item w3-button" style="float: right; margin-left:30%;">LOGOUT</a> -->
     </div>
 
-    <!-- Slideshow untuk ruangan -->
-    <div class="slideshow-container" style="margin-top:30px;">
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
 
-            <img src="images/1.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/2.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/3.png" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/4.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/5.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/6.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/7.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/8.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/9.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/10.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/11.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/12.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/13.jpeg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/14.jpeg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/15.jpeg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/16.jpg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/17.jpeg" style="width:100%">
-            </a>
-        </div>
-
-        <div class="mySlides fade">
-
-            <img src="images/18.jpg" style="width:100%">
-            </a>
-        </div>
-
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-    <br>
-
-
-    <!-- The dots/circles -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-        <span class="dot" onclick="currentSlide(6)"></span>
-        <span class="dot" onclick="currentSlide(7)"></span>
-        <span class="dot" onclick="currentSlide(8)"></span>
-        <span class="dot" onclick="currentSlide(9)"></span>
-        <span class="dot" onclick="currentSlide(10)"></span>
-        <span class="dot" onclick="currentSlide(11)"></span>
-        <span class="dot" onclick="currentSlide(12)"></span>
-        <span class="dot" onclick="currentSlide(13)"></span>
-        <span class="dot" onclick="currentSlide(14)"></span>
-        <span class="dot" onclick="currentSlide(15)"></span>
-        <span class="dot" onclick="currentSlide(16)"></span>
-        <span class="dot" onclick="currentSlide(17)"></span>
-        <span class="dot" onclick="currentSlide(18)"></span>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="w3-container w3-center w3-dark-grey">
-        <h2>Ruangku. A place to collaborate and create. <br>
-            SERVICED OFFICE. COWORKING. VIRTUAL OFFICE. MEETING ROOM.</h2>
-    </div>
 
     <br>
     <br>
@@ -421,9 +273,7 @@
                         Kapasitas: 6pax<br>
                         Fasilitas: AC, Snack and Drink, Projector <br>
                         Price: 400.000/hour <br>
-                        Status Ruangan:<p id="statusRuangan">Available</p>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Booking</a>
+                        <br>
                 </td>
                 </center>
                 <td>
@@ -432,20 +282,16 @@
                         Kapasitas: 15pax<br>
                         Fasilitas: AC, Snack and Drink, Projector <br>
                         Price: 450.000/hour <br>
-                        Status Ruangan:<p id="statusRuangan">Available</p>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Booking</a>
+                        <br>
                     </center>
                 </td>
                 <td>
                     <center>
-                        A Class Public Room <br>
+                        White Public Room <br>
                         Kapasitas: -<br>
                         Fasilitas: AC, Snack and Drink <br>
                         Price: 80.000/day/person <br>
-                        Status Ruangan:<p id="statusRuangan">Available</p>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Booking</a>
+                        <br>
                     </center>
                 </td>
             </tr>
@@ -463,13 +309,11 @@
             <tr>
                 <td>
                     <center>
-                        Public Room <br>
+                        Cafeteria <br>
                         Kapasitas: - <br>
                         Fasilitas: AC, Cafeteria<br>
                         Price: 60.000/day/person <br>
-                        Status Ruangan:<p id="statusRuangan">Available</p>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Booking</a>
+                        <br>
                 </td>
                 </center>
                 <td>
@@ -478,20 +322,16 @@
                         Kapasitas: 4pax<br>
                         Fasilitas: AC, Snack and Drink, Projector, Tv <br>
                         Price: 400.000/hour <br>
-                        Status Ruangan:<p id="statusRuangan">Available</p>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Booking</a>
+                        <br>
                     </center>
                 </td>
                 <td>
                     <center>
-                        Executive Room <br>
+                        Business Room <br>
                         Kapasitas: 12pax<br>
                         Fasilitas: AC, Snack and Drink, Tv <br>
                         Price: 800.000/hour <br>
-                        Status Ruangan:<p id="statusRuangan">Available</p>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Booking</a>
+                        <br>
                     </center>
                 </td>
             </tr>
@@ -499,9 +339,9 @@
         <br>
         <div class="w3-container w3-center">
             <div class="w3-bar">
-                <a href="OPERATOR-TRANSAKSI1.html" class="w3-button">1</a>
-                <a href="OPERATOR-TRANSAKSI2.html" class="w3-button w3-grey">2</a>
-                <a href="OPERATOR-TRANSAKSI3.html" class="w3-button">3</a>
+                <a href="OPERATOR-RUANGAN.php" class="w3-button">1</a>
+                <a href="OPERATOR-RUANGAN2.php" class="w3-button w3-grey">2</a>
+                <a href="OPERATOR-RUANGAN3.php" class="w3-button">3</a>
             </div>
 
         </div>

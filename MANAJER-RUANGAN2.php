@@ -230,11 +230,11 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border " id="menu">
-        <a href="MANAJER-RUANGAN.html" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
-        <a href="MANAJER-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
-        <a href="MANAJER-CUSTOMER.html" class="w3-bar-item w3-button">TRANSAKSI RUANGAN</a>
-        <a href="MANAJER-ALAT.html" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
-        <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+        <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
+        <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
+        <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button">TRANSAKSI RUANGAN</a>
+        <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
+        <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
@@ -458,9 +458,9 @@
             <tr>
                 <td>
                     <center>
-                        Public Room <br>
+                        Cafeteria <br>
                         Kapasitas: - <br>
-                        Fasilitas: AC, Cafeteria<br>
+                        Fasilitas: AC<br>
                         Price: 60.000/day/person <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
@@ -478,7 +478,7 @@
                 </td>
                 <td>
                     <center>
-                        Executive Room <br>
+                        Business Room <br>
                         Kapasitas: 12pax<br>
                         Fasilitas: AC, Snack and Drink, Tv <br>
                         Price: 800.000/hour <br><br>
@@ -491,9 +491,9 @@
         <br>
         <div class="w3-container w3-center">
             <div class="w3-bar">
-                <a href="MANAJER-RUANGAN.html" class="w3-button">1</a>
-                <a href="MANAJER-RUANGAN2.html" class="w3-button w3-grey">2</a>
-                <a href="MANAJER-RUANGAN3.html" class="w3-button">3</a>
+                <a href="MANAJER-RUANGAN.php" class="w3-button">1</a>
+                <a href="MANAJER-RUANGAN2.php" class="w3-button w3-grey">2</a>
+                <a href="MANAJER-RUANGAN3.php" class="w3-button">3</a>
             </div>
 
         </div>

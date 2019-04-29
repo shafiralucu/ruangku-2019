@@ -160,7 +160,7 @@
         }
 
         a {
-            font-family: texts;
+            font-family: navBarFont;
             font-size: 25px;
             color: #868B8E;
             font-style: bold;
@@ -235,10 +235,10 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border" id="menu">
-        <a href="ADMIN-CUSTOMER.html" class="w3-bar-item w3-button w3-dark-grey">LIST CUSTOMER</a>
-        <a href="ADMIN-RUANGAN1.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-        <a href="ADMIN-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
-        <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+        <a href="ADMIN-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">LIST CUSTOMER</a>
+        <a href="ADMIN-RUANGAN1.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+        <a href="ADMIN-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
+        <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
@@ -254,9 +254,9 @@
             style="width:auto; margin-top: 11%; margin-left: 4%;" href="#">INSERT CUSTOMER</a>
         <br><br>
         <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 17%;" href="#">UPDATE CUSTOMER</a>
-            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 30.5%;" href="#">DELETE CUSTOMER</a>
+            style="width:auto; margin-top: 11%; margin-left: 19%;" href="#">UPDATE CUSTOMER</a>
+            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
+            style="width:auto; margin-top: 11%; margin-left: 34.5%;" href="#">DELETE CUSTOMER</a>
         <table class="w3-table-all w3-center w3-hoverable" id="tabelcust" style="font-family: texts; font-size: 20px;">
             <thead>
               <tr class="w3-light-grey">
@@ -386,15 +386,17 @@
 
             </div>
 
-            <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="Model/insertCustomer.php" method="POST">
                 <!-- MODAL UNTUK INSERT CUSTOMER -->
                 <br>
                 <label><b>Nama</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Nama Customer" name="nama" required> <br>
                 <label><b>No.Handphone</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="No. Hp Customer" name="email" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="No. Hp Customer" name="nohp" required> <br>
                 <label><b>Alamat</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="nohp" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="alamat" required> <br>
+                <label><b>Email</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Email Customer" name="email" required> <br>
                 <label><b>Tanggal transaksi</b></label>
                 <input class="w3-input w3-border" type="date" name="tanggaltransaksi" required> <br>
                 <label><b>Total Transaksi</b></label> 
@@ -405,7 +407,7 @@
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
                 </div>
             </form>
 

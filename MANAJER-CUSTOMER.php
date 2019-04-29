@@ -161,7 +161,7 @@
     }
 
     a {
-      font-family: texts;
+      font-family: navBarFont;
       font-size: 25px;
       color: #868B8E;
       font-style: bold;
@@ -236,11 +236,11 @@
 
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border" id="menu">
-    <a href="MANAJER-RUANGAN.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-    <a href="MANAJER-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
-    <a href="MANAJER-CUSTOMER.html" class="w3-bar-item w3-button">TRANSAKSI RUANGAN</a>
-    <a href="MANAJER-ALAT.html" class="w3-bar-item w3-button w3-dark-grey">TRANSAKSI ALAT</a>
-    <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+    <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+    <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
+    <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">TRANSAKSI RUANGAN</a>
+    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button ">TRANSAKSI BARANG</a>
+    <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search.." name="search">
@@ -249,27 +249,20 @@
     </div>
   </div>
 
-  
-  <div class="w3-dropdown-hover w3-left" style = "margin-top: 1%; margin-left: 4%; margin-bottom: 1%;">
-      <button class="w3-button w3-black">Bulan...</button>
-      <div class="w3-dropdown-content w3-bar-block">
-        <a href="#" class="w3-bar-item w3-button">Januari</a>
-        <a href="#" class="w3-bar-item w3-button">Februari</a>
-        <a href="#" class="w3-bar-item w3-button">Maret</a>
-        <a href="#" class="w3-bar-item w3-button">April</a>
-        <a href="#" class="w3-bar-item w3-button">Mei</a>
-        <a href="#" class="w3-bar-item w3-button">Juni</a>
-        <a href="#" class="w3-bar-item w3-button">Juli</a>
-        <a href="#" class="w3-bar-item w3-button">Agustus</a>
-        <a href="#" class="w3-bar-item w3-button">September</a>
-        <a href="#" class="w3-bar-item w3-button">Oktober</a>
-        <a href="#" class="w3-bar-item w3-button">November</a>
-        <a href="#" class="w3-bar-item w3-button">Desember</a>
-      </div>
-    </div>
+  <br>
+  <form action="/action_page.php" style="float:left; margin-left: 5%;">
+  Tanggal :
+  <input type="date" name="transaksi">
+</form>
+<p style="float: left; margin-top: -0.01%; margin-left: 2%;">Sampai</p>
+
+<form action="/action_page.php" style="float:left; margin-left:2%;">
+  Tanggal :
+  <input type="date" name="transaksi">
+</form>
 
     <div class = "w3-container w3-center">
-      <img src = "images/graph3.jpg" style="width: 20%; height: 20%">
+      <img src = "images/graph.jpg">
     </div>
 
   <div class="w3-container" style="margin: 3%;">
@@ -290,7 +283,7 @@
         <td>087743553397</td>
         <td>Jl. Rancabentang I No. 10a</td>
         <td>2019-01-11</td>
-        <td>50.000</td>
+        <td>150.000</td>
       </tr>
       <tr>
         <td>2</td>
@@ -298,7 +291,7 @@
         <td>081224541830</td>
         <td>Jl. Rancabentang I No. 10D</td>
         <td>2019-10-17</td>
-        <td>80.000</td>
+        <td>280.000</td>
       </tr>
       <tr>
         <td>3</td>
@@ -306,7 +299,15 @@
         <td>081506836583</td>
         <td>Jl. Bukit Jarian No. 12</td>
         <td>2019-10-13</td>
-        <td>10.000</td>
+        <td>80.000</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Hashrul</td>
+        <td>085639986247</td>
+        <td>Jl. Bukit Resik No. 28</td>
+        <td>2019-02-12</td>
+        <td>170.000</td>
       </tr>
     </table>
   </div>

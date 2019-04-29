@@ -2,9 +2,8 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>RUANGAN1 - OPERATOR</title>
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>BARANG - MANAJER</title>
 
 <head>
   <style>
@@ -169,15 +168,15 @@
 
 
     h2 {
-      font-family: navBarFont;
+      font-family: texts;
       font-size: 30px;
-      color: white;
+      color: #373737;
       margin-top: 40px;
       margin-bottom: 40px;
     }
 
     h5 {
-      font-family: navBarFont;
+      font-family: texts;
       font-size: 20px;
       color: white;
     }
@@ -229,12 +228,12 @@
   </div>
 
   <!-- navigation bar -->
-  <div class="w3-bar w3-white w3-border " id="menu">
-    <a href="OPERATOR-TRANSAKSI1.html" class="w3-bar-item w3-button">Transaksi</a>
-    <a href="OPERATOR-RUANGAN.html" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
-    <a href="OPERATOR-ALAT.html" class="w3-bar-item w3-button">LIST BARANG</a>
-    <a href="OPERATOR-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
-    <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+  <div class="w3-bar w3-white w3-border" id="menu">
+    <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+    <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button w3-dark-grey">LIST BARANG</a>
+    <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button">TRANSAKSI RUANGAN</a>
+    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
+    <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search.." name="search">
@@ -243,103 +242,101 @@
     </div>
   </div>
 
-  
-  <br>
 
-
+<br><br><br><br>
   <div class="w3-container" id="containerRuang">
 
     <table class="w3-table w3-bordered w3-center">
       <tr>
         <th>
-          <center><img src="images/1.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center><img src="images/laptop.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </th>
         <th>
-          <center><img src="images/2.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center><img src="images/microphone.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </th>
         <th>
-          <center><img src="images/3.png" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center><img src="images/proyektor.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </th>
       </tr>
       <tr>
         <td>
           <center>
-            Executive Room (Large)<br>
-            Kapasitas: 20pax <br>
-            Fasilitas: AC, Proyektor, Free Drinks and Snack <br>
-            Price: 400.000/hour <br><br>
+            Laptop<br>
+            Jumlah: 10pcs <br>
+            Price: 60.000/hour <br>
+            Status Alat:<p id="statusRuangan">Available</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
 
         <td>
           <center>
-            Executive Room (Medium)<br>
-            Kapasitas: 16pax <br>
-            Fasilitas: AC, Proyektor <br>
-            Price:300.000/hour <br><br>
+            Microphone (2pcs)<br>
+            Jumlah: 10set <br>
+            Price: 50.000/hour <br>
+            Status Alat:<p id="statusRuangan">Available</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
         <td>
           <center>
-            Public Room <br>
-            Kapasitas: - <br>
-            Fasilitas: AC <br>
-            Price: 50.0000/day/person <br><br>
+            Proyektor <br>
+            Jumlah: 10pcs <br>
+            Price: 100.000/hour <br>
+            Status Alat:<p id="statusRuangan">Available</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
       </tr>
       <tr>
         <td>
-          <center><img src="images/4.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center><img src="images/spidol.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </td>
         <td>
-          <center><img src="images/5.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center><img src="images/speaker.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </td>
         <td>
-          <center><img src="images/6.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center><img src="images/whiteboard.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </td>
       </tr>
       <tr>
         <td>
           <center>
-            Standard Room (Small) <br>
-            Kapasitas: 4pax<br>
-            Fasilitas: AC <br>
-            Price: 200.000/hour <br><br>
+            Spidol (2pcs)<br>
+            Jumlah: 10set<br>
+            Price: 200.000/hour <br>
+            Status Alat:<p id="statusRuangan">Available</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;" href="#">EDIT</a>
         </td>
         </center>
         <td>
           <center>
-            Standard Room (Large) <br>
-            Kapasitas: 18pax<br>
-            Fasilitas: AC <br>
-            Price: 300.000/hour <br><br>
-
+            Speaker <br>
+            Jumlah: 5pcs<br>
+            Price: 100.000/hour <br>
+            Status Alat:<p id="statusRuangan">Available</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
         <td>
           <center>
-            Standard Room (Medium) <br>
-            Kapasitas: 10pax<br>
-            Fasilitas: AC <br>
-            Price: 250.000/hour <br><br>
+            Whiteboard <br>
+            Jumlah: 10pcs<br>
+            Price: 75.000/hour <br>
+            Status Alat:<p id="statusRuangan">Booked</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
       </tr>
-      <br>
     </table>
-    <br>
-    <div class="w3-container w3-center">
-      <div class="w3-bar">
-        <a href="OPERATOR-RUANGAN.html" class="w3-button w3-grey">1</a>
-        <a href="OPERATOR-RUANGAN2.html" class="w3-button">2</a>
-        <a href="OPERATOR-RUANGAN3.html" class="w3-button">3</a>
-      </div>
-
-    </div>
   </div>
 
-  <!-- modal untuk daftar cust -->
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
 
@@ -350,85 +347,33 @@
       </div>
 
       <form class="w3-container" action="/action_page.php">
-        <div class="w3-section">
-          <label><b>Tanggal Transaksi</b></label> <br>
-          <p id="date"></p>
 
-          <label><b>Nama</b></label>
-          <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama" required>
-          <label><b>Email</b></label>
-          <input class="w3-input w3-border" type="text" placeholder="Enter Email" name="email" required>
-          <label><b>No.Handphone</b></label>
-          <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="nohp" required>
-          <label><b>Alamat</b></label>
-          <input class="w3-input w3-border" type="text" placeholder="Enter Address" name="address" required>
-          <br>
+        <br>
+        <label><b>Nama Alat</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
+        <label><b>Jumlah</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="jumlah">
+        <label><b>Tarif</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="tarif">
+        <br>
+        <br>
+        <br>
 
-
-          <label><b>Waktu Mulai</b></label>
-          <input type="time" id="mulai" name="mulai" min="9:00" max="22:00" required>
-          <label><b>Waktu Akhir</b></label>
-          <input type="time" id="akhir" name="akhir" min="9:00" max="22:00" required>
-          <br>
-          <br>
-
-
-          <center>
-            <label><b>Total Transaksi: </b></label>
-            <br>
-            <label id="total" style="font-size: 30px">150.000</label>
-            <br>
-          </center>
-
-
+        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">UPDATE</button>
         </div>
       </form>
 
-      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Booking</button>
-
-      </div>
-
     </div>
-  </div>
 
+
+  </div>
 
   <div class="w3-container w3-black">
     <h5>Ruangku. Collaborate to create. </h5>
   </div>
 
 
-  <script>
-    //tampilkan carousel
-    var slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-
-    // tampilkan date
-    n = new Date();
-    y = n.getFullYear();
-    m = n.getMonth() + 1;
-    d = n.getDate();
-    document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
-
-
-  </script>
 </body>
 
 </html>

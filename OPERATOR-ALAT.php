@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>BARANG - MANAJER</title>
+<title>List Barang - OPERATOR</title>
 
 <head>
   <style>
@@ -229,11 +229,11 @@
 
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border" id="menu">
-    <a href="MANAJER-RUANGAN.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-    <a href="MANAJER-BARANG.html" class="w3-bar-item w3-button w3-dark-grey">LIST BARANG</a>
-    <a href="MANAJER-CUSTOMER.html" class="w3-bar-item w3-button">TRANSAKSI RUANGAN</a>
-    <a href="MANAJER-ALAT.html" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
-    <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+    <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button">TRANSAKSI</a>
+    <a href="OPERATOR-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+    <a href="OPERATOR-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">LIST BARANG</a>
+    <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
+    <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search.." name="search">
@@ -242,8 +242,9 @@
     </div>
   </div>
 
-
 <br><br><br><br>
+
+
   <div class="w3-container" id="containerRuang">
 
     <table class="w3-table w3-bordered w3-center">
@@ -265,8 +266,6 @@
             Jumlah: 10pcs <br>
             Price: 60.000/hour <br>
             Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
 
@@ -276,8 +275,6 @@
             Jumlah: 10set <br>
             Price: 50.000/hour <br>
             Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
         <td>
@@ -286,8 +283,6 @@
             Jumlah: 10pcs <br>
             Price: 100.000/hour <br>
             Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
       </tr>
@@ -309,8 +304,6 @@
             Jumlah: 10set<br>
             Price: 200.000/hour <br>
             Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
         </td>
         </center>
         <td>
@@ -319,8 +312,6 @@
             Jumlah: 5pcs<br>
             Price: 100.000/hour <br>
             Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
         <td>
@@ -329,44 +320,10 @@
             Jumlah: 10pcs<br>
             Price: 75.000/hour <br>
             Status Alat:<p id="statusRuangan">Booked</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
           </center>
         </td>
       </tr>
     </table>
-  </div>
-
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-
-      <div class="w3-center"><br>
-        <span onclick="document.getElementById('id01').style.display='none'"
-          class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
-
-      </div>
-
-      <form class="w3-container" action="/action_page.php">
-
-        <br>
-        <label><b>Nama Alat</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
-        <label><b>Jumlah</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="jumlah">
-        <label><b>Tarif</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="tarif">
-        <br>
-        <br>
-        <br>
-
-        <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">UPDATE</button>
-        </div>
-      </form>
-
-    </div>
-
-
   </div>
 
   <div class="w3-container w3-black">

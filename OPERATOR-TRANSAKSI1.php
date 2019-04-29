@@ -230,11 +230,11 @@
 
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border " id="menu">
-    <a href="OPERATOR-TRANSAKSI1.html" class="w3-bar-item w3-button w3-dark-grey">Transaksi</a>
-    <a href="OPERATOR-RUANGAN.html" class="w3-bar-item w3-button">LIST RUANGAN</a>
-    <a href="OPERATOR-ALAT.html" class="w3-bar-item w3-button">LIST BARANG</a>
-    <a href="OPERATOR-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
-    <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+    <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button w3-dark-grey">Transaksi</a>
+    <a href="OPERATOR-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+    <a href="OPERATOR-ALAT.php" class="w3-bar-item w3-button">LIST BARANG</a>
+    <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
+    <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
         <input type="text" placeholder="Search.." name="search">
@@ -407,10 +407,10 @@
           <center>
             Executive Room (Large)<br>
             Kapasitas: 20pax <br>
-            Fasilitas: AC, Proyektor, Free Drinks and Snack <br>
+            Fasilitas: AC, Proyektor, Snack and Drink <br>
             Price: 400.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Booked</p>
-            <a class="w3-btn w3-black w3-disabled" onclick="document.getElementById('id01').style.display='block'"
+            Status Ruangan:<p id="statusRuangan">Available</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">Booking</a>
           </center>
         </td>
@@ -431,7 +431,7 @@
             Public Room <br>
             Kapasitas: - <br>
             Fasilitas: AC <br>
-            Price: 50.0000/day/person <br>
+            Price: 50.000/day/person <br>
             Status Ruangan:<p id="statusRuangan">Available</p>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">Booking</a>
@@ -479,8 +479,8 @@
             Kapasitas: 10pax<br>
             Fasilitas: AC <br>
             Price: 250.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Booked</p>
-            <a class="w3-btn w3-black w3-disabled" onclick="document.getElementById('id01').style.display='block'"
+            Status Ruangan:<p id="statusRuangan">Available</p>
+            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">Booking</a>
           </center>
         </td>
@@ -490,9 +490,9 @@
     <br>
     <div class="w3-container w3-center">
       <div class="w3-bar">
-        <a href="OPERATOR-TRANSAKSI1.html" class="w3-button w3-grey">1</a>
-        <a href="OPERATOR-TRANSAKSI2.html" class="w3-button">2</a>
-        <a href="OPERATOR-TRANSAKSI3.html" class="w3-button">3</a>
+        <a href="OPERATOR-TRANSAKSI1.php" class="w3-button w3-grey">1</a>
+        <a href="OPERATOR-TRANSAKSI2.php" class="w3-button">2</a>
+        <a href="OPERATOR-TRANSAKSI3.php" class="w3-button">3</a>
       </div>
 
     </div>
@@ -544,8 +544,9 @@
       </form>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <form action="OPERATOR-COMPLETE.php">
         <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Booking</button>
-
+  </form>
       </div>
 
     </div>

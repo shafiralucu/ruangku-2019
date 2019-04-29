@@ -169,7 +169,7 @@
 
 
         h2 {
-            font-family: navBarFont;
+            font-family: texts2;
             font-size: 30px;
             color: white;
             margin-top: 40px;
@@ -230,10 +230,10 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border " id="menu">
-        <a href="ADMIN-CUSTOMER.html" class="w3-bar-item w3-button">LIST CUSTOMER</a>
-        <a href="ADMIN-RUANGAN1.html" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
-        <a href="ADMIN-BARANG.html" class="w3-bar-item w3-button">LIST BARANG</a>
-        <a href="OPERATOR-HOME.html" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
+        <a href="ADMIN-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
+        <a href="ADMIN-RUANGAN1.php" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
+        <a href="ADMIN-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
+        <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search.." name="search">
@@ -250,7 +250,7 @@
     <div class="w3-container" id="containerRuang">
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
             style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Ruangan</a>
-            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
+            <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
             style="width:auto; margin-top: 11%; margin-left: 16%;" href="#">DELETE Ruangan</a>
             <br> 
             <br>
@@ -273,7 +273,7 @@
                     <center>
                         Executive Room (Large)<br>
                         Kapasitas: 20pax <br>
-                        Fasilitas: AC, Proyektor, Free Drinks and Snack <br>
+                        Fasilitas: AC, Projector, Snack and Drink <br>
                         Price: 400.000/hour <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
@@ -284,7 +284,7 @@
                     <center>
                         Executive Room (Medium)<br>
                         Kapasitas: 16pax <br>
-                        Fasilitas: AC, Proyektor <br>
+                        Fasilitas: AC, Projector <br>
                         Price:300.000/hour <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
@@ -295,7 +295,7 @@
                         Public Room <br>
                         Kapasitas: - <br>
                         Fasilitas: AC <br>
-                        Price: 50.0000/day/person <br><br>
+                        Price: 50.000/day/person <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                     </center>
@@ -350,9 +350,9 @@
         <br>
         <div class="w3-container w3-center">
             <div class="w3-bar">
-                <a href="ADMIN-RUANGAN1.html" class="w3-button w3-grey">1</a>
-                <a href="ADMIN-RUANGAN2.html" class="w3-button">2</a>
-                <a href="ADMIN-RUANGAN3.html" class="w3-button">3</a>
+                <a href="ADMIN-RUANGAN1.php" class="w3-button w3-grey">1</a>
+                <a href="ADMIN-RUANGAN2.php" class="w3-button">2</a>
+                <a href="ADMIN-RUANGAN3.php" class="w3-button">3</a>
             </div>
 
         </div>
@@ -368,7 +368,7 @@
 
             </div>
 
-            <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="Model/insertRuangan.php" method="POST">
 
                 <br>
                 <label><b>Nama Ruangan</b></label>
@@ -384,6 +384,32 @@
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+            <div class="w3-center"><br>
+                <span onclick="document.getElementById('id02').style.display='none'"
+                    class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+
+            </div>
+
+            <form class="w3-container" action="/action_page.php">
+
+                <br>
+                <label><b>Nama Ruangan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Ruangan yang dihapus" name="nama">
+                <br>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                     <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
                 </div>
             </form>
@@ -392,6 +418,8 @@
 
 
     </div>
+
+    
 
     <div class="w3-container w3-black">
         <h5>Ruangku. Collaborate to create. </h5>
