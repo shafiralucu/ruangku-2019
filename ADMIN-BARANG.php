@@ -244,9 +244,9 @@
 
 <div class="w3-container" id="containerRuang">
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Ruangan</a>
+            style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Barang</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 16%;" href="#">DELETE Ruangan</a>
+            style="width:auto; margin-top: 11%; margin-left: 16%;" href="#">DELETE Barang</a>
             <br> 
             <br>
 
@@ -353,15 +353,14 @@
 
             </div>
 
-            <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="Model/insertBarang.php" method="POST">
 
                 <br>
-                <label><b>Nama Ruangan</b></label>
+                <label><b>Nama Barang</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
                 <label><b>Kapasitas</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
-                <label><b>Fasilitas</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Facility" name="fasilitas">
+              
                 <label><b>Tarif</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
                 <br>
@@ -369,7 +368,7 @@
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
                 </div>
             </form>
 

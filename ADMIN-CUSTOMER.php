@@ -386,15 +386,17 @@
 
             </div>
 
-            <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="Model/insertCustomer.php" method="POST">
                 <!-- MODAL UNTUK INSERT CUSTOMER -->
                 <br>
                 <label><b>Nama</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Nama Customer" name="nama" required> <br>
                 <label><b>No.Handphone</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="No. Hp Customer" name="email" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="No. Hp Customer" name="nohp" required> <br>
                 <label><b>Alamat</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="nohp" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="alamat" required> <br>
+                <label><b>Email</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Email Customer" name="email" required> <br>
                 <label><b>Tanggal transaksi</b></label>
                 <input class="w3-input w3-border" type="date" name="tanggaltransaksi" required> <br>
                 <label><b>Total Transaksi</b></label> 
@@ -405,7 +407,7 @@
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
                 </div>
             </form>
 

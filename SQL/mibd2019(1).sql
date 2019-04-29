@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2019 at 05:37 AM
+-- Generation Time: Apr 29, 2019 at 07:06 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -34,6 +34,13 @@ CREATE TABLE `alat` (
   `tarif` float NOT NULL,
   `status_booking` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alat`
+--
+
+INSERT INTO `alat` (`idAlat`, `namaAlat`, `tarif`, `status_booking`) VALUES
+(1, 'coca cola', 10000, 0);
 
 -- --------------------------------------------------------
 
@@ -92,8 +99,16 @@ CREATE TABLE `pelanggan` (
   `nama` varchar(20) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `no_hp` varchar(20) NOT NULL
+  `no_hp` varchar(20) NOT NULL,
+  `tanggal_transaksi` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pelanggan`
+--
+
+INSERT INTO `pelanggan` (`idPelanggan`, `nama`, `alamat`, `email`, `no_hp`, `tanggal_transaksi`) VALUES
+(1, 'hasrul', 'Raben 1', 'hasrul@gmail.com', '0812121212', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -105,9 +120,17 @@ CREATE TABLE `ruang` (
   `idRuang` int(11) NOT NULL,
   `namaRuang` varchar(25) NOT NULL,
   `kapasitas` int(11) NOT NULL,
+  `fasilitas` varchar(50) NOT NULL,
   `tarif` float NOT NULL,
   `status_booking` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ruang`
+--
+
+INSERT INTO `ruang` (`idRuang`, `namaRuang`, `kapasitas`, `fasilitas`, `tarif`, `status_booking`) VALUES
+(1, 'Basic Room', 2, 'AC', 50000, 0);
 
 -- --------------------------------------------------------
 
@@ -214,7 +237,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `alat`
 --
 ALTER TABLE `alat`
-  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
@@ -226,13 +249,13 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ruang`
 --
 ALTER TABLE `ruang`
-  MODIFY `idRuang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRuang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
