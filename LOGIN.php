@@ -21,7 +21,7 @@
 							
 		<div class="register-info-box">
             <h1>Ruangku</h1>
-			<h5>YOU'LL KNOW AT FIRST</h5>
+			<h3>YOU'LL KNOW AT FIRST</h3>
             <h1>THE RIGHT PLACE TO BE</h1>
 			<label id="label-login" for="log-login-show">Check our details</label>
 			<input type="radio" name="active-log-panel" id="log-login-show">

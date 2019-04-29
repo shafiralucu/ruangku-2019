@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Mukta');
+
+@font-face {
+    font-family: quicksand;
+    src: url("quicksand.otf");
+}
+
 body{
     font-family: 'Mukta', sans-serif;
 	height:100vh;
