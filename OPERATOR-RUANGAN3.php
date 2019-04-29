@@ -307,7 +307,7 @@
                     <center>
                         Library Room <br>
                         Kapasitas: 12pax <br>
-                        Fasilitas: AC, Library, Snack and Drink<br>
+                        Fasilitas: AC<br>
                         Price: 500.000/hour <br>
                         <br>
                 </td>

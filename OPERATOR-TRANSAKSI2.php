@@ -439,7 +439,7 @@
                 </td>
                 <td>
                     <center>
-                        A Class Public Room <br>
+                        White Public Room <br>
                         Kapasitas: -<br>
                         Fasilitas: AC, Snack and Drink <br>
                         Price: 80.000/day/person <br>
@@ -463,9 +463,9 @@
             <tr>
                 <td>
                     <center>
-                        Public Room <br>
+                        Cafeteria <br>
                         Kapasitas: - <br>
-                        Fasilitas: AC, Cafeteria<br>
+                        Fasilitas: AC<br>
                         Price: 60.000/day/person <br>
                         Status Ruangan:<p id="statusRuangan">Available</p>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
@@ -485,7 +485,7 @@
                 </td>
                 <td>
                     <center>
-                        Executive Room <br>
+                        Business Room <br>
                         Kapasitas: 12pax<br>
                         Fasilitas: AC, Snack and Drink, Tv <br>
                         Price: 800.000/hour <br>
