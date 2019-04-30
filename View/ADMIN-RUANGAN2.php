@@ -2,7 +2,7 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<title>RUANGAN3 - ADMIN</title>
+<title>RUANGAN2 - ADMIN</title>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -244,7 +244,6 @@
 
     
 
-
     <br>
     <br>
 
@@ -261,31 +260,74 @@
 
             <tr>
                 <td>
-                    <center><img src="images/13.jpeg" class="imgTable" style="width:600px; height: 300px;"></center>
+                    <center><img src="images/7.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
                 </td>
                 <td>
-                    <center><img src="images/14.jpeg" class="imgTable" style="width:600px; height: 300px;"></center>
+                    <center><img src="images/8.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
                 </td>
                 <td>
-                    <center><img src="images/15.jpeg" class="imgTable" style="width:600px; height: 300px;"></center>
+                    <center><img src="images/9.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
                 </td>
             </tr>
             <tr>
                 <td>
                     <center>
-                        Tuition Room (Large) <br>
-                        Kapasitas: 15pax<br>
+                        A Class Room (Small) <br>
+                        Kapasitas: 6pax<br>
                         Fasilitas: AC, Snack and Drink, Projector <br>
-                        Price: 500.000/hour <br><br>
+                        Price: 400.000/hour <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                 </td>
                 </center>
                 <td>
                     <center>
-                        Tuition Room (Small) <br>
-                        Kapasitas: 6pax<br>
-                        Fasilitas: AC. Snack and Drink, Projector <br>
+                        A Class Room (Large) <br>
+                        Kapasitas: 15pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector <br>
+                        Price: 450.000/hour <br><br>
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                            style="width:auto;" href="#">Edit</a>
+                    </center>
+                </td>
+                <td>
+                    <center>
+                        White Public Room <br>
+                        Kapasitas: -<br>
+                        Fasilitas: AC, Snack and Drink <br>
+                        Price: 80.000/day/person <br><br>
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                            style="width:auto;" href="#">Edit</a>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center><img src="images/10.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/11.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+                <td>
+                    <center><img src="images/12.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        Cafeteria <br>
+                        Kapasitas: - <br>
+                        Fasilitas: AC<br>
+                        Price: 60.000/day/person <br><br>
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                            style="width:auto;" href="#">Edit</a>
+                </td>
+                </center>
+                <td>
+                    <center>
+                        Glass Room <br>
+                        Kapasitas: 4pax<br>
+                        Fasilitas: AC, Snack and Drink, Projector, Tv <br>
                         Price: 400.000/hour <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
@@ -293,67 +335,22 @@
                 </td>
                 <td>
                     <center>
-                        Office Room <br>
-                        Kapasitas: 8pax<br>
-                        Fasilitas: AC, Snack and Drink, Projector <br>
-                        Price: 600.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center><img src="images/16.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-                <td>
-                    <center><img src="images/17.jpeg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-                <td>
-                    <center><img src="images/18.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center>
-                        Library Room <br>
-                        Kapasitas: 12pax <br>
-                        Fasilitas: AC<br>
-                        Price: 500.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                </td>
-                </center>
-                <td>
-                    <center>
-                        Boss Room <br>
-                        Kapasitas: 15pax<br>
-                        Fasilitas: AC. Snack and Drink<br>
+                        Business Room <br>
+                        Kapasitas: 12pax<br>
+                        Fasilitas: AC, Snack and Drink, Tv <br>
                         Price: 800.000/hour <br><br>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                     </center>
                 </td>
-                <td>
-                    <center>
-                        Bulkhead Room <br>
-                        Kapasitas: 8pax<br>
-                        Fasilitas: AC, Snack and Drink <br>
-                        Price: 400.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
             </tr>
-
-
         </table>
         <br>
         <div class="w3-container w3-center">
             <div class="w3-bar">
                 <a href="ADMIN-RUANGAN1.php" class="w3-button">1</a>
-                <a href="ADMIN-RUANGAN2.php" class="w3-button">2</a>
-                <a href="ADMIN-RUANGAN3.php" class="w3-button  w3-grey">3</a>
+                <a href="ADMIN-RUANGAN2.php" class="w3-button w3-grey">2</a>
+                <a href="ADMIN-RUANGAN3.php" class="w3-button">3</a>
             </div>
 
         </div>
@@ -407,7 +404,7 @@
 
                 <br>
                 <label><b>Nama Ruangan</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Ruangan yang dihapus" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">

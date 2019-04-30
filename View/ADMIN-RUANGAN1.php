@@ -1,5 +1,5 @@
 <?php 
-	require "Model/Connector.php";
+	require "../Controller/Connector.php";
 	$query = "SELECT * from ruang";
 
 	//filter
@@ -396,7 +396,7 @@
 
             </div>
 
-            <form class="w3-container" action="Model/insertRuangan.php" method="POST">
+            <form class="w3-container" action="../Model/insertRuangan.php" method="POST">
 
                 <br>
                 <label><b>Nama Ruangan</b></label>
@@ -434,7 +434,7 @@
 
                 <br>
                 <label><b>Nama Ruangan</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Ruangan yang dihapus" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">

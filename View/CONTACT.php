@@ -15,8 +15,24 @@
             font-style: bold;
         }
 
-        body {
+        @font-face {
+            font-family: header;
+            src: url(fonts/Ailerons-Typeface.otf);
+        }
+
+        @font-face {
+            font-family: texts;
+            src: url("fonts/Renner_ 400 Book.ttf");
+        }
+
+        @font-face {
             font-family: navBarFont;
+            src: url("fonts/Kiona-Regular.ttf");
+            font-style: bold;
+        }
+
+        body {
+            font-family: texts;
             color: pink;
             background-image: url("images/contact2.jpg");
         }
@@ -24,8 +40,8 @@
         .judul {
             float: right;
             text-align: center;
-            margin-right: 40vw;
-            margin-top: 8vh;
+            margin-top: 1%;
+            margin-right: 45%;
         }
 
         .judul h1 {
@@ -49,7 +65,7 @@
 
         .contact {
             margin-top: 5%;
-            margin-left: 30%;
+            margin-left: 27.5%;
             float: left;
             text-align: center;
         }
@@ -72,6 +88,22 @@
         .button:hover {
             background-color: grey;
             transition: 0.5s;
+        }
+
+        h5 {
+            font-family: navBarFont;
+            font-size: 20px;
+            color: white;
+        }
+        
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
         }
     </style>
 </head>
@@ -107,6 +139,10 @@
             </fieldset>
         </div>
     </form>
+
+    <div class="footer">
+        <p>Ruangku. Collaborate to Create</p>
+    </div>
 
 </body>
 

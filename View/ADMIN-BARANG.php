@@ -358,8 +358,8 @@
                 <br>
                 <label><b>Nama Barang</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
-                <label><b>Kapasitas</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
+                <label><b>Jumlah</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="kapasitas">
               
                 <label><b>Tarif</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
@@ -389,8 +389,8 @@
             <form class="w3-container" action="/action_page.php">
 
                 <br>
-                <label><b>Nama Ruangan</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Ruangan yang dihapus" name="nama">
+                <label><b>Nama Barang</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">

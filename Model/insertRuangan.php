@@ -1,6 +1,6 @@
 <?php
 
-    require 'Connector.php';
+    require '../Controller/Connector.php';
 		if (isset($_POST['btnInsert'])) {
             $namaRuangan = $_POST['nama'];
             $kapasitas = $_POST['kapasitas'];
@@ -13,6 +13,6 @@
                 $harga = $db->escapeString($harga);
 				$query = "INSERT INTO ruang (namaRuang, kapasitas, fasilitas, tarif, status_booking) VALUES ('$namaRuangan' , '$kapasitas' , '$fasilitas','$harga' , '$status')";
                 $db->executeNonSelectedQuery($query);
-                header('Location: ../ADMIN-RUANGAN1.php');
+                header('Location: ../View/ADMIN-RUANGAN1.php');
         }
 ?>

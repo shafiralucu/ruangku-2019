@@ -29,7 +29,7 @@
 							
 		<div class="white-panel">
 			<div class="login-show">
-                <form action="Model/confirmLogin.php" method="POST">
+                <form action="../Model/confirmLogin.php" method="POST">
 				<h2>LOGIN</h2>
 				<input type="text" name="nama" placeholder="Username / ID Karyawan">
 				<input type="password" name="pass" placeholder="Password">

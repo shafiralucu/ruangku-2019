@@ -1,6 +1,6 @@
 <?php
-	include_once '../LOGIN.php';
-    require 'Connector.php';
+	include_once '../View/LOGIN.php';
+    require '../Controller/Connector.php';
 		if (isset($_POST['btnLogin'])) {
             $username = $_POST['nama'];
             $pass = $_POST['pass'];
@@ -17,19 +17,19 @@
             }
             
             if($res == "manager"){
-                header('Location: ../MANAJER-RUANGAN.php');
+                header('Location: ../View/MANAJER-RUANGAN.php');
                 
             }
             else if($res == "operator"){
-                header('Location: ../OPERATOR-RUANGAN.php');
+                header('Location: ../View/OPERATOR-TRANSAKSI1.php');
                
             }
             else if($res == "admin"){
-                header('Location: ../ADMIN-RUANGAN1.php');
+                header('Location: ../View/ADMIN-CUSTOMER.php');
             
             }
             else {
-                header('Location: ../LOGIN.php');
+                header('Location: ../View/LOGIN.php');
             }
 		}
 	

@@ -1,5 +1,5 @@
 <?php 
-	require "Model/Connector.php";
+	require "../Controller/Connector.php";
 	$query = "SELECT * from pelanggan";
 
 	$result = $db->executeSelectQuery($query);
@@ -303,7 +303,7 @@
 
             </div>
 
-            <form class="w3-container" action="Model/insertCustomer.php" method="POST">
+            <form class="w3-container" action="../Model/insertCustomer.php" method="POST">
                 <!-- MODAL UNTUK INSERT CUSTOMER -->
                 <br>
                 <label><b>Nama</b></label>
