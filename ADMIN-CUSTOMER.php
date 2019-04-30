@@ -375,6 +375,8 @@
                 <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="alamat" required> <br>
                 <label><b>Email</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Email Customer" name="email" required> <br>
+                <label><b>Nama Ruangan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Nama Ruangan" name="email" required> <br>
                 <label><b>Tanggal transaksi</b></label>
                 <input class="w3-input w3-border" type="date" name="tanggaltransaksi" required> <br>
                 <label><b>Total Transaksi</b></label> 

@@ -525,7 +525,7 @@
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">UPDATE</button>
                 </div>
             </form>
 

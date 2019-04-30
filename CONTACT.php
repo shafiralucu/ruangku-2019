@@ -36,31 +36,6 @@
             font-size: 125%;
         }
 
-        
-
-        ul {
-            text-decoration: none;
-            list-style-type: none;
-            float: left;
-            background-color: white;
-            width: 20%;
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: auto;
-            position: fixed;
-            text-align: center;
-        }
-
-        li a {
-            text-decoration: none;
-            color: white;
-            color: black;
-            font: bold;
-            font-size: 125%;
-            transition: 0.5s;
-        }
-
         li a:hover {
             color: rgb(107, 190, 218);
             transition: 0.5s;
@@ -126,8 +101,9 @@
                     <br>
                     <br>
                     <br>
-                    <button class="button" style="color:pink; margin-right: 6%;">SEND REQUEST</button>
+                    <button onclick="location.href = 'CONTACT-COMPLETE.php'" class="button" style="color:pink; margin-right: 6%;">SEND</button>
                 </div>
+                <a href="OPERATOR-HOME.php" style="color:white;float: right;">Kembali ke halaman utama</a>
             </fieldset>
         </div>
     </form>
