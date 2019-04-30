@@ -343,15 +343,15 @@
 
             </div>
 
-            <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="Model/deleteCustomer.php" method="POST">
                 <br>
                 <label><b>Nama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Customer yang dihapus" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Nama customer yang dihapus" name="nama">
                 <br>
                 <br>
                 <br>
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Update</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name = "btnDelete">Delete</button>
                 </div>
             </form>
 
