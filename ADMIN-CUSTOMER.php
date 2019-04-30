@@ -1,3 +1,10 @@
+<?php 
+	require "Model/Connector.php";
+	$query = "SELECT * from pelanggan";
+
+	$result = $db->executeSelectQuery($query);
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -267,87 +274,19 @@
                 <th>E-mail</th>
                 <th>Tanggal Transaksi</th>
               </tr>
+              <?php
+			    foreach ($result as $key => $row) {
+				echo "<tr>";
+				echo "<td>".$row['idPelanggan']."</td>";
+                echo "<td>".$row['nama']."</td>";
+                echo "<td>".$row['no_hp']."</td>";
+                echo "<td>".$row['alamat']."</td>";
+                echo "<td>".$row['email']."</td>";
+                
+				echo "</tr>";
+			}
+		?>
             </thead>
-            <tr>
-              <td>1</td>
-              <td>Shafira</td>
-              <td>087743553397</td>
-              <td>Jl. Rancabentang I No. 10a</td>
-              <td>Executive Room (Large)</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Giovanni</td>
-              <td>081224541830</td>
-              <td>Jl. Rancabentang I No. 10D</td>
-              <td>Glass Room (Large)</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Alif</td>
-              <td>081506836583</td>
-              <td>Jl. Bukit Jarian No. 12</td>
-              <td>Standard Room (Large)</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Hashrul</td>
-              <td>085639986247</td>
-              <td>Jl. Bukit Resik No. 28</td>
-              <td>Library Room (Large)</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Timothy</td>
-              <td>0811234221</td>
-              <td>Jl. Rancabulan 1 No. 20</td>
-              <td>Library Room (Small)</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Naofal</td>
-              <td>08975462135</td>
-              <td>Jl. Bukit Indah 14 No. 203</td>
-              <td>Public Room</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>Samuel</td>
-              <td>08122355567</td>
-              <td>Jl. Jurang No. 3</td>
-              <td>Public Room</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Jaya</td>
-              <td>0812232345</td>
-              <td>Jl. Sukajadi No. 34</td>
-              <td>Public Room</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Alwan</td>
-              <td>0812232345</td>
-              <td>Jl. Cimahi No. 1233</td>
-              <td>Glass Room</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>Audi</td>
-              <td>08122343235</td>
-              <td>Jl. Sadang Serang No. 3313</td>
-              <td>Standard Room</td>
-              <td></td>
-            </tr>
           </table>
     </div>
 

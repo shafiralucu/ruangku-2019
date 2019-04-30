@@ -8,7 +8,8 @@
 		$name = $_GET['search'];
 		if (isset($name) && $name != "") {
 			$name = $db->escapeString($name);
-			$query .= " WHERE name LIKE '%$name%'";
+            $query .= " WHERE namaRuang LIKE '%$name%'";
+            
 		}
 	}
 
@@ -453,6 +454,7 @@
     </div>
 
 
+    
 
 
     <script>
