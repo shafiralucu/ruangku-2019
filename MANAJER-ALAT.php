@@ -249,24 +249,17 @@
     </div>
   </div>
 
-  
-  <div class="w3-dropdown-hover w3-left" style = "margin-top: 1%; margin-left: 4%; margin-bottom: 1%;">
-      <button class="w3-button w3-black">Bulan...</button>
-      <div class="w3-dropdown-content w3-bar-block">
-        <a href="#" class="w3-bar-item w3-button">Januari</a>
-        <a href="#" class="w3-bar-item w3-button">Februari</a>
-        <a href="#" class="w3-bar-item w3-button">Maret</a>
-        <a href="#" class="w3-bar-item w3-button">April</a>
-        <a href="#" class="w3-bar-item w3-button">Mei</a>
-        <a href="#" class="w3-bar-item w3-button">Juni</a>
-        <a href="#" class="w3-bar-item w3-button">Juli</a>
-        <a href="#" class="w3-bar-item w3-button">Agustus</a>
-        <a href="#" class="w3-bar-item w3-button">September</a>
-        <a href="#" class="w3-bar-item w3-button">Oktober</a>
-        <a href="#" class="w3-bar-item w3-button">November</a>
-        <a href="#" class="w3-bar-item w3-button">Desember</a>
-      </div>
-    </div>
+  <br>
+  <form action="/action_page.php" style="float:left; margin-left: 5%;">
+  Tanggal :
+  <input type="date" name="transaksi">
+</form>
+<p style="float: left; margin-top: -0.01%; margin-left: 2%;">Sampai</p>
+
+<form action="/action_page.php" style="float:left; margin-left:2%;">
+  Tanggal :
+  <input type="date" name="transaksi">
+</form> <br><br>
 
     <div class = "w3-container w3-center">
       <img src = "images/graph3.jpg" style="width: 20%; height: 20%">

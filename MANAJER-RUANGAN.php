@@ -417,7 +417,7 @@
           <center>
             Executive Room (Large)<br>
             Kapasitas: 20pax <br>
-            Fasilitas: AC, Proyektor, Free Drinks and Snack <br>
+            Fasilitas: AC, Proyektor, Snack and Drink <br>
             Price: 400.000/hour <br><br>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">Edit</a>

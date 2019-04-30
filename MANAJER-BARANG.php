@@ -307,7 +307,7 @@
           <center>
             Spidol (2pcs)<br>
             Jumlah: 10set<br>
-            Price: 200.000/hour <br>
+            Price: 20.000/hour <br>
             Status Alat:<p id="statusRuangan">Available</p>
             <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
               style="width:auto;" href="#">EDIT</a>

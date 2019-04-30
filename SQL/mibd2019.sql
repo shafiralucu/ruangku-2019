@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 29, 2019 at 05:37 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Apr 29, 2019 at 06:34 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -32,8 +32,21 @@ CREATE TABLE `alat` (
   `idAlat` int(11) NOT NULL,
   `namaAlat` varchar(25) NOT NULL,
   `tarif` float NOT NULL,
+  `jumlah` int(11) NOT NULL,
   `status_booking` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alat`
+--
+
+INSERT INTO `alat` (`idAlat`, `namaAlat`, `tarif`, `jumlah`, `status_booking`) VALUES
+(1, 'Laptop', 60000, 10, 0),
+(2, 'Microphone 2pcs', 50000, 10, 0),
+(3, 'Proyektor', 100000, 10, 0),
+(4, 'Spidol 2pcs', 20000, 10, 0),
+(5, 'Speaker', 100000, 5, 0),
+(6, 'Whiteboard', 75000, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -92,7 +105,8 @@ CREATE TABLE `pelanggan` (
   `nama` varchar(20) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `no_hp` varchar(20) NOT NULL
+  `no_hp` varchar(20) NOT NULL,
+  `tanggal_transaksi` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -105,9 +119,34 @@ CREATE TABLE `ruang` (
   `idRuang` int(11) NOT NULL,
   `namaRuang` varchar(25) NOT NULL,
   `kapasitas` int(11) NOT NULL,
+  `fasilitas` varchar(50) NOT NULL,
   `tarif` float NOT NULL,
   `status_booking` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ruang`
+--
+
+INSERT INTO `ruang` (`idRuang`, `namaRuang`, `kapasitas`, `fasilitas`, `tarif`, `status_booking`) VALUES
+(1, 'Executive Room (Large)', 20, 'AC, Projector, Snack and Drink', 400000, 0),
+(2, 'Executive Room (Medium)', 10, 'AC, Projector', 300000, 0),
+(3, 'Public Room', 100, 'AC', 50000, 0),
+(4, 'Standard Room (Small)', 4, 'AC', 200000, 0),
+(5, 'Standard Room (Large)', 16, 'AC', 300000, 0),
+(6, 'Standard Room (Medium)', 10, 'AC', 250000, 0),
+(7, 'A Class Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
+(8, 'A Class Room (Large)', 15, 'AC, Snack and Drink, Projector', 450000, 0),
+(9, 'White Public Room', 70, 'AC, Snack and Drink', 80000, 0),
+(10, 'Cafeteria', 50, 'AC', 60000, 0),
+(11, 'Glass Room', 4, 'AC, Snack and Drink, Projector, Tv', 400000, 0),
+(12, 'Business Room', 12, 'AC, Snack and Drink, Tv', 800000, 0),
+(13, 'Tuition Room (Large)', 15, 'AC, Snack and Drink, Projector', 500000, 0),
+(14, 'Tuition Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
+(15, 'Office Room', 8, 'AC, Snack and Drink, Projector', 600000, 0),
+(16, 'Library Room', 12, 'AC', 500000, 0),
+(17, 'Boss Room', 15, 'AC, Snack and Drink', 800000, 0),
+(18, 'Bulkhead Room', 8, 'AC, Snack and Drink', 400000, 0);
 
 -- --------------------------------------------------------
 
@@ -214,7 +253,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `alat`
 --
 ALTER TABLE `alat`
-  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
@@ -226,13 +265,13 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ruang`
 --
 ALTER TABLE `ruang`
-  MODIFY `idRuang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRuang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `transaksi`

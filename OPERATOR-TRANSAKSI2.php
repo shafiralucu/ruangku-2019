@@ -439,7 +439,7 @@
                 </td>
                 <td>
                     <center>
-                        A Class Public Room <br>
+                        White Public Room <br>
                         Kapasitas: -<br>
                         Fasilitas: AC, Snack and Drink <br>
                         Price: 80.000/day/person <br>
@@ -463,9 +463,9 @@
             <tr>
                 <td>
                     <center>
-                        Public Room <br>
+                        Cafeteria <br>
                         Kapasitas: - <br>
-                        Fasilitas: AC, Cafeteria<br>
+                        Fasilitas: AC<br>
                         Price: 60.000/day/person <br>
                         Status Ruangan:<p id="statusRuangan">Available</p>
                         <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
@@ -485,7 +485,7 @@
                 </td>
                 <td>
                     <center>
-                        Executive Room <br>
+                        Business Room <br>
                         Kapasitas: 12pax<br>
                         Fasilitas: AC, Snack and Drink, Tv <br>
                         Price: 800.000/hour <br>
@@ -532,13 +532,13 @@
               <br>
 
               
-              <label><b>Waktu Mulai</b></label>
-              <input type="time" id="mulai" name="mulai" min="9:00" max="22:00" required>
-              <label><b>Waktu Akhir</b></label>
-              <input type="time" id="akhir" name="akhir" min="9:00" max="22:00" required>
-              <br>
-              <br>
-
+              <label class="heading">Sewa Alat:</label> <br>
+          <input type="checkbox" name="Laptop" value="laptop">Laptop <br>
+          <input type="checkbox" name="Microphone 2pcs" value="microphone">Microphone (2pcs) <br>
+          <input type="checkbox" name="Proyektor"value="proyektor">Proyektor <br>
+          <input type="checkbox" name="Spidol 2pcs" value="radio">Spidol (2pcs) <br>
+          <input type="checkbox" name="Speaker" value="speaker">Speaker <br>
+          <input type="checkbox" name="Whiteboard" value="whiteboard">Whiteboard <br>
 
               <center> 
                     <label><b>Total Transaksi: </b></label> 

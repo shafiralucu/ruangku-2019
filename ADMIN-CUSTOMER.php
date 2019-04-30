@@ -254,9 +254,9 @@
             style="width:auto; margin-top: 11%; margin-left: 4%;" href="#">INSERT CUSTOMER</a>
         <br><br>
         <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 17%;" href="#">UPDATE CUSTOMER</a>
+            style="width:auto; margin-top: 11%; margin-left: 19%;" href="#">UPDATE CUSTOMER</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 30.5%;" href="#">DELETE CUSTOMER</a>
+            style="width:auto; margin-top: 11%; margin-left: 34.5%;" href="#">DELETE CUSTOMER</a>
         <table class="w3-table-all w3-center w3-hoverable" id="tabelcust" style="font-family: texts; font-size: 20px;">
             <thead>
               <tr class="w3-light-grey">
@@ -265,9 +265,7 @@
                 <th>No. Handphone</th>
                 <th>Alamat</th>
                 <th>Ruangan</th>
-                <th>Tanggal Transaksi</th>
-                <th>Durasi</th>
-                <th>Total Transaksi</th>
+                <th>E-mail</th>
               </tr>
             </thead>
             <tr>
@@ -276,9 +274,7 @@
               <td>087743553397</td>
               <td>Jl. Rancabentang I No. 10a</td>
               <td>Executive Room (Large)</td>
-              <td>2019-01-11</td>
-              <td>2 jam</td>
-              <td>150.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>2</td>
@@ -286,9 +282,7 @@
               <td>081224541830</td>
               <td>Jl. Rancabentang I No. 10D</td>
               <td>Glass Room (Large)</td>
-              <td>2019-10-17</td>
-              <td>3 jam</td>
-              <td>280.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>3</td>
@@ -296,9 +290,7 @@
               <td>081506836583</td>
               <td>Jl. Bukit Jarian No. 12</td>
               <td>Standard Room (Large)</td>
-              <td>2019-10-13</td>
-              <td>1 jam</td>
-              <td>80.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>4</td>
@@ -306,9 +298,7 @@
               <td>085639986247</td>
               <td>Jl. Bukit Resik No. 28</td>
               <td>Library Room (Large)</td>
-              <td>2019-02-12</td>
-              <td>12 jam</td>
-              <td>170.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>5</td>
@@ -316,9 +306,7 @@
               <td>0811234221</td>
               <td>Jl. Rancabulan 1 No. 20</td>
               <td>Library Room (Small)</td>
-              <td>2019-02-24</td>
-              <td>3 jam</td>
-              <td>120.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>6</td>
@@ -326,9 +314,7 @@
               <td>08975462135</td>
               <td>Jl. Bukit Indah 14 No. 203</td>
               <td>Public Room</td>
-              <td>2019-02-24</td>
-              <td>All Day</td>
-              <td>100.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>7</td>
@@ -336,9 +322,7 @@
               <td>08122355567</td>
               <td>Jl. Jurang No. 3</td>
               <td>Public Room</td>
-              <td>2019-02-24</td>
-              <td>All Day</td>
-              <td>100.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>8</td>
@@ -346,9 +330,7 @@
               <td>0812232345</td>
               <td>Jl. Sukajadi No. 34</td>
               <td>Public Room</td>
-              <td>2019-02-24</td>
-              <td>All Day</td>
-              <td>100.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>9</td>
@@ -356,9 +338,7 @@
               <td>0812232345</td>
               <td>Jl. Cimahi No. 1233</td>
               <td>Glass Room</td>
-              <td>2019-02-26</td>
-              <td>5 jam</td>
-              <td>600.000</td>
+              <td></td>
             </tr>
             <tr>
               <td>10</td>
@@ -366,9 +346,7 @@
               <td>08122343235</td>
               <td>Jl. Sadang Serang No. 3313</td>
               <td>Standard Room</td>
-              <td>2019-02-26</td>
-              <td>2 jam</td>
-              <td>400.000</td>
+              <td></td>
             </tr>
           </table>
     </div>
@@ -386,15 +364,17 @@
 
             </div>
 
-            <form class="w3-container" action="/action_page.php">
+            <form class="w3-container" action="Model/insertCustomer.php" method="POST">
                 <!-- MODAL UNTUK INSERT CUSTOMER -->
                 <br>
                 <label><b>Nama</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Nama Customer" name="nama" required> <br>
                 <label><b>No.Handphone</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="No. Hp Customer" name="email" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="No. Hp Customer" name="nohp" required> <br>
                 <label><b>Alamat</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="nohp" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="alamat" required> <br>
+                <label><b>Email</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Email Customer" name="email" required> <br>
                 <label><b>Tanggal transaksi</b></label>
                 <input class="w3-input w3-border" type="date" name="tanggaltransaksi" required> <br>
                 <label><b>Total Transaksi</b></label> 
@@ -405,7 +385,7 @@
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">Insert</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
                 </div>
             </form>
 
@@ -425,16 +405,8 @@
 
             <form class="w3-container" action="/action_page.php">
                 <br>
-                <label><b>ID</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter ID" name="id" required>
                 <label><b>Nama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
-                <label><b>No.Handphone</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="nohp">
-                <label><b>Tanggal transaksi</b></label>
-                <input class="w3-input w3-border" type="date" name="tanggaltransaksi">
-                <label><b>Total Transaksi</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Customer yang dihapus" name="nama">
                 <br>
                 <br>
                 <br>
