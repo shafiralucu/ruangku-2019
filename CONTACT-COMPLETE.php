@@ -2,6 +2,8 @@
 <html>
 
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Contact</title>
     <style>
         @font-face {
@@ -26,7 +28,7 @@
 
 <body>
     
-    <h1 class="w3-center">Thankyou for your </h1>
+<div class="w3-display-middle">Thankyou for your kindness !</div>
 
 </body>
 
