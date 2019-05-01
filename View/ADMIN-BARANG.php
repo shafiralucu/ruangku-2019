@@ -350,23 +350,23 @@
 
             </div>
 
-            <form class="w3-container" action="../Model/insertBarang.php" method="POST" enctype="multipart/form-data">
+            <form class="w3-container" action="../Model/updateBarang.php" method="POST" enctype="multipart/form-data">
 
                 <br>
                 <label><b>Nama Barang Lama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="namaold">
                 <label><b>Nama Barang Baru</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
                 <label><b>Tarif</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="kapasitas">
+                <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="tarif">
                 <label><b>Jumlah</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="harga">
+                <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="jumlah">
                 <br>
                 <br>
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Update</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update</button>
                 </div>
             </form>
 
