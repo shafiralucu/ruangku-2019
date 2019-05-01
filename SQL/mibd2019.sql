@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2019 at 04:08 PM
+-- Generation Time: May 01, 2019 at 06:31 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -47,8 +47,7 @@ INSERT INTO `alat` (`idAlat`, `imagesAlat`, `namaAlat`, `tarif`, `jumlah`, `stat
 (3, 'proyektor.jpg', 'Proyektor', 100000, 10, 0),
 (4, 'spidol.jpg', 'Spidol 2pcs', 20000, 10, 0),
 (5, 'speaker.jpg', 'Speaker', 100000, 5, 0),
-(6, 'whiteboard.jpg', 'Whiteboard', 75000, 10, 0),
-(15, 'cover.jpg', 'cover', 100, 0, 0);
+(6, 'whiteboard.jpg', 'Whiteboard', 75000, 10, 0);
 
 -- --------------------------------------------------------
 
@@ -92,7 +91,7 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`idPegawai`, `nama`, `no_hp`, `email`, `jabatan`, `password`) VALUES
-(1, 'Shafira', '08121247658', 'firalucu@gmail.com', 'manager', '123'),
+(1, 'Shafira', '087743553397', 'shafiranurfahardi@gmail.c', 'Manager', '123'),
 (2, 'Khadaffa', '081212459820', 'matias@gmail.com', 'admin', '123'),
 (3, 'Giovanni', '08131356783', 'giogio@gmail.com', 'operator', '123');
 
@@ -133,23 +132,23 @@ CREATE TABLE `ruang` (
 
 INSERT INTO `ruang` (`idRuang`, `imagesRuang`, `namaRuang`, `kapasitas`, `fasilitas`, `tarif`, `status_booking`) VALUES
 (1, '1.jpg', 'Executive Room (Large)', 20, 'AC, Projector, Snack and Drink', 400000, 0),
-(2, '', 'Executive Room (Medium)', 10, 'AC, Projector', 300000, 0),
-(3, '', 'Public Room', 100, 'AC', 50000, 0),
-(4, '', 'Standard Room (Small)', 4, 'AC', 200000, 0),
-(5, '', 'Standard Room (Large)', 16, 'AC', 300000, 0),
-(6, '', 'Standard Room (Medium)', 10, 'AC', 250000, 0),
-(7, '', 'A Class Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
-(8, '', 'A Class Room (Large)', 15, 'AC, Snack and Drink, Projector', 450000, 0),
-(9, '', 'White Public Room', 70, 'AC, Snack and Drink', 80000, 0),
-(10, '', 'Cafeteria', 50, 'AC', 60000, 0),
-(11, '', 'Glass Room', 4, 'AC, Snack and Drink, Projector, Tv', 400000, 0),
-(12, '', 'Business Room', 12, 'AC, Snack and Drink, Tv', 800000, 0),
-(13, '', 'Tuition Room (Large)', 15, 'AC, Snack and Drink, Projector', 500000, 0),
-(14, '', 'Tuition Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
-(15, '', 'Office Room', 8, 'AC, Snack and Drink, Projector', 600000, 0),
-(16, '', 'Library Room', 12, 'AC', 500000, 0),
-(17, '', 'Boss Room', 15, 'AC, Snack and Drink', 800000, 0),
-(18, '', 'Bulkhead Room', 8, 'AC, Snack and Drink', 400000, 0);
+(2, '2.jpg', 'Executive Room (Medium)', 10, 'AC, Projector', 300000, 0),
+(3, '3.png', 'Public Room', 100, 'AC', 50000, 0),
+(4, '4.jpg', 'Standard Room (Small)', 4, 'AC', 200000, 0),
+(5, '5.jpg', 'Standard Room (Large)', 16, 'AC', 300000, 0),
+(6, '6.jpg', 'Standard Room (Medium)', 10, 'AC', 250000, 0),
+(7, '7.jpg', 'A Class Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
+(8, '8.jpg', 'A Class Room (Large)', 15, 'AC, Snack and Drink, Projector', 450000, 0),
+(9, '9.jpg', 'White Public Room', 70, 'AC, Snack and Drink', 80000, 0),
+(10, '10.jpg', 'Cafeteria', 50, 'AC', 60000, 0),
+(11, '11.jpg', 'Glass Room', 4, 'AC, Snack and Drink, Projector, Tv', 400000, 0),
+(12, '12.jpg', 'Business Room', 12, 'AC, Snack and Drink, Tv', 800000, 0),
+(13, '13.jpeg', 'Tuition Room (Large)', 15, 'AC, Snack and Drink, Projector', 500000, 0),
+(14, '14.jpeg', 'Tuition Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
+(15, '15.jpeg', 'Office Room', 8, 'AC, Snack and Drink, Projector', 600000, 0),
+(16, '16.jpg', 'Library Room', 12, 'AC', 500000, 0),
+(17, '17.jpeg', 'Boss Room', 15, 'AC, Snack and Drink', 800000, 0),
+(18, '18.jpg', 'Bulkhead Room', 8, 'AC, Snack and Drink', 400000, 0);
 
 -- --------------------------------------------------------
 
@@ -256,7 +255,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `alat`
 --
 ALTER TABLE `alat`
-  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
