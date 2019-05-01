@@ -243,162 +243,14 @@
     </div>
   </div>
 
-  <!-- Slideshow untuk ruangan -->
-  <div class="slideshow-container" style="margin-top:30px;">
-    <!-- Full-width images with number and caption text -->
-    <div class="mySlides fade">
-
-      <img src="images/1.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/2.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/3.png" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/4.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/5.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/6.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/7.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/8.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/9.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/10.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/11.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/12.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/13.jpeg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/14.jpeg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/15.jpeg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/16.jpg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/17.jpeg" style="width:100%">
-      </a>
-    </div>
-
-    <div class="mySlides fade">
-
-      <img src="images/18.jpg" style="width:100%">
-      </a>
-    </div>
-
-
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
-  <br>
-
-
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-    <span class="dot" onclick="currentSlide(5)"></span>
-    <span class="dot" onclick="currentSlide(6)"></span>
-    <span class="dot" onclick="currentSlide(7)"></span>
-    <span class="dot" onclick="currentSlide(8)"></span>
-    <span class="dot" onclick="currentSlide(9)"></span>
-    <span class="dot" onclick="currentSlide(10)"></span>
-    <span class="dot" onclick="currentSlide(11)"></span>
-    <span class="dot" onclick="currentSlide(12)"></span>
-    <span class="dot" onclick="currentSlide(13)"></span>
-    <span class="dot" onclick="currentSlide(14)"></span>
-    <span class="dot" onclick="currentSlide(15)"></span>
-    <span class="dot" onclick="currentSlide(16)"></span>
-    <span class="dot" onclick="currentSlide(17)"></span>
-    <span class="dot" onclick="currentSlide(18)"></span>
-  </div>
-
-  <br>
-  <br>
-
-  <div class="w3-container w3-center w3-dark-grey ">
-    <h2>Ruangku. A place to collaborate and create. <br>
-      SERVICED OFFICE. COWORKING. VIRTUAL OFFICE. MEETING ROOM.</h2>
-  </div>
-
   <br>
   <br>
 
 
   <div class="w3-container" id="containerRuang">
-
+  <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
+            style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">UPDATE Ruangan</a>
+            <br><br>
   <table class="w3-table w3-bordered w3-center">
     <tr>
         <th>
@@ -419,6 +271,8 @@
         <th>
           <center>Status Ruangan</center>
         </th>
+        <th>
+        </th>
       </tr>
       <tr>
         <th>
@@ -438,7 +292,7 @@
         </th>
         <th>
         <br><br><br><br><a style="font-size: 20px;"<center>Available</center></a>
-        </th>
+        </th> 
       </tr>
 
     </table>
@@ -466,8 +320,10 @@
       <form class="w3-container" action="/action_page.php">
 
         <br>
-        <label><b>Nama Ruangan</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
+        <label><b>Nama Ruangan Lama</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama">
+        <label><b>Nama Ruangan Baru</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
         <label><b>Kapasitas</b></label>
         <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
         <label><b>Fasilitas</b></label>

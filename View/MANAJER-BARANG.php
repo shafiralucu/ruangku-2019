@@ -245,6 +245,9 @@
 
 <br><br><br><br>
   <div class="w3-container" id="containerRuang">
+  <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
+            style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">UPDATE Barang</a>
+            <br><br>
 
   <table class="w3-table w3-bordered w3-center">
     <tr>
@@ -385,8 +388,10 @@
       <form class="w3-container" action="/action_page.php">
 
         <br>
-        <label><b>Nama Alat</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
+        <label><b>Nama Barang Lama</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama">
+        <label><b>Nama Barang Baru</b></label>
+        <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
         <label><b>Jumlah</b></label>
         <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="jumlah">
         <label><b>Tarif</b></label>
