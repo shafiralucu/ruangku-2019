@@ -384,7 +384,7 @@
             <form class="w3-container" action="../Model/deletePegawai.php" method="POST">
                 <br>
                 <label><b>Nama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Nama pegawai yang dihapus" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Enter name" name="nama">
                 <br>
                 <br>
                 <br>
