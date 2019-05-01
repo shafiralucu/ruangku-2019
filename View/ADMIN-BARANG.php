@@ -427,11 +427,12 @@
             <form class="w3-container" action="Model/insertBarang.php" method="POST">
 
                 <br>
-                <label><b>Nama Barang</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
+                <label><b>Nama Barang Lama</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama" required>
+                <label><b>Nama Barang Baru</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
                 <label><b>Jumlah</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="kapasitas">
-              
                 <label><b>Tarif</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
                 <br>
@@ -460,7 +461,7 @@
             <form class="w3-container" action="Model/deleteBarang.php" method="POST">
 
                 <br>
-                <label><b>Nama Alat</b></label>
+                <label><b>Nama Barang</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Alat yang dihapus" name="nama">
                 <br>
 
