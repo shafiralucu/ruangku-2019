@@ -1,5 +1,5 @@
 <?php
-    require 'Connector.php';
+    require '../Controller/Connector.php';
 		if (isset($_POST['btnInsert'])) {
             // //path untuk simpan foto yg di upload
             // $target = "images/" .basename ($_FILES['image']['name']);
@@ -22,6 +22,6 @@
 
 				$query = "INSERT INTO alat (imagesAlat, namaAlat, tarif, status_booking) VALUES ('$filename','$namaBarang' , '$harga' , '$status')";
                 $db->executeNonSelectedQuery($query);
-                header('Location: ../ADMIN-BARANG.php');
+                header('Location: ../View/ADMIN-BARANG.php');
         }
 ?>
