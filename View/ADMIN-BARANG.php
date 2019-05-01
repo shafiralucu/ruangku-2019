@@ -236,6 +236,11 @@
       border: none;
       cursor: pointer;
     }
+
+    img {
+      width: 300px; 
+      height: 300px;
+    }
   </style>
 </head>
 
@@ -261,6 +266,7 @@
 
 
 <div class="w3-container" id="containerRuang">
+
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
             style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Barang</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id03').style.display='block'"
@@ -269,21 +275,34 @@
             style="width:auto; margin-top: 11%; margin-left: 30.5%;" href="#">DELETE Barang</a>
             <br> 
             <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <table  class="w3-table w3-bordered w3-center">
+            <tr>
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Tarif</th>
+            <th>Nama</th>
+            <th>Jumlah</th>
+            <th>Status Booking</th>
+            <?php 
+              foreach ($result as $key => $row) {
+                echo "<tr>";
+                echo "<td>".$row['idAlat']."</td>";
+                echo "<td><img src='images/".$row['imagesAlat']."'></td>";
+                echo "<td>".$row['namaAlat']."</td>";
+                echo "<td>".$row['tarif']."</td>";
+                echo "<td>".$row['jumlah']."</td>";
+                echo "<td>".$row['status_booking']."</td>";
+                echo "</tr>";
+              }
+            ?>
 
-<br><br><br><br>
 
-
-<?php 
-  foreach ($result as $key => $row) {
-    echo "<tr>";
-    echo "<td><img src='images/".$row['imagesAlat']."'></td>";
-    echo "<td>".$row['namaAlat']."</td>";
-    echo "<td>".$row['tarif']."</td>";
-    echo "<td>".$row['jumlah']."</td>";
-    echo "<td>".$row['status_booking']."</td>";
-    echo "</tr>";
-  }
-?>
+            </table>
 
 
   
@@ -332,13 +351,11 @@
 
             </div>
 
-            <form class="w3-container" action="Model/deleteBarang.php" method="POST">
-
+            <form class="w3-container" action="../Model/deleteBarang.php" method="POST">
                 <br>
                 <label><b>Nama Barang</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Alat yang dihapus" name="nama">
                 <br>
-
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                     <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name ="btnDelete">Delete</button>
                 </div>
