@@ -230,7 +230,7 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border " id="menu">
-        <a href="ADMIN-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
+        <a href="ADMIN-CUSTOMER.php" class="w3-bar-item w3-button">LIST PEGAWAI</a>
         <a href="ADMIN-RUANGAN1.php" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
         <a href="ADMIN-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
         <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>

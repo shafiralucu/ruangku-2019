@@ -8,7 +8,7 @@
     <title>Contact</title>
     <style>
         body {
-            color: pink;
+            color: white;
             background-image: url("images/contact2.jpg");
         }
         

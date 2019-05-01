@@ -239,10 +239,11 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      background-color: red;
+      background-color: black;
       color: white;
       text-align: center;
     }
+    
   </style>
 </head>
 
@@ -397,9 +398,9 @@
     </table>
   </div>
 
-  <div class="w3-container w3-black w3-bottom">
-    <h5>Ruangku. Collaborate to create. </h5>
-  </div>
+  <div class="footer">
+  <p>Ruangku. Collaborate to Create</p>
+</div>  
 
 
 

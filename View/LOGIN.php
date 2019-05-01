@@ -43,7 +43,7 @@
                 <img src="images/01.png" style="float: left; width: 50%;">
                 <img src="images/02.png" style="width: 50%; float: left;">
                 <img src="images/03.png" style="width: 50%; float: left;">
-                <button onclick="location.href = 'CONTACT.php'" class="button" style="color:pink; margin-right: 6%;">Contact us</button>
+                <button onclick="location.href = 'CONTACT.php'" class="button" style="color:white; margin-right: 6%;">Contact us</button>
                 </form>
 			</div>
 		</div>

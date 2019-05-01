@@ -390,103 +390,56 @@
 
   <div class="w3-container" id="containerRuang">
 
-    <table class="w3-table w3-bordered w3-center">
-      <tr>
+  <table class="w3-table w3-bordered w3-center">
+    <tr>
         <th>
-          <center><img src="images/1.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center>Ruangan</center>
         </th>
         <th>
-          <center><img src="images/2.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center>Nama Ruangan</center>
         </th>
         <th>
-          <center><img src="images/3.png" class="imgTable" style="width:600px; height: 300px;"></center>
+          <center>Kapasitas</center>
+        </th>
+        <th>
+          <center>Fasilitas</center>
+        </th>
+        <th>
+          <center>Tarif</p></center>
+        </th>
+        <th>
+          <center>Status Ruangan</center>
+        </th>
+        <th>
         </th>
       </tr>
       <tr>
-        <td>
-          <center>
-            Executive Room (Large)<br>
-            Kapasitas: 20pax <br>
-            Fasilitas: AC, Proyektor, Snack and Drink <br>
-            Price: 400.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">Booking</a>
-          </center>
-        </td>
-
-        <td>
-          <center>
-            Executive Room (Medium)<br>
-            Kapasitas: 16pax <br>
-            Fasilitas: AC, Proyektor <br>
-            Price:300.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">Booking</a>
-          </center>
-        </td>
-        <td>
-          <center>
-            Public Room <br>
-            Kapasitas: - <br>
-            Fasilitas: AC <br>
-            Price: 50.000/day/person <br>
-            Status Ruangan:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">Booking</a>
-          </center>
-        </td>
+      <div class = "fonttabel">
+        <th>
+          <center><img src="images/1.jpg" class="imgTable" style="width:500px; height: 300px;"></center>
+        </th>
+        <th>
+          <br><br><br><br><a style="font-size: 20px;"><center>Executive Room (Large)</center></a>
+        </th>
+        <th>
+        <br><br><br><br><a style="font-size: 20px;"><center>20pax</center></a>
+        </th>
+        <th>
+        <br><br><br><br><a style="font-size: 20px;"><center>AC, Projector, Snack and Drink</center></a>
+        </th>
+        <th>
+        <br><br><br><br><a style="font-size: 20px;"><center>400.000/hour</center></a>
+        </th>
+        <th>
+        <br><br><br><br><a style="font-size: 20px;"><center>Available</center></a>
+        </th>
+        <th>
+        <br><br><br><a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'" 
+        style="width:auto; margin-top: 18.5%;" href="#">Book</a>
+        </th>
+        </div>
       </tr>
-      <tr>
-        <td>
-          <center><img src="images/4.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-        </td>
-        <td>
-          <center><img src="images/5.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-        </td>
-        <td>
-          <center><img src="images/6.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <center>
-            Standard Room (Small) <br>
-            Kapasitas: 4pax<br>
-            Fasilitas: AC <br>
-            Price: 200.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">Booking</a>
-        </td>
-        </center>
-        <td>
-          <center>
-            Standard Room (Large) <br>
-            Kapasitas: 18pax<br>
-            Fasilitas: AC <br>
-            Price: 300.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">Booking</a>
-
-          </center>
-        </td>
-        <td>
-          <center>
-            Standard Room (Medium) <br>
-            Kapasitas: 10pax<br>
-            Fasilitas: AC <br>
-            Price: 250.000/hour <br>
-            Status Ruangan:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">Booking</a>
-          </center>
-        </td>
-      </tr>
-      <br>
-    </table>
+      </table>
     <br>
     <div class="w3-container w3-center">
       <div class="w3-bar">

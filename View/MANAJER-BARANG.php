@@ -246,93 +246,129 @@
 <br><br><br><br>
   <div class="w3-container" id="containerRuang">
 
-    <table class="w3-table w3-bordered w3-center">
+  <table class="w3-table w3-bordered w3-center">
+    <tr>
+        <th>
+          <center>Barang</center>
+        </th>
+        <th>
+          <center>Nama Barang</center>
+        </th>
+        <th>
+          <center>Jumlah Barang</center>
+        </th>
+        <th>
+          <center>Tarif Barang</center>
+        </th>
+        <th>
+          <center>Status Alat</center>  
+        </th>
+        <th>
+          <center></center>
+        </th>
+      </tr>
       <tr>
         <th>
           <center><img src="images/laptop.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </th>
         <th>
-          <center><img src="images/microphone.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
+          <br><br><br><br><a><center>Laptop</center></a>
         </th>
         <th>
-          <center><img src="images/proyektor.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
+        <br><br><br><br><a><center>10pcs</center></a>
         </th>
+        <th>
+        <br><br><br><br><a><center>60.000/hour</center></a>
+        </th>
+        <th>
+        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
+        </th>
+        <th>
       </tr>
       <tr>
-        <td>
-          <center>
-            Laptop<br>
-            Jumlah: 10pcs <br>
-            Price: 60.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
-        </td>
-
-        <td>
-          <center>
-            Microphone (2pcs)<br>
-            Jumlah: 10set <br>
-            Price: 50.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
+      <td>
+          <center><img src="images/microphone.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </td>
         <td>
-          <center>
-            Proyektor <br>
-            Jumlah: 10pcs <br>
-            Price: 100.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
+          <br><br><br><br><a><center>Microphone</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>2</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>60.000/hour</center></a>
+        </td>
+        <td>
+        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
         </td>
       </tr>
       <tr>
-        <td>
-          <center><img src="images/spidol.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
+      <td>
+          <center><img src="images/proyektor.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </td>
         <td>
+          <br><br><br><br><a><center>Proyektor</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>10pcs</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>60.000/hour</center></a>
+        </td>
+        <td>
+        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
+        </td>
+      </tr>
+      <tr>
+      <td>
           <center><img src="images/speaker.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </td>
         <td>
-          <center><img src="images/whiteboard.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
+          <br><br><br><br><a><center>Speaker</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>10pcs</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>60.000/hour</center></a>
+        </td>
+        <td>
+        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
         </td>
       </tr>
       <tr>
-        <td>
-          <center>
-            Spidol (2pcs)<br>
-            Jumlah: 10set<br>
-            Price: 20.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-        </td>
-        </center>
-        <td>
-          <center>
-            Speaker <br>
-            Jumlah: 5pcs<br>
-            Price: 100.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
+      <td>
+          <center><img src="images/spidol.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
         </td>
         <td>
-          <center>
-            Whiteboard <br>
-            Jumlah: 10pcs<br>
-            Price: 75.000/hour <br>
-            Status Alat:<p id="statusRuangan">Booked</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
+          <br><br><br><br><a><center>Spidol</center></a>
         </td>
+        <td>
+        <br><br><br><br><a><center>10pcs</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>60.000/hour</center></a>
+        </td>
+        <td>
+        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
+        </td>
+      </tr>
+      <tr>
+      <td>
+          <center><img src="images/whiteboard.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
+        </td>
+        <td>
+          <br><br><br><br><a><center>Whiteboard</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>10pcs</center></a>
+        </td>
+        <td>
+        <br><br><br><br><a><center>60.000/hour</center></a>
+        </td>
+        <td>
+        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
+        </td> 
       </tr>
     </table>
   </div>

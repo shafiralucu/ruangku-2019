@@ -231,6 +231,16 @@
             border: none;
             cursor: pointer;
         }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -242,7 +252,7 @@
 
     <!-- navigation bar -->
     <div class="w3-bar w3-white w3-border" id="menu">
-        <a href="ADMIN-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">LIST CUSTOMER</a>
+        <a href="ADMIN-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">LIST PEGAWAI</a>
         <a href="ADMIN-RUANGAN1.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
         <a href="ADMIN-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
         <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
@@ -258,21 +268,20 @@
 
     <div class="w3-container" style="margin: 3%;">
         <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 4%;" href="#">INSERT CUSTOMER</a>
+            style="width:auto; margin-top: 11%; margin-left: 4%;" href="#">INSERT PEGAWAI</a>
         <br><br>
-        <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 19%;" href="#">UPDATE CUSTOMER</a>
+        <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id03').style.display='block'"
+            style="width:auto; margin-top: 11%; margin-left: 19%;" href="#">UPDATE PEGAWAI</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 34.5%;" href="#">DELETE CUSTOMER</a>
+            style="width:auto; margin-top: 11%; margin-left: 34.5%;" href="#">DELETE PEGAWAI</a>
         <table class="w3-table-all w3-center w3-hoverable" id="tabelcust" style="font-family: texts; font-size: 20px;">
             <thead>
               <tr class="w3-light-grey">
-                <th>ID Pelanggan </th>
+                <th>ID Pegawai </th>
                 <th>Nama</th>
                 <th>No. Handphone</th>
-                <th>Alamat</th>
                 <th>E-mail</th>
-                <th>Tanggal Transaksi</th>
+                <th>Jabatan</th>
               </tr>
               <?php
 			    foreach ($result as $key => $row) {
@@ -290,9 +299,9 @@
           </table>
     </div>
 
-    <div class="w3-container w3-black">
-        <h5>Ruangku. Collaborate to create. </h5>
-    </div>
+    <div class="footer">
+  <p>Ruangku. Collaborate to Create</p>
+</div>
 
     <div id="id01" class="w3-modal">
         <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
@@ -304,21 +313,50 @@
             </div>
 
             <form class="w3-container" action="../Model/insertCustomer.php" method="POST">
-                <!-- MODAL UNTUK INSERT CUSTOMER -->
+                <!-- MODAL UNTUK INSERT PEGAWAI -->
                 <br>
                 <label><b>Nama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Nama Customer" name="nama" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter name" name="nama" required> <br>
                 <label><b>No.Handphone</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="No. Hp Customer" name="nohp" required> <br>
-                <label><b>Alamat</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Alamat Customer" name="alamat" required> <br>
-                <label><b>Email</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Email Customer" name="email" required> <br>
-                <label><b>Tanggal transaksi</b></label>
-                <input class="w3-input w3-border" type="date" name="tanggaltransaksi" required> <br>
-                <label><b>Total Transaksi</b></label> 
-                <input class="w3-input w3-border" type="text" placeholder="Total Transaksi Customer" name="tanggaltransaksi"
-                    required>
+                <input class="w3-input w3-border" type="text" placeholder="Enter handphone" name="nohp" required> <br>
+                <label><b>E-mail</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter address" name="alamat" required> <br>
+                <label><b>Jabatan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="email" required> <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <div id="id03" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+            <div class="w3-center"><br>
+                <span onclick="document.getElementById('id03').style.display='none'"
+                    class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+
+            </div>
+
+            <form class="w3-container" action="../Model/insertCustomer.php" method="POST">
+                <!-- MODAL UNTUK INSERT PEGAWAI -->
+                <br>
+                <label><b>Nama</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter name" name="nama" required> <br>
+                <label><b>No.Handphone</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter handphone" name="nohp" required> <br>
+                <label><b>E-mail</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="alamat" required> <br>
+                <label><b>Jabatan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter position" name="email" required> <br>
                 <br>
                 <br>
                 <br>
@@ -345,7 +383,7 @@
             <form class="w3-container" action="/action_page.php">
                 <br>
                 <label><b>Nama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Customer yang dihapus" name="nama">
+                <input class="w3-input w3-border" type="text" placeholder="Enter name" name="nama">
                 <br>
                 <br>
                 <br>

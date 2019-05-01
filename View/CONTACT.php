@@ -33,7 +33,7 @@
 
         body {
             font-family: texts;
-            color: pink;
+            color: white;
             background-image: url("images/contact2.jpg");
         }
 
@@ -133,7 +133,7 @@
                     <br>
                     <br>
                     <br>
-                    <button onclick="location.href = 'CONTACT-COMPLETE.php'" class="button" style="color:pink; margin-right: 6%;">SEND</button>
+                    <button onclick="location.href = 'CONTACT-COMPLETE.php'" class="button" style="color:white; margin-right: 6%;">SEND</button>
                 </div>
                 <a href="OPERATOR-HOME.php" style="color:white;float: right;">Kembali ke halaman utama</a>
             </fieldset>
