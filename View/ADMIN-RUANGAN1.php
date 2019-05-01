@@ -446,12 +446,12 @@
             <form class="w3-container" action="../Model/insertRuangan.php" method="POST">
 
                 <br>
-                <label><b>Nama Ruangan yang lama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama">
-                <label><b>Nama Ruangan yang baru</b></label>
+                <label><b>Nama Ruangan Lama</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama" required>
+                <label><b>Nama Ruangan Baru</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
                 <label><b>Kapasitas</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
+                <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas" >
                 <label><b>Fasilitas</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Facility" name="fasilitas">
                 <label><b>Tarif</b></label>

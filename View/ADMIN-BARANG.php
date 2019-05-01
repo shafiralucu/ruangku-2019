@@ -335,7 +335,7 @@
             <form class="w3-container" action="Model/deleteBarang.php" method="POST">
 
                 <br>
-                <label><b>Nama Alat</b></label>
+                <label><b>Nama Barang</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Alat yang dihapus" name="nama">
                 <br>
 

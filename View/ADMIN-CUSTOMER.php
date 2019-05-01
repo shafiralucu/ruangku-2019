@@ -348,14 +348,16 @@
             <form class="w3-container" action="../Model/updatePegawai.php" method="POST">
                 <!-- MODAL UNTUK UPDATE PEGAWAI -->
                 <br>
-                <label><b>Nama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter name" name="nama" required> <br>
+                <label><b>Nama Pegawai Baru</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Old name" name="nama" required> <br>
+                <label><b>Nama Pegawai Baru</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama"> <br>
                 <label><b>No.Handphone</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter handphone" name="nohp" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter handphone" name="nohp"> <br>
                 <label><b>E-mail</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="email" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="alamat"> <br>
                 <label><b>Jabatan</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter position" name="jabatan" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter position" name="email"> <br>
                 <br>
                 <br>
                 <br>
