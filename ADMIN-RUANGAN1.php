@@ -293,7 +293,7 @@
                         Kapasitas: 20pax <br>
                         Fasilitas: AC, Projector, Snack and Drink <br>
                         Price: 400.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                     </center>
                 </td>
@@ -304,7 +304,7 @@
                         Kapasitas: 16pax <br>
                         Fasilitas: AC, Projector <br>
                         Price:300.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                     </center>
                 </td>
@@ -314,7 +314,7 @@
                         Kapasitas: - <br>
                         Fasilitas: AC <br>
                         Price: 50.000/day/person <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                     </center>
                 </td>
@@ -337,7 +337,7 @@
                         Kapasitas: 4pax<br>
                         Fasilitas: AC <br>
                         Price: 200.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                 </td>
                 </center>
@@ -347,7 +347,7 @@
                         Kapasitas: 18pax<br>
                         Fasilitas: AC, Tv <br>
                         Price: 300.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
 
                     </center>
@@ -358,7 +358,7 @@
                         Kapasitas: 10pax<br>
                         Fasilitas: AC <br>
                         Price: 250.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
+                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
                             style="width:auto;" href="#">Edit</a>
                     </center>
                 </td>
@@ -439,6 +439,40 @@
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                     <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnDelete">Delete</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+    
+    <div id="id03" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+
+            <div class="w3-center"><br>
+                <span onclick="document.getElementById('id03').style.display='none'"
+                    class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
+
+            </div>
+
+            <form class="w3-container" action="Model/updateRuangan.php" method="POST">
+
+                <br>
+                <label><b>Nama Ruangan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
+                <label><b>Kapasitas</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter New Capacity" name="kapasitas">
+                <label><b>Fasilitas</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter New Facility" name="fasilitas">
+                <label><b>Tarif</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter New Price" name="harga">
+                <br>
+                <br>
+                <br>
+
+                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update</button>
                 </div>
             </form>
 

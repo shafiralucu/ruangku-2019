@@ -1,3 +1,21 @@
+<?php 
+	require "Model/Connector.php";
+	$query = "SELECT * from alat";
+
+	// //filter
+	// $name = "";
+	// if (isset($_GET['btnSearch'])) {
+	// 	$name = $_GET['search'];
+	// 	if (isset($name) && $name != "") {
+	// 		$name = $db->escapeString($name);
+  //           $query .= " WHERE namaAlat LIKE '%$name%'";
+            
+	// 	}
+	// }
+
+	$result = $db->executeSelectQuery($query);
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -251,97 +269,22 @@
             <br>
 
 <br><br><br><br>
-  <div class="w3-container" id="containerRuang">
 
-    <table class="w3-table w3-bordered w3-center">
-      <tr>
-        <th>
-          <center><img src="images/laptop.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </th>
-        <th>
-          <center><img src="images/microphone.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </th>
-        <th>
-          <center><img src="images/proyektor.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </th>
-      </tr>
-      <tr>
-        <td>
-          <center>
-            Laptop<br>
-            Jumlah: 10pcs <br>
-            Price: 60.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
-        </td>
+<table class="w3-table w3-bordered w3-center">
+<?php 
+  foreach ($result as $key => $row) {
+    echo "<tr>";
+    echo "<td><img src='images/".$row['imagesAlat']."'></td>";
+    echo "<td>".$row['namaAlat']."</td>";
+    echo "<td>".$row['tarif']."</td>";
+    echo "<td>".$row['jumlah']."</td>";
+    echo "<td>".$row['status_booking']."</td>";
+    echo "</tr>";
+  }
+?>
+</table>
 
-        <td>
-          <center>
-            Microphone (2pcs)<br>
-            Jumlah: 10set <br>
-            Price: 50.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
-        </td>
-        <td>
-          <center>
-            Proyektor <br>
-            Jumlah: 10pcs <br>
-            Price: 100.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <center><img src="images/spidol.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <center><img src="images/speaker.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <center><img src="images/whiteboard.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <center>
-            Spidol (2pcs)<br>
-            Jumlah: 10set<br>
-            Price: 20.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-        </td>
-        </center>
-        <td>
-          <center>
-            Speaker <br>
-            Jumlah: 5pcs<br>
-            Price: 100.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
-        </td>
-        <td>
-          <center>
-            Whiteboard <br>
-            Jumlah: 10pcs<br>
-            Price: 75.000/hour <br>
-            Status Alat:<p id="statusRuangan">Available</p>
-            <a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'"
-              style="width:auto;" href="#">EDIT</a>
-          </center>
-        </td>
-      </tr>
-    </table>
+  
   </div>
 
   <div id="id01" class="w3-modal">
@@ -353,14 +296,15 @@
 
             </div>
 
-            <form class="w3-container" action="Model/insertBarang.php" method="POST">
+            <form class="w3-container" action="Model/insertBarang.php" method="POST" enctype="multipart/form-data">
 
                 <br>
+                <label><b>Foto Barang</b></label>
+                <input class="w3-input w3-border" type="file" placeholder="Enter Picture" name="uploadImage">
                 <label><b>Nama Barang</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
                 <label><b>Kapasitas</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
-              
                 <label><b>Tarif</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
                 <br>
