@@ -1,3 +1,21 @@
+<?php 
+	require "../Controller/Connector.php";
+	$query = "SELECT * from alat";
+
+	// //filter
+	// $name = "";
+	// if (isset($_GET['btnSearch'])) {
+	// 	$name = $_GET['search'];
+	// 	if (isset($name) && $name != "") {
+	// 		$name = $db->escapeString($name);
+  //           $query .= " WHERE namaAlat LIKE '%$name%'";
+            
+	// 	}
+	// }
+
+	$result = $db->executeSelectQuery($query);
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -253,133 +271,22 @@
             <br>
 
 <br><br><br><br>
-  <div class="w3-container" id="containerRuang">
 
-    <table class="w3-table w3-bordered w3-center">
-    <tr>
-        <th>
-          <center>Barang</center>
-        </th>
-        <th>
-          <center>Nama Barang</center>
-        </th>
-        <th>
-          <center>Jumlah Barang</center>
-        </th>
-        <th>
-          <center>Tarif Barang</center>
-        </th>
-        <th>
-          <center>Status Alat</center>  
-        </th>
-        <th>
-          <center></center>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <center><img src="images/laptop.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </th>
-        <th>
-          <br><br><br><br><a><center>Laptop</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </th>
-        <th>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </th>
-        <th>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/microphone.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Microphone</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>2</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/proyektor.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Proyektor</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/speaker.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Speaker</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/spidol.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Spidol</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/whiteboard.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Whiteboard</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td> 
-      </tr>
-    </table>
+
+<?php 
+  foreach ($result as $key => $row) {
+    echo "<tr>";
+    echo "<td><img src='images/".$row['imagesAlat']."'></td>";
+    echo "<td>".$row['namaAlat']."</td>";
+    echo "<td>".$row['tarif']."</td>";
+    echo "<td>".$row['jumlah']."</td>";
+    echo "<td>".$row['status_booking']."</td>";
+    echo "</tr>";
+  }
+?>
+
+
+  
   </div>
 
   <div id="id01" class="w3-modal">
@@ -391,48 +298,15 @@
 
             </div>
 
-            <form class="w3-container" action="Model/insertBarang.php" method="POST">
+            <form class="w3-container" action="../Model/insertBarang.php" method="POST" enctype="multipart/form-data">
 
                 <br>
+                <label><b>Foto Barang</b></label>
+                <input class="w3-input w3-border" type="file" placeholder="Enter Picture" name="uploadImage">
                 <label><b>Nama Barang</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
-                <label><b>Jumlah</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="kapasitas">
-              
-                <label><b>Tarif</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
-                <br>
-                <br>
-                <br>
-
-                <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
-                </div>
-            </form>
-
-        </div>
-
-
-    </div>
-
-    <div id="id03" class="w3-modal">
-        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
-
-            <div class="w3-center"><br>
-                <span onclick="document.getElementById('id03').style.display='none'"
-                    class="w3-button w3-xlarge w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
-
-            </div>
-
-            <form class="w3-container" action="Model/insertBarang.php" method="POST">
-
-                <br>
-                <label><b>Nama Barang Lama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama" required>
-                <label><b>Nama Barang Baru</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
-                <label><b>Jumlah</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Amount" name="kapasitas">
+                <label><b>Kapasitas</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Capacity" name="kapasitas">
                 <label><b>Tarif</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="harga">
                 <br>
