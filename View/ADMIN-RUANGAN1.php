@@ -247,6 +247,11 @@
             color: white;
             text-align: center;
         }
+
+          img {
+      width: 500px; 
+      height: 300px;
+    }
     </style>
 </head>
 
@@ -285,108 +290,28 @@
             <br> 
             <br>
             <br>
-
-        <table class="w3-table w3-bordered w3-center">
+        <table  class="w3-table w3-bordered w3-center">
             <tr>
-
-                <th>
-                    <center><img src="images/1.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-                <th>
-                    <center><img src="images/2.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-                <th>
-                    <center><img src="images/3.png" class="imgTable" style="width:600px; height: 300px;"></center>
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <center>
-                        Executive Room (Large)<br>
-                        Kapasitas: 20pax <br>
-                        Fasilitas: AC, Projector, Snack and Drink <br>
-                        Price: 400.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-
-                <td>
-                    <center>
-                        Executive Room (Medium)<br>
-                        Kapasitas: 16pax <br>
-                        Fasilitas: AC, Projector <br>
-                        Price:300.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        Public Room <br>
-                        Kapasitas: - <br>
-                        Fasilitas: AC <br>
-                        Price: 50.000/day/person <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center><img src="images/4.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-                <td>
-                    <center><img src="images/5.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-                <td>
-                    <center><img src="images/6.jpg" class="imgTable" style="width:600px; height: 300px;"></center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center>
-                        Standard Room (Small) <br>
-                        Kapasitas: 4pax<br>
-                        Fasilitas: AC <br>
-                        Price: 200.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                </td>
-                </center>
-                <td>
-                    <center>
-                        Standard Room (Large) <br>
-                        Kapasitas: 18pax<br>
-                        Fasilitas: AC, Tv <br>
-                        Price: 300.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-
-                    </center>
-                </td>
-                <td>
-                    <center>
-                        Standard Room (Medium) <br>
-                        Kapasitas: 10pax<br>
-                        Fasilitas: AC <br>
-                        Price: 250.000/hour <br><br>
-                        <a class="w3-btn w3-black" onclick="document.getElementById('id03').style.display='block'"
-                            style="width:auto;" href="#">Edit</a>
-                    </center>
-                </td>
-            </tr>
-
-            <?php
-			foreach ($result as $key => $row) {
-				echo "<tr>";
-				echo "<td>".$row['namaRuang']."</td>";
-				echo "<td>".$row['kapasitas']."</td>";
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Kapasitas</th>
+            <th>Fasilitas</th>
+            <th>Tarif</th>
+            <th>Status Booking</th>
+            <?php 
+              foreach ($result as $key => $row) {
+                echo "<tr>";
+                echo "<td>".$row['idRuang']."</td>";
+                echo "<td><img src='images/".$row['imagesRuang']."'></td>";
+                echo "<td>".$row['namaRuang']."</td>";
+                echo "<td>".$row['kapasitas']."</td>";
                 echo "<td>".$row['fasilitas']."</td>";
                 echo "<td>".$row['tarif']."</td>";
-				echo "</tr>";
-			}
-		?>
+                echo "<td>".$row['status_booking']."</td>";
+                echo "</tr>";
+              }
+            ?>
         </table>
         <br>
         <div class="w3-container w3-center">
@@ -479,7 +404,7 @@
 
             </div>
 
-            <form class="w3-container" action="Model/deleteRuangan.php" method="POST">
+            <form class="w3-container" action="../Model/deleteRuangan.php" method="POST">
 
                 <br>
                 <label><b>Nama Ruangan</b></label>
@@ -505,7 +430,7 @@
 
             </div>
 
-            <form class="w3-container" action="Model/updateRuangan.php" method="POST">
+            <form class="w3-container" action="../Model/updateRuangan.php" method="POST" enctype="multipart/form-data">
 
                 <br>
                 <label><b>Nama Ruangan</b></label>
