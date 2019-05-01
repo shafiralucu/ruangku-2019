@@ -1,6 +1,6 @@
 <?php
 
-    require 'Connector.php';
+    require '../Controller/Connector.php';
 		if (isset($_POST['btnInsert'])) {
             $filename = $_FILES['uploadImage']['name'];
             $namaRuangan = $_POST['nama'];
@@ -17,6 +17,6 @@
                 
 				$query = "INSERT INTO ruang (imagesRuang, namaRuang, kapasitas, fasilitas, tarif, status_booking) VALUES ('$filename','$namaRuangan' , '$kapasitas' , '$fasilitas','$harga' , '$status')";
                 $db->executeNonSelectedQuery($query);
-                header('Location: ../ADMIN-RUANGAN1.php');
+                header('Location: ../View/ADMIN-RUANGAN1.php');
         }
 ?>

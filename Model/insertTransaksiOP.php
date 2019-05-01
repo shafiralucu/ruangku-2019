@@ -1,5 +1,5 @@
 <?php
-    require 'Connector.php';
+    require '../Controller/Connector.php';
 		if (isset($_POST['btnInsert'])) {
             $nama = $_POST['nama'];
             $email = $_POST['email'];
@@ -23,6 +23,6 @@
             $query2 = "INSERT INTO transaksi (durasi_sewa) VALUES ('$durasi')";
             $db->executeNonSelectedQuery($query);
             $db->executeNonSelectedQuery($query2);
-            header('Location: ../OPERATOR-COMPLETE.php');
+            header('Location: ../View/OPERATOR-COMPLETE.php');
         }
 ?>
