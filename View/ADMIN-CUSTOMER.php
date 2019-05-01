@@ -1,6 +1,6 @@
 <?php 
 	require "../Controller/Connector.php";
-	$query = "SELECT * from pelanggan";
+	$query = "SELECT * from pegawai";
 
 	$result = $db->executeSelectQuery($query);
 ?>
@@ -286,13 +286,11 @@
               <?php
 			    foreach ($result as $key => $row) {
 				echo "<tr>";
-				echo "<td>".$row['idPelanggan']."</td>";
+				echo "<td>".$row['idPegawai']."</td>";
                 echo "<td>".$row['nama']."</td>";
                 echo "<td>".$row['no_hp']."</td>";
-                echo "<td>".$row['alamat']."</td>";
                 echo "<td>".$row['email']."</td>";
-                echo "<td>".$row['tanggal_transaksi']."</td>";
-                
+                echo "<td>".$row['jabatan']."</td>";
 				echo "</tr>";
 			}
 		?>
@@ -313,7 +311,7 @@
 
             </div>
 
-            <form class="w3-container" action="../Model/insertCustomer.php" method="POST">
+            <form class="w3-container" action="../Model/insertPegawai.php" method="POST">
                 <!-- MODAL UNTUK INSERT PEGAWAI -->
                 <br>
                 <label><b>Nama</b></label>
@@ -321,9 +319,9 @@
                 <label><b>No.Handphone</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter handphone" name="nohp" required> <br>
                 <label><b>E-mail</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter address" name="alamat" required> <br>
-                <label><b>Jabatan</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="email" required> <br>
+                <label><b>Jabatan</b></label>
+                <input class="w3-input w3-border" type="text" placeholder="Enter jabatan" name="jabatan" required> <br>
                 <br>
                 <br>
                 <br>
@@ -347,23 +345,23 @@
 
             </div>
 
-            <form class="w3-container" action="../Model/insertCustomer.php" method="POST">
-                <!-- MODAL UNTUK INSERT PEGAWAI -->
+            <form class="w3-container" action="../Model/updatePegawai.php" method="POST">
+                <!-- MODAL UNTUK UPDATE PEGAWAI -->
                 <br>
                 <label><b>Nama</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter name" name="nama" required> <br>
                 <label><b>No.Handphone</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter handphone" name="nohp" required> <br>
                 <label><b>E-mail</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="alamat" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="email" required> <br>
                 <label><b>Jabatan</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter position" name="email" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter position" name="jabatan" required> <br>
                 <br>
                 <br>
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update</button>
                 </div>
             </form>
 
@@ -381,7 +379,7 @@
 
             </div>
 
-            <form class="w3-container" action="Model/deleteCustomer.php" method="POST">
+            <form class="w3-container" action="../Model/deletePegawai.php" method="POST">
                 <br>
                 <label><b>Nama</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Nama customer yang dihapus" name="nama">

@@ -4,9 +4,8 @@
             $nama = $_POST['nama'];
             $email = $_POST['email'];
             $no_hp = $_POST['nohp'];
-            $tanggaltransaksi = $_POST['tanggaltransaksi'];
-            $alamat = $_POST['alamat'];
-				$query = "INSERT INTO pelanggan (nama, alamat, email, no_hp , tanggal_transaksi) VALUES ('$nama' , '$alamat' , '$email','$no_hp' , '$tanggaltransaksi')";
+            $jabatan = $_POST['jabatan'];
+				$query = "INSERT INTO pegawai (nama, email, no_hp , jabatan) VALUES ('$nama' , '$email','$no_hp' , '$jabatan')";
                 $db->executeNonSelectedQuery($query);
                 header('Location: ../View/ADMIN-CUSTOMER.php');
         }
