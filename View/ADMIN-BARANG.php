@@ -353,9 +353,9 @@
             <form class="w3-container" action="../Model/insertBarang.php" method="POST" enctype="multipart/form-data">
 
                 <br>
-                <label><b>Nama Ruangan Lama</b></label>
+                <label><b>Nama Barang Lama</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama">
-                <label><b>Nama Ruangan Baru</b></label>
+                <label><b>Nama Barang Baru</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
                 <label><b>Tarif</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Price" name="kapasitas">
