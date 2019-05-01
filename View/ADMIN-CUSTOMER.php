@@ -349,15 +349,15 @@
                 <!-- MODAL UNTUK UPDATE PEGAWAI -->
                 <br>
                 <label><b>Nama Pegawai Baru</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Old name" name="nama" required> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Old name" name="namaold" required> <br>
                 <label><b>Nama Pegawai Baru</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama"> <br>
                 <label><b>No.Handphone</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter handphone" name="nohp"> <br>
                 <label><b>E-mail</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="alamat"> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter e-mail" name="email"> <br>
                 <label><b>Jabatan</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter position" name="email"> <br>
+                <input class="w3-input w3-border" type="text" placeholder="Enter position" name="jabatan"> <br>
                 <br>
                 <br>
                 <br>
