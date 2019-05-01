@@ -370,11 +370,11 @@
 
             </div>
 
-            <form class="w3-container" action="../Model/insertRuangan.php" method="POST">
+            <form class="w3-container" action="../Model/updateRuangan.php" method="POST">
 
                 <br>
                 <label><b>Nama Ruangan Lama</b></label>
-                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama" required>
+                <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="namaold" required>
                 <label><b>Nama Ruangan Baru</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
                 <label><b>Kapasitas</b></label>
@@ -388,7 +388,7 @@
                 <br>
 
                 <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Insert</button>
+                    <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update</button>
                 </div>
             </form>
 
