@@ -9,11 +9,12 @@
             $harga = $_POST['harga'];
             $status = 0;
 
+                $filename = $db->escapeString($filename);
                 $namaRuangan = $db->escapeString($namaRuangan);
                 $kapasitas = $db->escapeString($kapasitas);
                 $fasilitas = $db->escapeString($fasilitas);
                 $harga = $db->escapeString($harga);
-                $filename = $db->escapeString($filename);
+                
                 
 				$query = "INSERT INTO ruang (imagesRuang, namaRuang, kapasitas, fasilitas, tarif, status_booking) VALUES ('$filename','$namaRuangan' , '$kapasitas' , '$fasilitas','$harga' , '$status')";
                 $db->executeNonSelectedQuery($query);
