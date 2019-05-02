@@ -479,12 +479,12 @@
           <br>
 
           <label class="heading">Sewa Alat:</label> <br>
-          <input type="checkbox" name="Laptop" value="laptop">Laptop <br>
-          <input type="checkbox" name="Microphone 2pcs" value="microphone">Microphone (2pcs) <br>
-          <input type="checkbox" name="Proyektor"value="proyektor">Proyektor <br>
-          <input type="checkbox" name="Spidol 2pcs" value="radio">Spidol (2pcs) <br>
-          <input type="checkbox" name="Speaker" value="speaker">Speaker <br>
-          <input type="checkbox" name="Whiteboard" value="whiteboard">Whiteboard <br>
+          <input type="checkbox" name="check_list[]" value="laptop">Laptop <br>
+          <input type="checkbox" name="check_list[]" value="microphone">Microphone (2pcs) <br>
+          <input type="checkbox" name="check_list[]"value="proyektor">Proyektor <br>
+          <input type="checkbox" name="check_list[]" value="radio">Spidol (2pcs) <br>
+          <input type="checkbox" name="check_list[]" value="speaker">Speaker <br>
+          <input type="checkbox" name="check_list[]" value="whiteboard">Whiteboard <br>
 
 
           <center>
