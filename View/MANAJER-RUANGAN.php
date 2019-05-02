@@ -317,11 +317,11 @@
 
       </div>
 
-      <form class="w3-container" action="/action_page.php">
+      <form class="w3-container" action="../Model/updateRuanganManager.php">
 
         <br>
         <label><b>Nama Ruangan Lama</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama">
+        <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="namaold">
         <label><b>Nama Ruangan Baru</b></label>
         <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
         <label><b>Kapasitas</b></label>
@@ -335,7 +335,7 @@
         <br>
 
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">UPDATE</button>
+          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">UPDATE</button>
         </div>
       </form>
 

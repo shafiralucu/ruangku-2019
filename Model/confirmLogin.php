@@ -8,7 +8,7 @@
             $username = $db->escapeString($username);
             $pass = $db->escapeString($pass);
 
-            $query = "SELECT jabatan FROM pegawai WHERE nama = '$username'";
+            $query = "SELECT jabatan FROM pegawai WHERE nama = '$username' AND password ='$pass'";
             $result =$db->executeNonSelectedQuery($query);
             $res="";
             while ($row=mysqli_fetch_row($result))
@@ -16,7 +16,7 @@
                 $res =$row[0];
             }
             
-            if($res == "manager"){
+            if($res == "Manager"){
                 header('Location: ../View/MANAJER-RUANGAN.php');
                 
             }

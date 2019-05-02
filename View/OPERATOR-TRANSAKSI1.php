@@ -461,7 +461,7 @@
 
       </div>
 
-      <form class="w3-container" action="Model/insertTransaksiOP.php" method="POST">
+      <form class="w3-container" action="../Model/insertTransaksiOP.php" method="POST">
         <div class="w3-section">
           <label><b>Tanggal Transaksi</b></label> <br>
           <p id="date"></p>
@@ -493,9 +493,12 @@
             <label id="total" style="font-size: 30px">150.000</label>
             <br>
           </center>
+          <?php
+            $btnChange = "BOOKED";
+          ?>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnInsert">Booking</button>
+        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnBook">Booking</button>
       </div>
 
         </div>
