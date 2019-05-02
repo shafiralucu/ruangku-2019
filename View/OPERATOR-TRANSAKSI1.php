@@ -464,7 +464,7 @@
       <form class="w3-container" action="../Model/insertTransaksiOP.php" method="POST">
         <div class="w3-section">
           <label><b>Tanggal Transaksi</b></label> <br>
-          <p id="date"></p>
+          <p id="date" name="date"></p>
           <label><b>Ruangan</b></label>
           <br>
           <input class="w3-input w3-border" type="text" placeholder="Enter Ruangan" name="ruangan" required>
