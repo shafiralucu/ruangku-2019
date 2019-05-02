@@ -22,6 +22,8 @@
 <title>TRANSAKSI1 - OPERATOR</title>
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+<link href="http://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
 
 <head>
   <style>
@@ -464,11 +466,14 @@
       <form class="w3-container" action="../Model/insertTransaksiOP.php" method="POST">
         <div class="w3-section">
           <label><b>Tanggal Transaksi</b></label> <br>
-          <p id="date" name="date"></p>
+         <p> <?php 
+         date_default_timezone_set("Asia/Bangkok");
+         $my_date = date("Y-m-d H:i:s");
+         echo $my_date; ?> </p> <br>
           <label><b>Ruangan</b></label>
           <br>
           <input class="w3-input w3-border" type="text" placeholder="Enter Ruangan" name="ruangan" required>
-          <label><b>Nama</b></label>
+          <label><b>Nama</b></label>s
           <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama" required>
           <label><b>Email</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Email" name="email" required>
@@ -477,9 +482,9 @@
           <label><b>Alamat</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Address" name="address" required> <br>
           <label><b>Waktu Mulai</b></label>
-          <input type="time" name="waktu_mulai">
+          <input type="number" name="waktu_mulai" style="width:20%; margin-right: 10%;">
           <label><b>Waktu Akhir</b></label>
-          <input type="time" name="waktu_akhir">
+          <input type="number" name="waktu_akhir" style="width:20%;">
           <br> <br>
           <label class="heading">Sewa Alat:</label> <br>
           <input type="checkbox" name="check_list[]" value="laptop">Laptop <br>
@@ -545,6 +550,16 @@
     d = n.getDate();
     document.getElementById("date").innerHTML = y + "/" + m + "/" + d;
 
+    var timepicker = new TimePicker('time', {
+      lang: 'en',
+      theme: 'dark'
+    });
+    timepicker.on('change', function(evt) {
+      
+      var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+      evt.element.value = value;
+
+    });
 
   </script>
 </body>
