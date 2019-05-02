@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 01, 2019 at 06:31 PM
+-- Generation Time: May 02, 2019 at 05:42 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -42,7 +42,7 @@ CREATE TABLE `alat` (
 --
 
 INSERT INTO `alat` (`idAlat`, `imagesAlat`, `namaAlat`, `tarif`, `jumlah`, `status_booking`) VALUES
-(1, 'laptop.jpg', 'Laptop', 60000, 10, 0),
+(1, 'laptop.jpg', 'Laptop', 70000, 10, 0),
 (2, 'microphone.jpg', 'Microphone 2pcs', 50000, 10, 0),
 (3, 'proyektor.jpg', 'Proyektor', 100000, 10, 0),
 (4, 'spidol.jpg', 'Spidol 2pcs', 20000, 10, 0),
@@ -91,9 +91,9 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`idPegawai`, `nama`, `no_hp`, `email`, `jabatan`, `password`) VALUES
-(1, 'Shafira', '087743553397', 'shafiranurfahardi@gmail.c', 'Manager', '123'),
-(2, 'Khadaffa', '081212459820', 'matias@gmail.com', 'admin', '123'),
-(3, 'Giovanni', '08131356783', 'giogio@gmail.com', 'operator', '123');
+(1, 'Shafira', '087743553397', 'fyrakaire@gmail.com', 'manager', '123'),
+(2, 'Khadaffa', '081212459820', 'alifkhadaffaa@gmail.com', 'admin', '123'),
+(3, 'Giovanni', '087742036248', 'giogioanggasta@gmail.com', 'operator', '123');
 
 -- --------------------------------------------------------
 
@@ -106,8 +106,7 @@ CREATE TABLE `pelanggan` (
   `nama` varchar(20) NOT NULL,
   `alamat` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `no_hp` varchar(20) NOT NULL,
-  `tanggal_transaksi` date NOT NULL
+  `no_hp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -180,9 +179,10 @@ CREATE TABLE `sewa_ruang` (
 
 CREATE TABLE `transaksi` (
   `idTransaksi` int(11) NOT NULL,
-  `durasi_sewa` int(11) NOT NULL,
+  `tanggal_transaksi` date NOT NULL,
   `waktu_awal` datetime NOT NULL,
-  `waktu_akhir` datetime NOT NULL
+  `waktu_akhir` datetime NOT NULL,
+  `total_transaksi` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -255,7 +255,7 @@ ALTER TABLE `transaksi`
 -- AUTO_INCREMENT for table `alat`
 --
 ALTER TABLE `alat`
-  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idAlat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pegawai`
