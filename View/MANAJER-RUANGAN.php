@@ -299,14 +299,6 @@
 
     </table>
     <br>
-    <div class="w3-container w3-center">
-      <div class="w3-bar">
-        <a href="MANAJER-RUANGAN.php" class="w3-button w3-grey">1</a>
-        <a href="MANAJER-RUANGAN2.php" class="w3-button">2</a>
-        <a href="MANAJER-RUANGAN3.php" class="w3-button">3</a>
-      </div>
-
-    </div>
   </div>
 
 
