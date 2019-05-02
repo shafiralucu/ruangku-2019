@@ -1,10 +1,10 @@
 <?php
     require '../Controller/Connector.php';
-		if (isset($_POST['btnInsert'])) {
+		if (isset($_POST['btnBook'])) {
             $nama = $_POST['nama'];
             $email = $_POST['email'];
             $no_hp = $_POST['nohp'];
-            $alamat = $_POST['alamat'];
+            $alamat = $_POST['address'];
 
             $waktuMulai = $_POST['mulai'];
             $waktuAkhir = $_POST['akhir'];
@@ -13,10 +13,10 @@
             $nama = $db->escapeString($nama);
             $email = $db->escapeString($email);
             $no_hp = $db->escapeString($no_hp);
-            $alamat = $db->escapeString($alamat);
+            $alamat = $db->escapeString($address);
 
-            $waktuMulai = $db->escapeString($waktuMulai);
-            $waktuAkhir = $db->escapeString($waktuAkhir);
+            // $waktuMulai = $db->escapeString($waktuMulai);
+            // $waktuAkhir = $db->escapeString($waktuAkhir);
             $durasi = $db->escapeString($durasi);
 
             $query = "INSERT INTO pelanggan (nama, alamat, email, no_hp) VALUES ('$nama' , '$alamat' , '$email','$no_hp')";
