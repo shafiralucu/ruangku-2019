@@ -16,7 +16,7 @@
                 $res =$row[0];
             }
             
-            if($res == "Manager"){
+            if($res == "manager"){
                 header('Location: ../View/MANAJER-RUANGAN.php');
                 
             }

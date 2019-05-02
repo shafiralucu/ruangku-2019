@@ -1,3 +1,20 @@
+<?php 
+	require "../Controller/Connector.php";
+	$query = "SELECT * from ruang";
+
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE namaRuang LIKE '%$name%'";
+            
+		}
+	}
+
+	$result = $db->executeSelectQuery($query);
+?>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -219,6 +236,12 @@
       border: none;
       cursor: pointer;
     }
+
+    
+    img {
+      width: 500px; 
+      height: 300px;
+    }
   </style>
 </head>
 
@@ -251,49 +274,28 @@
   <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
             style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">UPDATE Ruangan</a>
             <br><br>
-  <table class="w3-table w3-bordered w3-center">
-    <tr>
-        <th>
-          <center>Ruangan</center>
-        </th>
-        <th>
-          <center>Nama Ruangan</center>
-        </th>
-        <th>
-          <center>Kapasitas</center>
-        </th>
-        <th>
-          <center>Fasilitas</center>
-        </th>
-        <th>
-          <center>Tarif</p></center>
-        </th>
-        <th>
-          <center>Status Ruangan</center>
-        </th>
-        <th>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <center><img src="images/1.jpg" class="imgTable" style="width:500px; height: 300px;"></center>
-        </th>
-        <th>
-          <br><br><br><br><a style="font-size: 20px;"><center>Executive Room (Large)</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"><center>20pax</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"><center>AC, Projector, Snack and Drink</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"><center>400.000/hour</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"<center>Available</center></a>
-        </th> 
-      </tr>
+            <table id = "tblImg" class="w3-table w3-bordered w3-center">
+            <tr>
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Kapasitas</th>
+            <th>Fasilitas</th>
+            <th>Tarif</th>
+            <?php 
+              foreach ($result as $key => $row) {
+                echo "<tr>";
+                echo "<td>".$row['idRuang']."</td>";
+                echo "<td><img src='images/".$row['imagesRuang']."'></td>";
+                echo "<td>".$row['namaRuang']."</td>";
+                echo "<td>".$row['kapasitas']."</td>";
+                echo "<td>".$row['fasilitas']."</td>";
+                echo "<td>".$row['tarif']."</td>";
+                echo "<td>".$row['status_booking']."</td>";
+                echo "</tr>";
+              }
+            ?>
+  </table>
 
     </table>
     <br>
