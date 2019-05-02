@@ -334,9 +334,11 @@
 
             </div>
 
-            <form class="w3-container" action="../Model/insertRuangan.php" method="POST">
+            <form class="w3-container" action="../Model/insertRuangan.php" method="POST" enctype="multipart/form-data">
 
                 <br>
+                <label><b>Foto Barang</b></label>
+                <input class="w3-input w3-border" type="file" placeholder="Enter Picture" name="uploadImage">
                 <label><b>Nama Ruangan</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">
                 <label><b>Kapasitas</b></label>
