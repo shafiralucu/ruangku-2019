@@ -1,3 +1,20 @@
+<?php 
+	require "../Controller/Connector.php";
+	$query = "SELECT * from ruang";
+
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE namaRuang LIKE '%$name%'";
+            
+		}
+	}
+
+	$result = $db->executeSelectQuery($query);
+?>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -219,6 +236,11 @@
       border: none;
       cursor: pointer;
     }
+
+      #tblImg img {
+      width: 500px; 
+      height: 300px;
+    }
   </style>
 </head>
 
@@ -390,56 +412,34 @@
 
   <div class="w3-container" id="containerRuang">
 
-  <table class="w3-table w3-bordered w3-center">
-    <tr>
-        <th>
-          <center>Ruangan</center>
-        </th>
-        <th>
-          <center>Nama Ruangan</center>
-        </th>
-        <th>
-          <center>Kapasitas</center>
-        </th>
-        <th>
-          <center>Fasilitas</center>
-        </th>
-        <th>
-          <center>Tarif</p></center>
-        </th>
-        <th>
-          <center>Status Ruangan</center>
-        </th>
-        <th>
-        </th>
-      </tr>
-      <tr>
-      <div class = "fonttabel">
-        <th>
-          <center><img src="images/1.jpg" class="imgTable" style="width:500px; height: 300px;"></center>
-        </th>
-        <th>
-          <br><br><br><br><a style="font-size: 20px;"><center>Executive Room (Large)</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"><center>20pax</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"><center>AC, Projector, Snack and Drink</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"><center>400.000/hour</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a style="font-size: 20px;"><center>Available</center></a>
-        </th>
-        <th>
-        <br><br><br><a class="w3-btn w3-black" onclick="document.getElementById('id01').style.display='block'" 
-        style="width:auto; margin-top: 18.5%;" href="#">Book</a>
-        </th>
-        </div>
-      </tr>
-      </table>
+  
+
+  <table id = "tblImg" class="w3-table w3-bordered w3-center">
+  <a class="w3-btn w3-black w3-xxlarge" onclick="document.getElementById('id01').style.display='block'" 
+            style="width:auto; margin-top: 1%; margin-left:45%; margin-bottom: 5%;float: left;" href="#">Booking</a>
+            <tr>
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Kapasitas</th>
+            <th>Fasilitas</th>
+            <th>Tarif</th>
+            <th>Status Booking</th>
+            <?php 
+              foreach ($result as $key => $row) {
+                echo "<tr>";
+                echo "<td>".$row['idRuang']."</td>";
+                echo "<td><img src='images/".$row['imagesRuang']."'></td>";
+                echo "<td>".$row['namaRuang']."</td>";
+                echo "<td>".$row['kapasitas']."</td>";
+                echo "<td>".$row['fasilitas']."</td>";
+                echo "<td>".$row['tarif']."</td>";
+                echo "<td>".$row['status_booking']."</td>";
+                echo "</tr>";
+              }
+            ?>
+  </table>
+        
     <br>
     <div class="w3-container w3-center">
       <div class="w3-bar">
@@ -465,7 +465,9 @@
         <div class="w3-section">
           <label><b>Tanggal Transaksi</b></label> <br>
           <p id="date"></p>
-
+          <label><b>Ruangan</b></label>
+          <br>
+          <input class="w3-input w3-border" type="text" placeholder="Enter Ruangan" name="ruangan" required>
           <label><b>Nama</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama" required>
           <label><b>Email</b></label>
@@ -473,11 +475,12 @@
           <label><b>No.Handphone</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Phone Number" name="nohp" required>
           <label><b>Alamat</b></label>
-          <input class="w3-input w3-border" type="text" placeholder="Enter Address" name="address" required>
-          <label><b>Durasi</b></label>
-          <input class="w3-input w3-border" type="text" placeholder="Enter Durasi" name="durasi" required>
-          <br>
-
+          <input class="w3-input w3-border" type="text" placeholder="Enter Address" name="address" required> <br>
+          <label><b>Waktu Mulai</b></label>
+          <input type="time" name="waktu_mulai">
+          <label><b>Waktu Akhir</b></label>
+          <input type="time" name="waktu_akhir">
+          <br> <br>
           <label class="heading">Sewa Alat:</label> <br>
           <input type="checkbox" name="Laptop" value="laptop">Laptop <br>
           <input type="checkbox" name="Microphone 2pcs" value="microphone">Microphone (2pcs) <br>
@@ -537,7 +540,7 @@
     y = n.getFullYear();
     m = n.getMonth() + 1;
     d = n.getDate();
-    document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+    document.getElementById("date").innerHTML = y + "/" + m + "/" + d;
 
 
   </script>

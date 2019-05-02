@@ -1,3 +1,21 @@
+<?php 
+	require "../Controller/Connector.php";
+	$query = "SELECT * from alat";
+
+	// //filter
+	// $name = "";
+	// if (isset($_GET['btnSearch'])) {
+	// 	$name = $_GET['search'];
+	// 	if (isset($name) && $name != "") {
+	// 		$name = $db->escapeString($name);
+  //           $query .= " WHERE namaAlat LIKE '%$name%'";
+            
+	// 	}
+	// }
+
+	$result = $db->executeSelectQuery($query);
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -227,6 +245,12 @@
       color: white;
       text-align: center;
     }
+
+
+    img {
+      width: 300px; 
+      height: 300px;
+    }
   </style>
 </head>
 
@@ -250,136 +274,28 @@
       </form>
     </div>
   </div>
-
-<br><br><br><br>
-
-
-  <div class="w3-container" id="containerRuang">
+<br>
 
   <table class="w3-table w3-bordered w3-center">
-    <tr>
-        <th>
-          <center>Barang</center>
-        </th>
-        <th>
-          <center>Nama Barang</center>
-        </th>
-        <th>
-          <center>Jumlah Barang</center>
-        </th>
-        <th>
-          <center>Tarif Barang</center>
-        </th>
-        <th>
-          <center>Status Alat</center>  
-        </th>
-        <th>
-          <center></center>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <center><img src="images/laptop.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </th>
-        <th>
-          <br><br><br><br><a><center>Laptop</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </th>
-        <th>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </th>
-        <th>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </th>
-        <th>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/microphone.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Microphone</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>2</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/proyektor.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Proyektor</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/speaker.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Speaker</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/spidol.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Spidol</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td>
-      </tr>
-      <tr>
-      <td>
-          <center><img src="images/whiteboard.jpg" class="imgTable" style="width:300px; height: 300px;"></center>
-        </td>
-        <td>
-          <br><br><br><br><a><center>Whiteboard</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>10pcs</center></a>
-        </td>
-        <td>
-        <br><br><br><br><a><center>60.000/hour</center></a>
-        </td>
-        <td>
-        <br><br><br><a><center><p id="statusRuangan">Available</p></center></a>
-        </td> 
-      </tr>
+  <tr>
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Tarif</th>
+            <th>Jumlah</th>
+            <th>Status Booking</th>
+            <?php 
+              foreach ($result as $key => $row) {
+                echo "<tr>";
+                echo "<td>".$row['idAlat']."</td>";
+                echo "<td><img src='images/".$row['imagesAlat']."'></td>";
+                echo "<td>".$row['namaAlat']."</td>";
+                echo "<td>".$row['tarif']."</td>";
+                echo "<td>".$row['jumlah']."</td>";
+                echo "<td>".$row['status_booking']."</td>";
+                echo "</tr>";
+              }
+            ?>
     </table>
   </div>
 
