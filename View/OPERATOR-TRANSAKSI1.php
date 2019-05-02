@@ -464,7 +464,7 @@
           <label><b>Ruangan</b></label>
           <br>
           <input class="w3-input w3-border" type="text" placeholder="Enter Ruangan" name="ruangan" required>
-          <label><b>Nama</b></label>s
+          <label><b>Nama</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama" required>
           <label><b>Email</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Email" name="email" required>

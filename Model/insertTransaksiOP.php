@@ -30,36 +30,30 @@
             $namaRuang = $_POST['ruangan'];
             $queryUpdateRuangan = "UPDATE ruang SET status_booking = '1' WHERE namaRuang = '$namaRuang'";
 
-            //query insert
+            //query get harga ruangan
             $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'";
-
             $db->executeSelectQuery($qGetHargaRuangan);
-
+            //$rows2 = mysql_fetch_assoc($qGetHargaRuangan);
+            $totalTransaksi = $qGetHargaRuangan * ($waktuAkhir - $waktuMulai);
+            //query insert
             $query = "INSERT INTO pelanggan (nama, alamat, email, no_hp) VALUES ('$nama' , '$alamat' , '$email','$no_hp')";
-            $query2 = "INSERT INTO transaksi (tanggal_transaksi) VALUES ('$my_date')";
-            //  ,  , '$qGetHargaRuangan'
-            //  , waktu_awal, waktu_akhir , total_transaksi
-            // $db->executeSelectQuery($qGetHargaRuangan)')
+            $query2 = "INSERT INTO transaksi (tanggal_transaksi , waktu_awal , waktu_akhir , total_transaksi) VALUES ('$my_date' , '$waktuMulai' , '$waktuAkhir' , '$totalTransaksi')";
+
             //untuk get id fk dan memasukkan ke tabel fk(tabel relasi)
             $queryGet = "SELECT idTransaksi FROM transaksi";
             $queryGet2 = "SELECT idPelanggan FROM pelanggan WHERE nama = '$nama'";
-            
+            $db->executeSelectQuery($queryGet2);
+            //$rows = mysql_fetch_assoc($queryGet2);
 
-<<<<<<< HEAD
             //query insert
-            $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$statusRuang'";
-            $query = "INSERT INTO pelanggan (nama, alamat, email, no_hp) VALUES ('$nama' , '$alamat' , '$email','$no_hp')";
-            $query2 = "INSERT INTO transaksi (waktu_awal, waktu_akhir , tangal_transaksi) VALUES ('$waktuMulai' , '$waktuAkhir' , '$date')";
-=======
->>>>>>> c9c3f8da2f90dbda1f205730cb7e32e043ec9e46
-            $q = "INSERT INTO melakukan (idPelanggan) VALUES('$db->executeSelectQuery($queryGet2)')";
+            //$q = "INSERT INTO melakukan (idPelanggan) VALUES('$rows')";
 
             $db->executeSelectQuery($queryGet2);
             $db->executeNonSelectedQuery($query);
             $db->executeNonSelectedQuery($query2);
             $db->executeNonSelectedQuery($query3);
             $db->executeNonSelectedQuery($queryUpdateRuangan);
-            $db->executeNonSelectedQuery($q);
+            //$db->executeNonSelectedQuery($q);
             header('Location: ../View/OPERATOR-COMPLETE.php');
         }
 ?>
