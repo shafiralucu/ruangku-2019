@@ -8,9 +8,9 @@
             $alamat = $_POST['address'];
 
             //untuk transaksi
-            $waktuMulai = $_POST['waktu_mulai'];
-            $waktuAkhir = $_POST['waktu_akhir'];
-            $date = $_POST['date'];
+            $waktuMulai = date("Y-m-d H:i:s", strtotime($_POST['waktu_mulai']);
+            $waktuAkhir = strtotime($_POST['waktu_akhir']);
+            $date = date("Y-m-d H:i:s" , strtotime($_POST['date']));
 
             $nama = $db->escapeString($nama);
             $email = $db->escapeString($email);
@@ -35,9 +35,10 @@
             //query insert
             $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$statusRuang'";
             $query = "INSERT INTO pelanggan (nama, alamat, email, no_hp) VALUES ('$nama' , '$alamat' , '$email','$no_hp')";
-            $query2 = "INSERT INTO transaksi (waktu_awal, waktu_akhir , tangal_transaksi , total_transaksi) VALUES ('$waktuMulai' , '$waktuAkhir' , '$date' , '$db->executeSelectQuery($qGetHargaRuangan)')";
+            $query2 = "INSERT INTO transaksi (waktu_awal, waktu_akhir , tangal_transaksi) VALUES ('$waktuMulai' , '$waktuAkhir' , '$date')";
             $q = "INSERT INTO melakukan (idPelanggan) VALUES('$db->executeSelectQuery($queryGet2)')";
 
+            $db->executeSelectQuery($queryGet2);
             $db->executeNonSelectedQuery($query);
             $db->executeNonSelectedQuery($query2);
             $db->executeNonSelectedQuery($query3);
