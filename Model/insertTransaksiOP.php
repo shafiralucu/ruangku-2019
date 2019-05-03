@@ -27,19 +27,25 @@
                 $query3="UPDATE alat SET status_booking = '1' WHERE namaAlat = '".$choices[$i]. "'"; 
             }
 
-
-      
             //tanggal
             date_default_timezone_set("Asia/Bangkok");
             $my_date = date("Y-m-d H:i:s");
 
             //query get harga ruangan
-            $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'";
-            $db->executeSelectQuery($qGetHargaRuangan);
+            // $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'";
+            // $result = mysql_query("SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'");
+            // $db->executeSelectQuery($qGetHargaRuangan);
+            $qGetHargaRuangan = "SELECT tarif FROM ruang WHERE namaRuang = '$namaRuang'";
+            $result =$db->executeNonSelectedQuery($qGetHargaRuangan);
+            $res="";
+            while ($row=mysqli_fetch_row($result))
+            {
+                $res =$row[0];
+            }
 
-
-            //$rows2 = mysql_fetch_assoc($qGetHargaRuangan);
-            $totalTransaksi = $qGetHargaRuangan * ($waktuAkhir - $waktuMulai);
+            
+            //menghitung total transaksi
+            $totalTransaksi = $res * ($waktuAkhir - $waktuMulai);
 
 
             //query insert
@@ -61,6 +67,6 @@
             $db->executeNonSelectedQuery($query3);
             $db->executeNonSelectedQuery($queryUpdateRuangan);
             $db->executeNonSelectedQuery($q);
-            header('Location: ../View/OPERATOR-COMPLETE.php');
+            // header('Location: ../View/OPERATOR-COMPLETE.php');
         }
 ?>
