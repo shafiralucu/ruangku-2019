@@ -497,7 +497,14 @@
 
         </table>
         <br>
+        <div class="w3-container w3-center">
+            <div class="w3-bar">
+                <a href="OPERATOR-TRANSAKSI1.php" class="w3-button">1</a>
+                <a href="OPERATOR-TRANSAKSI2.php" class="w3-button">2</a>
+                <a href="OPERATOR-TRANSAKSI3.php" class="w3-button  w3-grey">3</a>
+            </div>
 
+        </div>
     </div>
 
 

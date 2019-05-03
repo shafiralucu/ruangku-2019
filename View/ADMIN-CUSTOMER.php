@@ -268,12 +268,12 @@
 
     <div class="w3-container" style="margin: 3%;">
         <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 4%;" href="#">INSERT PEGAWAI</a>
+            style="width:auto; margin-top: 9%; margin-left: 4%;" href="#">INSERT PEGAWAI</a>
         <br><br>
         <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id03').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 19%;" href="#">UPDATE PEGAWAI</a>
+            style="width:auto; margin-top: 9%; margin-left: 14%;" href="#">UPDATE PEGAWAI</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 34.5%;" href="#">DELETE PEGAWAI</a>
+            style="width:auto; margin-top: 9%; margin-left: 34.5%;" href="#">DELETE PEGAWAI</a>
         <table class="w3-table-all w3-center w3-hoverable" id="tabelcust" style="font-family: texts; font-size: 20px;">
             <thead>
               <tr class="w3-light-grey">

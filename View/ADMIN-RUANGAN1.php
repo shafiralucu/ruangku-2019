@@ -282,11 +282,11 @@
 
     <div class="w3-container" id="containerRuang">
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Ruangan</a>
+            style="width:auto; margin-top: 9%; margin-left: 2%;" href="#">INSERT Ruangan</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id03').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 16%;" href="#">UPDATE Ruangan</a>
+            style="width:auto; margin-top: 9%; margin-left: 12.5%;" href="#">UPDATE Ruangan</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 30.5%;" href="#">DELETE Ruangan</a>
+            style="width:auto; margin-top: 9%; margin-left: 23.5%;" href="#">DELETE Ruangan</a>
             <br> 
             <br>
             <br>
@@ -314,14 +314,6 @@
             ?>
         </table>
         <br>
-        <div class="w3-container w3-center">
-            <div class="w3-bar">
-                <a href="ADMIN-RUANGAN1.php" class="w3-button w3-grey">1</a>
-                <a href="ADMIN-RUANGAN2.php" class="w3-button">2</a>
-                <a href="ADMIN-RUANGAN3.php" class="w3-button">3</a>
-            </div>
-
-        </div>
     </div>
 
 
@@ -337,7 +329,7 @@
             <form class="w3-container" action="../Model/insertRuangan.php" method="POST" enctype="multipart/form-data">
 
                 <br>
-                <label><b>Foto Barang</b></label>
+                <label><b>Foto Ruangan</b></label>
                 <input class="w3-input w3-border" type="file" placeholder="Enter Picture" name="uploadImage">
                 <label><b>Nama Ruangan</b></label>
                 <input class="w3-input w3-border" type="text" placeholder="Enter Name" name="nama">

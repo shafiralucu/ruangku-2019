@@ -269,7 +269,7 @@
   <div class="w3-container" id="containerRuang">
   <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
             style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">UPDATE Barang</a>
-            <br>
+            <br><br><br>
 
   
   <table class="w3-table w3-bordered w3-center">
