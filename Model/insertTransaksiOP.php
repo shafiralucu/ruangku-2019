@@ -41,12 +41,17 @@
 
             //untuk get id fk dan memasukkan ke tabel fk(tabel relasi)
             $queryGet = "SELECT idTransaksi FROM transaksi WHERE tanggal_transaksi = '$my_date'";
-            $queryGet2 = "SELECT idPelanggan FROM pelanggan WHERE nama = '$nama'";
-            $db->executeSelectQuery($queryGet2);
-            $db->executeSelectQuery($queryGet);
-            $q = "INSERT INTO melakukan (idPelanggan , idTransaksi) VALUES($queryGet2 , $queryGet)";
+            $queryGet2 = "SELECT * FROM pelanggan WHERE nama = '$nama'";
+            $result = $db->executeNonSelectedQuery($queryGet);
+            $res="";
+            while ($row=mysqli_fetch_row($result))
+            {
+                $res =$row[0];
+            }
+            $q = "INSERT INTO melakukan (idPelanggan, idTransaksi) VALUES ('$res' , '$queryGet')";
             
-            //$rows = mysql_fetch_assoc($queryGet2);
+            
+
             //query insert
             $db->executeSelectQuery($queryGet2);
             $db->executeNonSelectedQuery($query);
