@@ -492,9 +492,6 @@
             <label id="total" style="font-size: 30px">150.000</label>
             <br>
           </center>
-          <?php
-            $btnChange = "BOOKED";
-          ?>
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnBook">Booking</button>

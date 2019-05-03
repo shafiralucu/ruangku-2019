@@ -252,3 +252,9 @@
         
     </body>
 </html>
+
+<!-- <?php
+$koneksi     = mysqli_connect("localhost", "root", "", "latihan");
+$bulan       = mysqli_query($koneksi, "SELECT bulan FROM penjualan WHERE tahun='2016' order by id asc");
+$penghasilan = mysqli_query($koneksi, "SELECT hasil_penjualan FROM penjualan WHERE tahun='2016' order by id asc");
+?>

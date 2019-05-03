@@ -33,9 +33,6 @@
             $my_date = date("Y-m-d H:i:s");
 
             //query get harga ruangan
-            // $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'";
-            // $result = mysql_query("SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'");
-            // $db->executeSelectQuery($qGetHargaRuangan);
             $qGetHargaRuangan = "SELECT tarif FROM ruang WHERE namaRuang = '$namaRuang'";
             $result = $db->executeNonSelectedQuery($qGetHargaRuangan);
             $res="";
