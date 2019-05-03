@@ -2,18 +2,17 @@
 	require "../Controller/Connector.php";
 	$query = "SELECT * from alat";
 
-	// //filter
-	// $name = "";
-	// if (isset($_GET['btnSearch'])) {
-	// 	$name = $_GET['search'];
-	// 	if (isset($name) && $name != "") {
-	// 		$name = $db->escapeString($name);
-  //           $query .= " WHERE namaAlat LIKE '%$name%'";
-            
-	// 	}
-	// }
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE namaAlat LIKE '%$name%'";      
+		}
+	}
 
-	$result = $db->executeSelectQuery($query);
+    $result = $db->executeSelectQuery($query);
 ?>
 
 <!DOCTYPE html>
@@ -267,9 +266,9 @@
     <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button">LIST CUSTOMER</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
-      <form action="/action_page.php">
+      <form action="OPERATOR-ALAT.php">
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" name="btnSearch"><i class="fa fa-search"></i></button>
       </form>
     </div>
   </div>

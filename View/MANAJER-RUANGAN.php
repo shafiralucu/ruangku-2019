@@ -259,9 +259,9 @@
     <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
-      <form action="/action_page.php">
+      <form action="MANAJER-RUANGAN.php">
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" name="btnSearch"><i class="fa fa-search"></i></button>
       </form>
     </div>
   </div>
@@ -311,7 +311,7 @@
 
       </div>
 
-      <form class="w3-container" action="../Model/updateRuanganManager.php">
+      <form class="w3-container" action="../Model/updateRuanganManager.php" method="POST">
 
         <br>
         <label><b>Nama Ruangan Lama</b></label>

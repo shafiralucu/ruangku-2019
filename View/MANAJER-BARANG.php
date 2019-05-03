@@ -2,16 +2,16 @@
 	require "../Controller/Connector.php";
 	$query = "SELECT * from alat";
 
-	// //filter
-	// $name = "";
-	// if (isset($_GET['btnSearch'])) {
-	// 	$name = $_GET['search'];
-	// 	if (isset($name) && $name != "") {
-	// 		$name = $db->escapeString($name);
-  //           $query .= " WHERE namaAlat LIKE '%$name%'";
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE namaAlat LIKE '%$name%'";
             
-	// 	}
-	// }
+		}
+	}
 
 	$result = $db->executeSelectQuery($query);
 ?>
@@ -257,9 +257,9 @@
     <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
-      <form action="/action_page.php">
+      <form action="MANAJER-BARANG.php">
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" name="btnSearch"><i class="fa fa-search"></i></button>
       </form>
     </div>
   </div>
@@ -304,11 +304,11 @@
 
       </div>
 
-      <form class="w3-container" action="../Model/updateRuangan.php">
+      <form class="w3-container" action="../Model/updateAlat.php" method="POST" >
 
         <br>
         <label><b>Nama Barang Lama</b></label>
-        <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="nama">
+        <input class="w3-input w3-border" type="text" placeholder="Enter Old Name" name="namaold">
         <label><b>Nama Barang Baru</b></label>
         <input class="w3-input w3-border" type="text" placeholder="Enter New Name" name="nama">
         <label><b>Jumlah</b></label>
@@ -320,7 +320,7 @@
         <br>
 
         <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit">UPDATE</button>
+          <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">UPDATE</button>
         </div>
       </form>
 

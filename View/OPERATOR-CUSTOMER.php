@@ -2,8 +2,19 @@
 	require "../Controller/Connector.php";
 	$query = "SELECT * from pelanggan";
 
-	$result = $db->executeSelectQuery($query);
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE nama LIKE '%$name%'";      
+		}
+	}
+
+    $result = $db->executeSelectQuery($query);
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -259,7 +270,6 @@
   <div class="w3-container w3-white">
     <h1>Ruangku</h1>
   </div>
-
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border" id="menu">
     <a href="OPERATOR-TRANSAKSI1.php" class="w3-bar-item w3-button">TRANSAKSI</a>
@@ -267,9 +277,9 @@
     <a href="OPERATOR-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">LIST CUSTOMER</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
-      <form action="/action_page.php">
+      <form action="OPERATOR-CUSTOMER.php" method="GET">
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit">
+        <button type="submit" name="btnSearch">
           <i class="fa fa-search"></i>
         </button>
       </form>
@@ -288,7 +298,7 @@
         </tr>
       </thead>
       <?php
-			    foreach ($result as $key => $row) {
+			  foreach ($result as $key => $row) {
 				echo "<tr>";
 				echo "<td>".$row['idPelanggan']."</td>";
                 echo "<td>".$row['nama']."</td>";
