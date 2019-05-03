@@ -473,9 +473,9 @@
           <label><b>Alamat</b></label>
           <input class="w3-input w3-border" type="text" placeholder="Enter Address" name="address" required> <br>
           <label><b>Waktu Mulai</b></label>
-          <input type="number" name="waktu_mulai" style="width:20%; margin-right: 10%;">
+          <input type="text" name="waktu_mulai" style="width:20%; margin-right: 10%;">
           <label><b>Waktu Akhir</b></label>
-          <input type="number" name="waktu_akhir" style="width:20%;">
+          <input type="text" name="waktu_akhir" style="width:20%;">
           <br> <br>
           <label class="heading">Sewa Alat:</label> <br>
           <input type="checkbox" name="check_list[]" value="laptop">Laptop <br>
