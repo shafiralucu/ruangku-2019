@@ -5,6 +5,7 @@
             //untuk update ruangan sehingga status book berubah
             $namaRuang = $_POST['ruangan'];
             $queryUpdateRuangan = "UPDATE ruang SET status_booking = '1' WHERE namaRuang = '$namaRuang'";
+            
 
             //untuk pelanggan
             $nama = $_POST['nama'];
@@ -36,37 +37,55 @@
             // $result = mysql_query("SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'");
             // $db->executeSelectQuery($qGetHargaRuangan);
             $qGetHargaRuangan = "SELECT tarif FROM ruang WHERE namaRuang = '$namaRuang'";
-            $result =$db->executeNonSelectedQuery($qGetHargaRuangan);
+            $result = $db->executeNonSelectedQuery($qGetHargaRuangan);
             $res="";
             while ($row=mysqli_fetch_row($result))
             {
                 $res =$row[0];
             }
 
-            
             //menghitung total transaksi
             $totalTransaksi = $res * ($waktuAkhir - $waktuMulai);
-
 
             //query insert
             $query = "INSERT INTO pelanggan (nama, alamat, email, no_hp) VALUES ('$nama' , '$alamat' , '$email','$no_hp')";
             $query2 = "INSERT INTO transaksi (tanggal_transaksi , waktu_awal , waktu_akhir , total_transaksi) VALUES ('$my_date' , '$waktuMulai' , '$waktuAkhir' , '$totalTransaksi')";
 
+
+            //berhasil//
+
+
+
             //untuk get id fk dan memasukkan ke tabel fk(tabel relasi)
             $queryGet = "SELECT idTransaksi FROM transaksi WHERE tanggal_transaksi = '$my_date'";
+            $resultIdTransaksi = $db->executeNonSelectedQuery($queryGet);
+            $res1="";
+            while ($row=mysqli_fetch_row($resultIdTransaksi))
+            {
+                $res1 = $row[0];
+            }
+
             $queryGet2 = "SELECT idPelanggan FROM pelanggan WHERE nama = '$nama'";
-            $db->executeSelectQuery($queryGet2);
-            $db->executeSelectQuery($queryGet);
-            $q = "INSERT INTO melakukan (idPelanggan , idTransaksi) VALUES($queryGet2 , $queryGet)";
+            $resultIdPelanggan = $db->executeNonSelectedQuery($queryGet2);
+            $res2="";
+            while ($row=mysqli_fetch_row($resultIdPelanggan))
+            {
+                $res2 = $row[0];
+            }
+            
+            // $db->executeSelectQuery($queryGet2);
+            // $db->executeSelectQuery($queryGet);
+            $q = "INSERT INTO melakukan(idPelanggan , idTransaksi) VALUES($res1 , $res2)";
             
             //$rows = mysql_fetch_assoc($queryGet2);
-            //query insert
-            $db->executeSelectQuery($queryGet2);
+            // //query insert
+            // $db->executeSelectQuery($queryGet2);
             $db->executeNonSelectedQuery($query);
             $db->executeNonSelectedQuery($query2);
             $db->executeNonSelectedQuery($query3);
+
             $db->executeNonSelectedQuery($queryUpdateRuangan);
-            $db->executeNonSelectedQuery($q);
+            // $db->executeNonSelectedQuery($q);
             // header('Location: ../View/OPERATOR-COMPLETE.php');
         }
 ?>
