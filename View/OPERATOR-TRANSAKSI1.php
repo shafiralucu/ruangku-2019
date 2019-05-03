@@ -479,13 +479,12 @@
           <input type="text" name="waktu_akhir" style="width:20%;">
           <br> <br>
           <label class="heading">Sewa Alat:</label> <br>
-          <input type="checkbox" name="check_list[]" value="laptop">Laptop <br>
-          <input type="checkbox" name="check_list[]" value="microphone">Microphone (2pcs) <br>
-          <input type="checkbox" name="check_list[]"value="proyektor">Proyektor <br>
-          <input type="checkbox" name="check_list[]" value="radio">Spidol (2pcs) <br>
-          <input type="checkbox" name="check_list[]" value="speaker">Speaker <br>
-          <input type="checkbox" name="check_list[]" value="whiteboard">Whiteboard <br>
-          <br>
+          <input type="checkbox" name="check_list[]" value="laptop">Laptop<br>
+          <input type="checkbox" name="check_list[]" value="microphone">Microphone<br>
+          <input type="checkbox" name="check_list[]"value="proyektor">Proyektor<br>
+          <input type="checkbox" name="check_list[]" value="radio">Spidol<br>
+          <input type="checkbox" name="check_list[]" value="speaker">Speaker<br>
+          <input type="checkbox" name="check_list[]" value="whiteboard">Whiteboard<br>
 
           <!-- <center>
             <label><b>Total Transaksi: </b></label>
