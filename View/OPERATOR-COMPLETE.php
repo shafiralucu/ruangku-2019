@@ -274,6 +274,8 @@
     <a href="OPERATOR-TRANSAKSI1.php">Kembali ke halaman utama
   </div>
 
+  <a href="../Model/download.php">Download PDF</a>
+
   <div class="w3-container w3-black w3-bottom">
     <h5>Ruangku. Collaborate to create. </h5>
   </div>
