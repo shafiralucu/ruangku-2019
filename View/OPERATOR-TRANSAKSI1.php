@@ -485,13 +485,12 @@
           <input type="checkbox" name="check_list[]" value="speaker">Speaker<br>
           <input type="checkbox" name="check_list[]" value="whiteboard">Whiteboard<br>
 
-
-          <center>
+          <!-- <center>
             <label><b>Total Transaksi: </b></label>
             <br>
             <label id="total" style="font-size: 30px">150.000</label>
             <br>
-          </center>
+          </center> -->
 
       <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnBook">Booking</button>
