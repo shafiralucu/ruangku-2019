@@ -282,11 +282,11 @@
 
     <div class="w3-container" id="containerRuang">
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
-            style="width:auto; margin-top: 9%; margin-left: 2%;" href="#">INSERT Ruangan</a>
+            style="width:auto; margin-top: 12%; margin-left: 2%;" href="#">INSERT Ruangan</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id03').style.display='block'"
-            style="width:auto; margin-top: 9%; margin-left: 12.5%;" href="#">UPDATE Ruangan</a>
+            style="width:auto; margin-top: 12%; margin-left: 15.5%;" href="#">UPDATE Ruangan</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 9%; margin-left: 23.5%;" href="#">DELETE Ruangan</a>
+            style="width:auto; margin-top: 12%; margin-left: 29.5%;" href="#">DELETE Ruangan</a>
             <br> 
             <br>
             <br>

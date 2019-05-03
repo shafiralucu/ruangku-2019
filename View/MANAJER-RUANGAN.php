@@ -311,7 +311,7 @@
 
       </div>
 
-      <form class="w3-container" action="../Model/updateRuanganManager.php">
+      <form class="w3-container" action="../Model/updateRuanganManager.php" method="POST">
 
         <br>
         <label><b>Nama Ruangan Lama</b></label>

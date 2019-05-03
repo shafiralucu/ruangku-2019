@@ -270,9 +270,9 @@
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
             style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">INSERT Barang</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id03').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 16%;" href="#">UPDATE Barang</a>
+            style="width:auto; margin-top: 11%; margin-left: 14.5%;" href="#">UPDATE Barang</a>
             <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id02').style.display='block'"
-            style="width:auto; margin-top: 11%; margin-left: 30.5%;" href="#">DELETE Barang</a>
+            style="width:auto; margin-top: 11%; margin-left: 27.5%;" href="#">DELETE Barang</a>
             <br> 
             <br>
             <br>
