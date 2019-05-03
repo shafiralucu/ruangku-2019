@@ -282,6 +282,7 @@
 
   <div class="w3-container" id="containerRuang">
 
+  <?php include "../Model/pagination.php" ?>
   <table id = "tblImg" class="w3-table w3-bordered w3-center">
             <tr>
             <th>Id</th>

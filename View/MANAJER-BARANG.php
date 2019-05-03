@@ -240,6 +240,16 @@
       border: none;
       cursor: pointer;
     }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -329,7 +339,7 @@
 
   </div>
 
-  <div class="w3-container w3-black">
+  <div class="footer">
     <h5>Ruangku. Collaborate to create. </h5>
   </div>
 

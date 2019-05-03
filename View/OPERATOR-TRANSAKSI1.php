@@ -415,6 +415,7 @@
 
   
 
+  <?php include "../Model/pagination2.php" ?>
   <table id = "tblImg" class="w3-table w3-bordered w3-center">
   <a class="w3-btn w3-black w3-xxlarge" onclick="document.getElementById('id01').style.display='block'" 
             style="width:auto; margin-top: 1%; margin-left:45%; margin-bottom: 5%;float: left;" href="#">Booking</a>

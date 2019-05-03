@@ -271,10 +271,12 @@
   <div class="w3-container w3-center" style="margin-top: 10%;">
     <img src="images/checked.png">
     <h1>ORDER COMPLETED</h1> <br>
-    <a href="OPERATOR-TRANSAKSI1.php">Kembali ke halaman utama
+    <a href="OPERATOR-TRANSAKSI1.php">Kembali ke halaman utama</a>
   </div>
-
-  <a href="../Model/download.php">Download PDF</a>
+    <div class="w3-container w3-padding-16">
+          <button class="w3-button w3-dark-grey w3-section" onclick = "location.href='../Model/download.php'" style = "margin-left: 42.7%;">DOWNLOAD PDF DATA RUANGAN</button>
+        </div>
+  <!-- <a href="../Model/download.php">Download PDF</a> -->
 
   <div class="w3-container w3-black w3-bottom">
     <h5>Ruangku. Collaborate to create. </h5>

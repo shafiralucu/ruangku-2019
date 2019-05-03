@@ -12,7 +12,7 @@
 
 	if ($pageCount > 1) {
 		for ($i = 0; $i < $pageCount; $i++) {
-			$link = "<a id='linkpagination' style = 'padding-left: 2%; letter-spacing: 5%;margin-top: 10%' href = '../View/ADMIN-RUANGAN1.php";
+			$link = "<a id='linkpagination' style = 'padding-left: 2%; letter-spacing: 5%;margin-top: 10%' href = '../View/MANAJER-RUANGAN.php";
 			if ($name != "") {
 				$link .= "?filter=".$name;
 			}

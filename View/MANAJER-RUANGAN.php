@@ -242,6 +242,16 @@
       width: 500px; 
       height: 300px;
     }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -274,6 +284,7 @@
   <a class="w3-btn w3-black w3-display-topleft" onclick="document.getElementById('id01').style.display='block'"
             style="width:auto; margin-top: 11%; margin-left: 2%;" href="#">UPDATE Ruangan</a>
             <br><br><br><br>
+            <?php include "../Model/pagination3.php" ?>
             <table id = "tblImg" class="w3-table w3-bordered w3-center">
             <tr>
             <th>Id</th>
@@ -338,7 +349,7 @@
 
   </div>
 
-  <div class="w3-container w3-black">
+  <div class="footer">
     <h5>Ruangku. Collaborate to create. </h5>
   </div>
 

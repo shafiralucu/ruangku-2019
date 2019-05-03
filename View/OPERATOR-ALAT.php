@@ -297,7 +297,7 @@
     </table>
   </div>
 
-  <div class="w3-container w3-black">
+  <div class="footer">
     <h5>Ruangku. Collaborate to create. </h5>
   </div>
 

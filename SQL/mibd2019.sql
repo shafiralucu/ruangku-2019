@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2019 at 05:42 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: May 03, 2019 at 09:07 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,12 +42,12 @@ CREATE TABLE `alat` (
 --
 
 INSERT INTO `alat` (`idAlat`, `imagesAlat`, `namaAlat`, `tarif`, `jumlah`, `status_booking`) VALUES
-(1, 'laptop.jpg', 'Laptop', 70000, 10, 0),
-(2, 'microphone.jpg', 'Microphone 2pcs', 50000, 10, 0),
-(3, 'proyektor.jpg', 'Proyektor', 100000, 10, 0),
-(4, 'spidol.jpg', 'Spidol 2pcs', 20000, 10, 0),
+(1, 'laptop.jpg', 'Laptop', 70000, 10, 1),
+(2, 'microphone.jpg', 'Microphone', 50000, 10, 1),
+(3, 'proyektor.jpg', 'Proyektor', 100000, 10, 1),
+(4, 'spidol.jpg', 'Spidol', 20000, 10, 0),
 (5, 'speaker.jpg', 'Speaker', 100000, 5, 0),
-(6, 'whiteboard.jpg', 'Whiteboard', 75000, 10, 0);
+(6, 'whiteboard.jpg', 'Whiteboard', 75000, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -70,6 +70,18 @@ CREATE TABLE `melakukan` (
   `idPelanggan` int(11) NOT NULL,
   `idTransaksi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `melakukan`
+--
+
+INSERT INTO `melakukan` (`idPelanggan`, `idTransaksi`) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(9, 5),
+(10, 6);
 
 -- --------------------------------------------------------
 
@@ -109,6 +121,18 @@ CREATE TABLE `pelanggan` (
   `no_hp` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pelanggan`
+--
+
+INSERT INTO `pelanggan` (`idPelanggan`, `nama`, `alamat`, `email`, `no_hp`) VALUES
+(1, 'Wonyoung', 'Jl. Rancabentang', 'wonyoung@gmail.com', '0818894077'),
+(2, 'Minjoo', 'Jl. Bukit Jarian', 'minju@gmail.com', '02168470707'),
+(3, 'Sakura', 'Jl. Bukit Resik', 'sakura@gmail.com', '08775464285'),
+(4, 'Hitomi', 'Jl. Rancabentang', 'hitomi@gmail.com', '08775464285'),
+(9, 'Jin', 'Jl.Kucing', 'jin@gmail.com', '08776584321'),
+(10, 'Jungkook', 'Jl. Anjing', 'jungkook@gmail.com', '0876563212');
+
 -- --------------------------------------------------------
 
 --
@@ -130,9 +154,9 @@ CREATE TABLE `ruang` (
 --
 
 INSERT INTO `ruang` (`idRuang`, `imagesRuang`, `namaRuang`, `kapasitas`, `fasilitas`, `tarif`, `status_booking`) VALUES
-(1, '1.jpg', 'Executive Room (Large)', 20, 'AC, Projector, Snack and Drink', 400000, 0),
-(2, '2.jpg', 'Executive Room (Medium)', 10, 'AC, Projector', 300000, 0),
-(3, '3.png', 'Public Room', 100, 'AC', 50000, 0),
+(1, '1.jpg', 'Executive Room (Large)', 20, 'AC, Projector, Snack and Drink', 400000, 1),
+(2, '2.jpg', 'Executive Room (Medium)', 10, 'AC, Projector', 300000, 1),
+(3, '3.png', 'Public Room', 100, 'AC', 50000, 1),
 (4, '4.jpg', 'Standard Room (Small)', 4, 'AC', 200000, 0),
 (5, '5.jpg', 'Standard Room (Large)', 16, 'AC', 300000, 0),
 (6, '6.jpg', 'Standard Room (Medium)', 10, 'AC', 250000, 0),
@@ -160,6 +184,17 @@ CREATE TABLE `sewa_alat` (
   `idAlat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sewa_alat`
+--
+
+INSERT INTO `sewa_alat` (`idTransaksi`, `idAlat`) VALUES
+(1, 2),
+(2, 2),
+(4, 3),
+(5, 1),
+(6, 6);
+
 -- --------------------------------------------------------
 
 --
@@ -171,6 +206,18 @@ CREATE TABLE `sewa_ruang` (
   `idRuang` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sewa_ruang`
+--
+
+INSERT INTO `sewa_ruang` (`idTransaksi`, `idRuang`) VALUES
+(1, 3),
+(2, 3),
+(3, 3),
+(4, 3),
+(5, 2),
+(6, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -180,10 +227,22 @@ CREATE TABLE `sewa_ruang` (
 CREATE TABLE `transaksi` (
   `idTransaksi` int(11) NOT NULL,
   `tanggal_transaksi` date NOT NULL,
-  `waktu_awal` datetime NOT NULL,
-  `waktu_akhir` datetime NOT NULL,
+  `waktu_awal` int(11) NOT NULL,
+  `waktu_akhir` int(11) NOT NULL,
   `total_transaksi` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`idTransaksi`, `tanggal_transaksi`, `waktu_awal`, `waktu_akhir`, `total_transaksi`) VALUES
+(1, '2019-05-04', 15, 18, 200000),
+(2, '2019-05-04', 1, 5, 200000),
+(3, '2019-05-04', 1, 2, 50000),
+(4, '2019-05-04', 15, 17, 200000),
+(5, '2019-05-04', 15, 17, 670000),
+(6, '2019-05-04', 12, 14, 875000);
 
 --
 -- Indexes for dumped tables
@@ -267,7 +326,7 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `ruang`
@@ -279,7 +338,7 @@ ALTER TABLE `ruang`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `idTransaksi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
