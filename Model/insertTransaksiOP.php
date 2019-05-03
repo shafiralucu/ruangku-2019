@@ -48,7 +48,8 @@
             //query insert
             $query = "INSERT INTO pelanggan (nama, alamat, email, no_hp) VALUES ('$nama' , '$alamat' , '$email','$no_hp')";
             $query2 = "INSERT INTO transaksi (tanggal_transaksi , waktu_awal , waktu_akhir , total_transaksi) VALUES ('$my_date' , '$waktuMulai' , '$waktuAkhir' , '$totalTransaksi')";
-
+            $db->executeNonSelectedQuery($query);
+            $db->executeNonSelectedQuery($query2);
             //untuk get id fk dan memasukkan ke tabel fk(tabel relasi)
             $count = "SELECT COUNT(idTransaksi) FROM transaksi";
             $temp = $db->executeNonSelectedQuery($count);
@@ -60,7 +61,7 @@
              $resultqget = $resultqget+1;
 
 
-            $queryGet2 = "SELECT idPelanggan FROM pelanggan WHERE no_hp = '$no_hp'";
+            $queryGet2 = "SELECT idPelanggan FROM pelanggan WHERE nama = '$nama'";
             $temp2 = $db->executeNonSelectedQuery($queryGet2);
             $resultqget2 = "";
             while ($row=mysqli_fetch_row($temp2))
@@ -68,14 +69,17 @@
                 $resultqget2 = $row[0];
             }
 
-            $q = "INSERT INTO melakukan (idPelanggan, idTransaksi) VALUES ('$resultqget2' , '$resultqget')";
+            // echo $resultqget2;
+            // echo $resultqget2;
+            // echo $resultqget;
+            
+            $q = "INSERT INTO melakukan  VALUES ($resultqget2 , $resultqget)";
             
             
 
             //query insert
-            $db->executeSelectQuery($queryGet2);
-            $db->executeNonSelectedQuery($query);
-            $db->executeNonSelectedQuery($query2);
+
+   
             $db->executeNonSelectedQuery($query3);
             $db->executeNonSelectedQuery($queryUpdateRuangan);
             $db->executeNonSelectedQuery($q);
