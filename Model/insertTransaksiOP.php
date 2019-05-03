@@ -1,6 +1,11 @@
 <?php
     require '../Controller/Connector.php';
 		if (isset($_POST['btnBook'])) {
+
+            //untuk update ruangan sehingga status book berubah
+            $namaRuang = $_POST['ruangan'];
+            $queryUpdateRuangan = "UPDATE ruang SET status_booking = '1' WHERE namaRuang = '$namaRuang'";
+
             //untuk pelanggan
             $nama = $_POST['nama'];
             $email = $_POST['email'];
@@ -22,19 +27,21 @@
                 $query3="UPDATE alat SET status_booking = '1' WHERE namaAlat = '".$choices[$i]. "'"; 
             }
 
+
+      
             //tanggal
             date_default_timezone_set("Asia/Bangkok");
             $my_date = date("Y-m-d H:i:s");
 
-            //untuk update ruangan sehingga status book berubah
-            $namaRuang = $_POST['ruangan'];
-            $queryUpdateRuangan = "UPDATE ruang SET status_booking = '1' WHERE namaRuang = '$namaRuang'";
-
             //query get harga ruangan
             $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'";
             $db->executeSelectQuery($qGetHargaRuangan);
+
+
             //$rows2 = mysql_fetch_assoc($qGetHargaRuangan);
             $totalTransaksi = $qGetHargaRuangan * ($waktuAkhir - $waktuMulai);
+
+
             //query insert
             $query = "INSERT INTO pelanggan (nama, alamat, email, no_hp) VALUES ('$nama' , '$alamat' , '$email','$no_hp')";
             $query2 = "INSERT INTO transaksi (tanggal_transaksi , waktu_awal , waktu_akhir , total_transaksi) VALUES ('$my_date' , '$waktuMulai' , '$waktuAkhir' , '$totalTransaksi')";
