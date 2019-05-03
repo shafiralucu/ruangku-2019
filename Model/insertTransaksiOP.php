@@ -47,20 +47,20 @@
             $query2 = "INSERT INTO transaksi (tanggal_transaksi , waktu_awal , waktu_akhir , total_transaksi) VALUES ('$my_date' , '$waktuMulai' , '$waktuAkhir' , '$totalTransaksi')";
 
             //untuk get id fk dan memasukkan ke tabel fk(tabel relasi)
-            $queryGet = "SELECT idTransaksi FROM transaksi";
+            $queryGet = "SELECT idTransaksi FROM transaksi WHERE tanggal_transaksi = '$my_date'";
             $queryGet2 = "SELECT idPelanggan FROM pelanggan WHERE nama = '$nama'";
             $db->executeSelectQuery($queryGet2);
+            $db->executeSelectQuery($queryGet);
+            $q = "INSERT INTO melakukan (idPelanggan , idTransaksi) VALUES($queryGet2 , $queryGet)";
+            
             //$rows = mysql_fetch_assoc($queryGet2);
-
             //query insert
-            //$q = "INSERT INTO melakukan (idPelanggan) VALUES('$rows')";
-
             $db->executeSelectQuery($queryGet2);
             $db->executeNonSelectedQuery($query);
             $db->executeNonSelectedQuery($query2);
             $db->executeNonSelectedQuery($query3);
             $db->executeNonSelectedQuery($queryUpdateRuangan);
-            //$db->executeNonSelectedQuery($q);
+            $db->executeNonSelectedQuery($q);
             header('Location: ../View/OPERATOR-COMPLETE.php');
         }
 ?>
