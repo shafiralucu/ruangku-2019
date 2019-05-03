@@ -32,9 +32,6 @@
             $my_date = date("Y-m-d H:i:s");
 
             //query get harga ruangan
-            // $qGetHargaRuangan = "SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'";
-            // $result = mysql_query("SELECT harga FROM ruang WHERE namaRuang = '$namaRuang'");
-            // $db->executeSelectQuery($qGetHargaRuangan);
             $qGetHargaRuangan = "SELECT tarif FROM ruang WHERE namaRuang = '$namaRuang'";
             $result =$db->executeNonSelectedQuery($qGetHargaRuangan);
             $res="";
@@ -53,15 +50,25 @@
             $query2 = "INSERT INTO transaksi (tanggal_transaksi , waktu_awal , waktu_akhir , total_transaksi) VALUES ('$my_date' , '$waktuMulai' , '$waktuAkhir' , '$totalTransaksi')";
 
             //untuk get id fk dan memasukkan ke tabel fk(tabel relasi)
-            $queryGet = "SELECT idTransaksi FROM transaksi WHERE tanggal_transaksi = '$my_date'";
-            $queryGet2 = "SELECT * FROM pelanggan WHERE nama = '$nama'";
-            $result = $db->executeNonSelectedQuery($queryGet);
-            $res="";
-            while ($row=mysqli_fetch_row($result))
+            $count = "SELECT COUNT(idTransaksi) FROM transaksi";
+            $temp = $db->executeNonSelectedQuery($count);
+             $resultqget = "";
+             while ($row=mysqli_fetch_row($temp))
+             {
+             $resultqget = $row[0];
+             }  
+             $resultqget = $resultqget+1;
+
+
+            $queryGet2 = "SELECT idPelanggan FROM pelanggan WHERE no_hp = '$no_hp'";
+            $temp2 = $db->executeNonSelectedQuery($queryGet2);
+            $resultqget2 = "";
+            while ($row=mysqli_fetch_row($temp2))
             {
-                $res =$row[0];
+                $resultqget2 = $row[0];
             }
-            $q = "INSERT INTO melakukan (idPelanggan, idTransaksi) VALUES ('$res' , '$queryGet')";
+
+            $q = "INSERT INTO melakukan (idPelanggan, idTransaksi) VALUES ('$resultqget2' , '$resultqget')";
             
             
 
@@ -72,6 +79,6 @@
             $db->executeNonSelectedQuery($query3);
             $db->executeNonSelectedQuery($queryUpdateRuangan);
             $db->executeNonSelectedQuery($q);
-            // header('Location: ../View/OPERATOR-COMPLETE.php');
+            header('Location: ../View/OPERATOR-COMPLETE.php');
         }
 ?>
