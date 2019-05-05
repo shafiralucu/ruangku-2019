@@ -1,18 +1,23 @@
-<?php 
-	require "../Controller/Connector.php";
-	$query = "SELECT * from alat";
+<?php
+    require '../Controller/Connector.php';
+    $querySelect = "SELECT * FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi";
 
-	//filter
-	$name = "";
-	if (isset($_GET['btnSearch'])) {
-		$name = $_GET['search'];
-		if (isset($name) && $name != "") {
-			$name = $db->escapeString($name);
-            $query .= " WHERE namaAlat LIKE '%$name%'";      
-		}
-	}
+    $queryGetDurasi = "SELECT durasi FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi INNER JOIN alat ON alat.idAlat = sewa_alat.idAlat";
+		if (isset($_POST['btnUpdate'])) {
+            $tanggal1 = $_POST['tanggal1'];
+            $tanggal2 = $_POST['tanggal2'];
+            //echo $tanggal1;
+            //echo $tanggal2;
+            $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+        }   
+        $result = $db->executeSelectQuery($querySelect);
+        $resultDurasi = $db->executeNonSelectedQuery($queryGetDurasi);
 
-    $result = $db->executeSelectQuery($query);
+        $resDurasi="";
+        while ($row=mysqli_fetch_row($resultDurasi))
+        {
+            $resDurasi = $row[0];
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -152,6 +157,10 @@
     table {
       border: none;
     }
+    img {
+      width: 300px; 
+      height: 300px;
+    }
 
     @font-face {
       font-family: header;
@@ -266,13 +275,13 @@
     <div class="search-container">
       <form action="MANAJER-ALAT.php" method = "POST">
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+        <button type="submit" name="btnSearch"><i class="fa fa-search"></i></button>
       </form>
     </div>
   </div>
 
   <br>
-  <form action="../Model/statistikAlat.php" style="float:left; margin-left: 5%;" method="POST">
+  <form action="MANAJER-ALAT.php" style="float:left; margin-left: 5%;" method="POST">
   Tanggal :
   <input type="date" name="tanggal1">
   <p> Sampai</p>
@@ -281,7 +290,7 @@
   <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
       </div>
-</form> <br><br>
+ <br><br>
 
     <div class = "w3-container w3-center">
       <img src = "images/graph3.jpg" style="width: 20%; height: 20%">
@@ -296,6 +305,8 @@
             <th>Tarif</th>
             <th>Jumlah</th>
             <th>Status Booking</th>
+            <th>Durasi</th>
+            
             <?php 
               foreach ($result as $key => $row) {
                 echo "<tr>";
@@ -305,10 +316,13 @@
                 echo "<td>".$row['tarif']."</td>";
                 echo "<td>".$row['jumlah']."</td>";
                 echo "<td>".$row['status_booking']."</td>";
+                echo "<td>".$row['durasi']."</td>";
                 echo "</tr>";
               }
             ?>
+            </form>
     </table>
+    
   </div>
 
 

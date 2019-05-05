@@ -1,7 +1,7 @@
 <?php
 
 class MySQLDB{
-	// Nomor 0
+
 	protected $servername, $username , $password , $dbname;
 
 	protected $db_connection;
