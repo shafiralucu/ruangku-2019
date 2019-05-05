@@ -1,3 +1,46 @@
+<?php
+    require '../Controller/Connector.php';
+    $querySelect = "SELECT * FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi";
+    $queryGetDurasi = "SELECT durasi FROM transaksi INNER JOIN sewa_ruang ON sewa_ruang.idTransaksi = transaksi.idTransaksi INNER JOIN ruang ON ruang.idRuang = sewa_ruang.idRuang";
+            
+    //query get harga ruangan
+            $getNamaRuang = "SELECT namaRuang FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi";
+            $resultNama = $db->executeNonSelectedQuery($getNamaRuang);
+            $resNama="";
+            while ($row=mysqli_fetch_row($resultNama))
+            {
+            $resNama = $row[0];
+            }
+
+            $qGetHargaRuangan = "SELECT tarif FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi WHERE namaRuang = '$resNama'";
+            $resultHargaRuangan = $db->executeNonSelectedQuery($qGetHargaRuangan);
+            $resHarga="";
+            while ($row=mysqli_fetch_row($resultHargaRuangan))
+            {
+                $resHarga =$row[0];
+            }
+
+            
+
+		if (isset($_POST['btnUpdate'])) {
+            $tanggal1 = $_POST['tanggal1'];
+            $tanggal2 = $_POST['tanggal2'];
+            //echo $tanggal1;
+            //echo $tanggal2;
+            $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+        }   
+        $result = $db->executeSelectQuery($querySelect);
+        $resultDurasi = $db->executeNonSelectedQuery($queryGetDurasi);
+
+        $resDurasi="";
+        while ($row=mysqli_fetch_row($resultDurasi))
+        {
+            $resDurasi = $row[0];
+        }
+
+        $totalT = $resHarga * $resDurasi;
+?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -225,6 +268,11 @@
       border: none;
       cursor: pointer;
     }
+    img {
+      width: 300px; 
+      height: 300px;
+    }
+
   </style>
 </head>
 
@@ -239,8 +287,8 @@
   <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
     <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
     <a href="MANAJER-TRANSAKSIHARIAN.php" class="w3-bar-item w3-button">TRANSAKSI HARIAN</a>
-    <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button">STATISTIK RUANGAN</a>
-    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">STATISTIK BARANG</a>
+    <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">STATISTIK RUANGAN</a>
+    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button ">STATISTIK BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
@@ -251,16 +299,14 @@
   </div>
 
   <br>
-  <form action="/action_page.php" style="float:left; margin-left: 5%;">
+  <form action="MANAJER-CUSTOMER.php" style="float:left; margin-left: 5%;">
   Tanggal :
   <input type="date" name="transaksi">
-</form>
+
 <p style="float: left; margin-top: -0.01%; margin-left: 2%;">Sampai</p>
 
-<form action="/action_page.php" style="float:left; margin-left:2%;">
   Tanggal :
   <input type="date" name="transaksi">
-</form>
 
     <div class = "w3-container w3-center">
       <img src = "images/graph.jpg">
@@ -270,46 +316,31 @@
     <table class="w3-table-all w3-center" id="tabelcust" style="font-family: texts; font-size: 20px;">
       <thead>
         <tr class="w3-dark-grey">
-          <th>ID Pelanggan </th>
-          <th>Nama</th>
-          <th>No. Handphone</th>
-          <th>Alamat</th>
-          <th>Tanggal Transaksi</th>
-          <th>Total Transaksi</th>
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Kapasitas</th>
+            <th>Fasilitas</th>
+            <th>Status Booking</th>
+            <th>Durasi</th>
+            <th>Total transaksi</th>
         </tr>
+        <?php 
+              foreach ($result as $key => $row) {
+                echo "<tr>";
+                echo "<td>".$row['idRuang']."</td>";
+                echo "<td><img src='images/".$row['imagesRuang']."'></td>";
+                echo "<td>".$row['namaRuang']."</td>";
+                echo "<td>".$row['kapasitas']."</td>";
+                echo "<td>".$row['fasilitas']."</td>";
+                echo "<td>".$row['status_booking']."</td>";
+                echo "<td>".$row['durasi']."</td>";
+                echo "<td>".$totalT."</td>";
+                echo "</tr>";
+              }
+            ?>
       </thead>
-      <tr>
-        <td>1</td>
-        <td>Shafira</td>
-        <td>087743553397</td>
-        <td>Jl. Rancabentang I No. 10a</td>
-        <td>2019-01-11</td>
-        <td>150.000</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Giovanni</td>
-        <td>081224541830</td>
-        <td>Jl. Rancabentang I No. 10D</td>
-        <td>2019-10-17</td>
-        <td>280.000</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Alif</td>
-        <td>081506836583</td>
-        <td>Jl. Bukit Jarian No. 12</td>
-        <td>2019-10-13</td>
-        <td>80.000</td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Hashrul</td>
-        <td>085639986247</td>
-        <td>Jl. Bukit Resik No. 28</td>
-        <td>2019-02-12</td>
-        <td>170.000</td>
-      </tr>
+      </form>
     </table>
   </div>
 

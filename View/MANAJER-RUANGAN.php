@@ -1,14 +1,19 @@
-<?php
-    // require '../Controller/Connector.php';
-		// if (isset($_POST['btnUpdate'])) {
-    //         $tanggal1 = $_POST['tanggal1'];
-    //         $tanggal2 = $_POST['tanggal2'];
-    //         echo $tanggal1;
-    //         echo $tanggal2;
-    //         $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
-    //         $db->executeNonSelectedQuery($querySelect);
-    //         header('Location: ../View/MANAJER-RUANGAN.php');
-    //     }
+<?php 
+	require "../Controller/Connector.php";
+	$query = "SELECT * from ruang";
+
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE namaRuang LIKE '%$name%'";
+            
+		}
+	}
+
+	$result = $db->executeSelectQuery($query);
 ?>
 <!DOCTYPE html>
 <html>
