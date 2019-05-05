@@ -1,31 +1,24 @@
 <?php
-    // require '../Controller/Connector.php';
-	// 	if (isset($_POST['btnUpdate'])) {
-    //         $tanggal1 = $_POST['tanggal1'];
-    //         $tanggal2 = $_POST['tanggal2'];
-    //         echo $tanggal1;
-    //         echo $tanggal2;
-    //         $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
-    //         $db->executeNonSelectedQuery($querySelect);
-    //         header('Location: ../View/MANAJER-CUSTOMER.php');
-    //     }
-?>
+    require '../Controller/Connector.php';
+    $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi";
+    $querySum = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi";
+    $tanggal1 = "";
+    $tanggal2 = "";
+    
+    if (isset($_POST['btnUpdate'])) {
+             $tanggal1 = $_POST['tanggal1'];
+             $tanggal2 = $_POST['tanggal2'];
+             $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+             $querySum = "SELECT SUM(total_transaksi) FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+            }
+         $result2 = $db->executeNonSelectedQuery($querySum);
+         $result = $db->executeSelectQuery($querySelect);
 
-<?php 
-	require "../Controller/Connector.php";
-	$query = "SELECT * from alat";
-
-	//filter
-	$name = "";
-	if (isset($_GET['btnSearch'])) {
-		$name = $_GET['search'];
-		if (isset($name) && $name != "") {
-			$name = $db->escapeString($name);
-            $query .= " WHERE namaAlat LIKE '%$name%'";      
-		}
-	}
-
-    $result = $db->executeSelectQuery($query);
+         $resSumTransaksi="";
+         while ($row=mysqli_fetch_row($result2))
+         {
+             $resSumTransaksi = $row[0];
+         }
 ?>
 <!DOCTYPE html>
 <html>
@@ -272,9 +265,9 @@
   <div class="w3-bar w3-white w3-border" id="menu">
     <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
     <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
-    <a href="MANAJER-TRANSAKSIHARIAN.php" class="w3-bar-item w3-button">TRANSAKSI HARIAN</a>
+    <a href="MANAJER-TRANSAKSIHARIAN.php" class="w3-bar-item w3-button w3-dark-grey">TRANSAKSI HARIAN</a>
     <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button">STATISTIK RUANGAN</a>
-    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">STATISTIK BARANG</a>
+    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button">STATISTIK BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="MANAJER-TRANSAKSIHARIAN.php" method = "POST">
@@ -285,43 +278,60 @@
   </div>
 
   <br>
-  <form action="../Model/statistikAlat.php" style="float:left; margin-left: 5%;" method="POST">
-  Tanggal :
-  <input type="date" name="tanggal1">
-  <p> Sampai</p>
-  Tanggal :
-  <input type="date" name="tanggal2">
-  <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
-      </div>
-</form> <br><br>
-
-    <div class = "w3-container w3-center">
-      <img src = "images/graph3.jpg" style="width: 20%; height: 20%">
+  <form action="MANAJER-TRANSAKSIHARIAN.php" style="float:left; margin-left: 5%;" method="POST">
+  <div class = "w3-center">
+    Tanggal :
+    <input type="date" name="tanggal1">
+    <p> Sampai</p>
+    Tanggal :
+    <input type="date" name="tanggal2">
+    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
     </div>
+  </div>
 
-  <div class="w3-container" style="margin: 3%;">
+    <div class="w3-container" style="margin: 3%;">
     <table class="w3-table w3-bordered w3-center">
-  <tr>
-            <th>Id</th>
-            <th>Foto</th>
+    <tr>
+            <th>Id Pelanggan</th>
             <th>Nama</th>
-            <th>Tarif</th>
-            <th>Jumlah</th>
-            <th>Status Booking</th>
+            <th>Alamat</th>
+            <th>Email</th>
+            <th>No. Handphone</th>
+            <th>Tanggal Transaksi</th>
+            <th>Waktu Awal</th>
+            <th>Waktu Akhir</th>
+            <th>Total Transaksi</th>
+
             <?php 
               foreach ($result as $key => $row) {
                 echo "<tr>";
-                echo "<td>".$row['idAlat']."</td>";
-                echo "<td><img src='images/".$row['imagesAlat']."'></td>";
-                echo "<td>".$row['namaAlat']."</td>";
-                echo "<td>".$row['tarif']."</td>";
-                echo "<td>".$row['jumlah']."</td>";
-                echo "<td>".$row['status_booking']."</td>";
+                echo "<td>".$row['idPelanggan']."</td>";
+                // echo "<td><img src='images/".$row['imagesRuang']."'></td>";
+                echo "<td>".$row['nama']."</td>";
+                echo "<td>".$row['alamat']."</td>";
+                echo "<td>".$row['email']."</td>";
+                echo "<td>".$row['no_hp']."</td>";
+                echo "<td>".$row['tanggal_transaksi']."</td>";
+                echo "<td>".$row['waktu_awal']."</td>";
+                echo "<td>".$row['waktu_akhir']."</td>";
+                echo "<td>".$row['total_transaksi']."</td>";
                 echo "</tr>";
               }
             ?>
+</form> <br><br>
+ </div>
     </table>
+  </div>
+
+  <div class = "w3-center">
+        <h2>Total Pendapatan Tanggal</h2>
+        <?php 
+            
+            $tanggal1 = $_POST['tanggal1'];
+            $tanggal2 = $_POST['tanggal2'];
+             echo $tanggal1 . " sampai dengan " . $tanggal2 . " = " . "\n" . $resSumTransaksi;
+              ?>
   </div>
 
 
