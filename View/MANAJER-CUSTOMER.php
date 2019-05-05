@@ -240,11 +240,7 @@
     <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
     <a href="MANAJER-TRANSAKSIHARIAN.php" class="w3-bar-item w3-button">TRANSAKSI HARIAN</a>
     <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button w3-dark-grey">STATISTIK RUANGAN</a>
-<<<<<<< HEAD
     <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button">STATISTIK BARANG</a>
-=======
-    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button ">STATISTIK BARANG</a>
->>>>>>> cc0d1718218c15fdb3f21f3706769e837ebef388
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="/action_page.php">
