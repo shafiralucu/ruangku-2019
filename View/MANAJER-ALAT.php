@@ -1,3 +1,19 @@
+<?php 
+	require "../Controller/Connector.php";
+	$query = "SELECT * from alat";
+
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE namaAlat LIKE '%$name%'";      
+		}
+	}
+
+    $result = $db->executeSelectQuery($query);
+?>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -225,6 +241,11 @@
       border: none;
       cursor: pointer;
     }
+
+     img {
+      width: 300px; 
+      height: 300px;
+    }
   </style>
 </head>
 
@@ -242,7 +263,7 @@
     <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">TRANSAKSI BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
-      <form action="/action_page.php">
+      <form action="MANAJER-ALAT.php" method = "POST">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
@@ -250,15 +271,15 @@
   </div>
 
   <br>
-  <form action="/action_page.php" style="float:left; margin-left: 5%;">
+  <form action="../Model/statistikAlat.php" style="float:left; margin-left: 5%;" method="POST">
   Tanggal :
-  <input type="date" name="transaksi">
-</form>
-<p style="float: left; margin-top: -0.01%; margin-left: 2%;">Sampai</p>
-
-<form action="/action_page.php" style="float:left; margin-left:2%;">
+  <input type="date" name="tanggal1">
+  <p> Sampai</p>
   Tanggal :
-  <input type="date" name="transaksi">
+  <input type="date" name="tanggal2">
+  <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
+      </div>
 </form> <br><br>
 
     <div class = "w3-container w3-center">
@@ -266,41 +287,26 @@
     </div>
 
   <div class="w3-container" style="margin: 3%;">
-    <table class="w3-table-all w3-center" id="tabelcust" style="font-family: texts; font-size: 20px;">
-      <thead>
-        <tr class="w3-dark-grey">
-          <th>ID Pelanggan </th>
-          <th>Nama</th>
-          <th>No. Handphone</th>
-          <th>Alamat</th>
-          <th>Tanggal Transaksi</th>
-          <th>Total Transaksi</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>1</td>
-        <td>Shafira</td>
-        <td>087743553397</td>
-        <td>Jl. Rancabentang I No. 10a</td>
-        <td>2019-01-11</td>
-        <td>50.000</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Giovanni</td>
-        <td>081224541830</td>
-        <td>Jl. Rancabentang I No. 10D</td>
-        <td>2019-10-17</td>
-        <td>80.000</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Alif</td>
-        <td>081506836583</td>
-        <td>Jl. Bukit Jarian No. 12</td>
-        <td>2019-10-13</td>
-        <td>10.000</td>
-      </tr>
+    <table class="w3-table w3-bordered w3-center">
+  <tr>
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Tarif</th>
+            <th>Jumlah</th>
+            <th>Status Booking</th>
+            <?php 
+              foreach ($result as $key => $row) {
+                echo "<tr>";
+                echo "<td>".$row['idAlat']."</td>";
+                echo "<td><img src='images/".$row['imagesAlat']."'></td>";
+                echo "<td>".$row['namaAlat']."</td>";
+                echo "<td>".$row['tarif']."</td>";
+                echo "<td>".$row['jumlah']."</td>";
+                echo "<td>".$row['status_booking']."</td>";
+                echo "</tr>";
+              }
+            ?>
     </table>
   </div>
 
