@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2019 at 04:51 PM
+-- Generation Time: May 05, 2019 at 09:08 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -249,6 +249,7 @@ CREATE TABLE `transaksi` (
   `tanggal_transaksi` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `waktu_awal` int(2) NOT NULL,
   `waktu_akhir` int(2) NOT NULL,
+  `durasi` int(2) NOT NULL,
   `total_transaksi` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -256,18 +257,18 @@ CREATE TABLE `transaksi` (
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`idTransaksi`, `tanggal_transaksi`, `waktu_awal`, `waktu_akhir`, `total_transaksi`) VALUES
-(1, '2019-05-04 12:10:21', 4, 5, 120000),
-(2, '2019-05-04 12:18:32', 5, 7, 170000),
-(3, '2019-05-04 12:19:11', 1, 3, 170000),
-(4, '2019-05-04 12:20:33', 1, 4, 220000),
-(5, '2019-05-04 12:21:28', 15, 16, 150000),
-(6, '2019-05-04 12:23:35', 1, 4, 1270000),
-(7, '2019-05-04 12:24:14', 7, 9, 670000),
-(8, '2019-05-04 12:26:01', 5, 9, 1600000),
-(9, '2019-05-04 20:21:13', 7, 9, 870000),
-(10, '2019-05-04 20:23:16', 3, 7, 315000),
-(11, '2019-05-04 20:24:24', 1, 7, 3100000);
+INSERT INTO `transaksi` (`idTransaksi`, `tanggal_transaksi`, `waktu_awal`, `waktu_akhir`, `durasi`, `total_transaksi`) VALUES
+(1, '2019-05-05 17:50:50', 4, 5, 1, 120000),
+(2, '2019-05-05 17:51:02', 5, 7, 2, 170000),
+(3, '2019-05-05 17:52:46', 1, 3, 2, 170000),
+(4, '2019-05-05 17:52:54', 1, 4, 3, 220000),
+(5, '2019-05-05 17:53:01', 15, 16, 1, 150000),
+(6, '2019-05-05 17:53:08', 1, 4, 3, 1270000),
+(7, '2019-05-05 17:55:02', 7, 9, 2, 670000),
+(8, '2019-05-05 17:55:11', 5, 9, 4, 1600000),
+(9, '2019-05-05 17:55:20', 7, 9, 2, 870000),
+(10, '2019-05-05 17:55:28', 3, 7, 4, 315000),
+(11, '2019-05-05 17:55:36', 1, 7, 6, 3100000);
 
 --
 -- Indexes for dumped tables
