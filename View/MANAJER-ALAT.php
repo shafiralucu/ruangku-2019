@@ -1,23 +1,37 @@
-<?php 
-	require "../Controller/Connector.php";
-	$query = "SELECT * from alat";
+<?php
+    require '../Controller/Connector.php';
+    $querySelect = "SELECT * FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi";
 
-	//filter
-	$name = "";
-	if (isset($_GET['btnSearch'])) {
-		$name = $_GET['search'];
-		if (isset($name) && $name != "") {
-			$name = $db->escapeString($name);
-            $query .= " WHERE namaAlat LIKE '%$name%'";      
-		}
-  }
-  
-  //filter tanggal
-  $tanggal_awal = $_POST[]
+    $qWaktuAwal = "SELECT waktu_awal FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi 
+    INNER JOIN alat ON sewa_alat.idAlat = alat.idAlat WHERE transaksi.idTransaksi = sewa_alat.idTransaksi";
 
-    $result = $db->executeSelectQuery($query);
+    $qWaktuAkhir = "SELECT waktu_akhir FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi 
+    INNER JOIN alat ON sewa_alat.idAlat = alat.idAlat WHERE transaksi.idTransaksi = sewa_alat.idTransaksi";
+    
+    $resultWaktuAwal = $db->executeNonSelectedQuery($qWaktuAwal);
+    $resultWaktuAkhir = $db->executeNonSelectedQuery($qWaktuAkhir);
+
+    $temp1="";
+      while ($row=mysqli_fetch_row($resultWaktuAwal))
+      {
+        $temp1 = $row[0];
+      }
+    $temp2="";
+      while ($row=mysqli_fetch_row($resultWaktuAkhir))
+      {
+        $temp2 = $row[0];
+      }
+
+      $durasi = $temp2 - $temp1;
+		if (isset($_POST['btnUpdate'])) {
+            $tanggal1 = $_POST['tanggal1'];
+            $tanggal2 = $_POST['tanggal2'];
+            //echo $tanggal1;
+            //echo $tanggal2;
+            $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+        }   
+        $result = $db->executeSelectQuery($querySelect);
 ?>
-
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -156,6 +170,10 @@
     table {
       border: none;
     }
+    img {
+      width: 300px; 
+      height: 300px;
+    }
 
     @font-face {
       font-family: header;
@@ -245,6 +263,11 @@
       border: none;
       cursor: pointer;
     }
+
+     img {
+      width: 300px; 
+      height: 300px;
+    }
   </style>
 </head>
 
@@ -262,7 +285,7 @@
     <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">TRANSAKSI BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
-      <form action="MANAJER-ALAT.php">
+      <form action="MANAJER-ALAT.php" method = "POST">
         <input type="text" placeholder="Search.." name="search">
         <button type="submit" name="btnSearch"><i class="fa fa-search"></i></button>
       </form>
@@ -270,44 +293,50 @@
   </div>
 
   <br>
-  <form action="MANAJER-ALAT.php" style="float:left; margin-left: 5%;">
+  <form action="MANAJER-ALAT.php" style="float:left; margin-left: 5%;" method="POST">
   Tanggal :
-  <input type="date" name="transaksi">
-</form>
-<p style="float: left; margin-top: -0.01%; margin-left: 2%;">Sampai</p>
-
-<form action="/action_page.php" style="float:left; margin-left:2%;">
+  <input type="date" name="tanggal1">
+  <p> Sampai</p>
   Tanggal :
-  <input type="date" name="transaksi">
-</form> <br><br>
+  <input type="date" name="tanggal2">
+  <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
+      </div>
+ <br><br>
 
     <div class = "w3-container w3-center">
       <img src = "images/graph3.jpg" style="width: 20%; height: 20%">
     </div>
 
   <div class="w3-container" style="margin: 3%;">
-    <table class="w3-table-all w3-center" id="tabelcust" style="font-family: texts; font-size: 20px;">
-      <thead>
-        <tr class="w3-dark-grey">
-          <th>ID Alat </th>
-          <th>Nama Alat</th>
-          <th>Tarif</th>
-          <th>Jumlah</th>
-          <th>Status Booking</th>
-        </tr>
-      </thead>
-      <?php 
+    <table class="w3-table w3-bordered w3-center">
+  <tr>
+            <th>Id</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Tarif</th>
+            <th>Jumlah</th>
+            <th>Status Booking</th>
+            <th>Durasi</th>
+            <th>Waktu Akhir</th>
+            
+            <?php 
               foreach ($result as $key => $row) {
                 echo "<tr>";
                 echo "<td>".$row['idAlat']."</td>";
+                echo "<td><img src='images/".$row['imagesAlat']."'></td>";
                 echo "<td>".$row['namaAlat']."</td>";
                 echo "<td>".$row['tarif']."</td>";
                 echo "<td>".$row['jumlah']."</td>";
                 echo "<td>".$row['status_booking']."</td>";
+                echo "<td>".$row['waktu_awal']."</td>";
+                echo "<td>".$row['waktu_akhir']."</td>";
                 echo "</tr>";
               }
             ?>
+            </form>
     </table>
+    
   </div>
 
 

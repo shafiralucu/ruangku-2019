@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2019 at 09:07 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.4
+-- Generation Time: May 05, 2019 at 04:51 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,10 +43,10 @@ CREATE TABLE `alat` (
 
 INSERT INTO `alat` (`idAlat`, `imagesAlat`, `namaAlat`, `tarif`, `jumlah`, `status_booking`) VALUES
 (1, 'laptop.jpg', 'Laptop', 70000, 10, 1),
-(2, 'microphone.jpg', 'Microphone', 50000, 10, 1),
+(2, 'microphone.jpg', 'Microphone 2pcs', 50000, 10, 0),
 (3, 'proyektor.jpg', 'Proyektor', 100000, 10, 1),
-(4, 'spidol.jpg', 'Spidol', 20000, 10, 0),
-(5, 'speaker.jpg', 'Speaker', 100000, 5, 0),
+(4, 'spidol.jpg', 'Spidol 2pcs', 20000, 10, 0),
+(5, 'speaker.jpg', 'Speaker', 100000, 5, 1),
 (6, 'whiteboard.jpg', 'Whiteboard', 75000, 10, 1);
 
 -- --------------------------------------------------------
@@ -80,8 +80,13 @@ INSERT INTO `melakukan` (`idPelanggan`, `idTransaksi`) VALUES
 (2, 2),
 (3, 3),
 (4, 4),
-(9, 5),
-(10, 6);
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
+(10, 10),
+(11, 11);
 
 -- --------------------------------------------------------
 
@@ -126,12 +131,17 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`idPelanggan`, `nama`, `alamat`, `email`, `no_hp`) VALUES
-(1, 'Wonyoung', 'Jl. Rancabentang', 'wonyoung@gmail.com', '0818894077'),
-(2, 'Minjoo', 'Jl. Bukit Jarian', 'minju@gmail.com', '02168470707'),
-(3, 'Sakura', 'Jl. Bukit Resik', 'sakura@gmail.com', '08775464285'),
-(4, 'Hitomi', 'Jl. Rancabentang', 'hitomi@gmail.com', '08775464285'),
-(9, 'Jin', 'Jl.Kucing', 'jin@gmail.com', '08776584321'),
-(10, 'Jungkook', 'Jl. Anjing', 'jungkook@gmail.com', '0876563212');
+(1, 'Sakura', 'Jl. Anjing', 'sakura@gmail.com', '088119456225'),
+(2, 'Nayeon', 'Jl. Rancabentang', 'nayeon@gmail.com', '087742036248'),
+(3, 'Mina', 'Jl. Kucing', 'mina@gmail.com', '08976574823'),
+(4, 'Sana', 'Jl. Korea', 'sana@gmail.com', '08554623154'),
+(5, 'Momo', 'Jl. Bukit Resik', 'momo@gmail.com', '088963154'),
+(6, 'Hashrul', 'Jl. Obc', 'hashrultk98@gmail.com', '087745556215'),
+(7, 'Alif', 'Jl. Rancabentang', 'alif@gmail.com', '08994561234'),
+(8, 'Jennie', 'Jl. Myeongdonng', 'jennie@gmail.com', '08984561232'),
+(9, 'Niki', 'Jl. Mars', 'niki@gmail.com', '0818894077'),
+(10, 'Tzuyu', 'Jl. Rancabentang 2', 'tzuyu@gmail.com', '081394378777'),
+(11, 'Jihyo', 'Jl. Saturnus', 'jihyo@gmail.com', '021755359');
 
 -- --------------------------------------------------------
 
@@ -163,15 +173,15 @@ INSERT INTO `ruang` (`idRuang`, `imagesRuang`, `namaRuang`, `kapasitas`, `fasili
 (7, '7.jpg', 'A Class Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
 (8, '8.jpg', 'A Class Room (Large)', 15, 'AC, Snack and Drink, Projector', 450000, 0),
 (9, '9.jpg', 'White Public Room', 70, 'AC, Snack and Drink', 80000, 0),
-(10, '10.jpg', 'Cafeteria', 50, 'AC', 60000, 0),
+(10, '10.jpg', 'Cafeteria', 50, 'AC', 60000, 1),
 (11, '11.jpg', 'Glass Room', 4, 'AC, Snack and Drink, Projector, Tv', 400000, 0),
 (12, '12.jpg', 'Business Room', 12, 'AC, Snack and Drink, Tv', 800000, 0),
 (13, '13.jpeg', 'Tuition Room (Large)', 15, 'AC, Snack and Drink, Projector', 500000, 0),
 (14, '14.jpeg', 'Tuition Room (Small)', 6, 'AC, Snack and Drink, Projector', 400000, 0),
 (15, '15.jpeg', 'Office Room', 8, 'AC, Snack and Drink, Projector', 600000, 0),
-(16, '16.jpg', 'Library Room', 12, 'AC', 500000, 0),
+(16, '16.jpg', 'Library Room', 12, 'AC', 500000, 1),
 (17, '17.jpeg', 'Boss Room', 15, 'AC, Snack and Drink', 800000, 0),
-(18, '18.jpg', 'Bulkhead Room', 8, 'AC, Snack and Drink', 400000, 0);
+(18, '18.jpg', 'Bulkhead Room', 8, 'AC, Snack and Drink', 400000, 1);
 
 -- --------------------------------------------------------
 
@@ -189,11 +199,16 @@ CREATE TABLE `sewa_alat` (
 --
 
 INSERT INTO `sewa_alat` (`idTransaksi`, `idAlat`) VALUES
-(1, 2),
-(2, 2),
-(4, 3),
-(5, 1),
-(6, 6);
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 3),
+(6, 1),
+(7, 1),
+(9, 1),
+(10, 6),
+(11, 5);
 
 -- --------------------------------------------------------
 
@@ -215,8 +230,13 @@ INSERT INTO `sewa_ruang` (`idTransaksi`, `idRuang`) VALUES
 (2, 3),
 (3, 3),
 (4, 3),
-(5, 2),
-(6, 1);
+(5, 3),
+(6, 1),
+(7, 2),
+(8, 18),
+(9, 18),
+(10, 10),
+(11, 16);
 
 -- --------------------------------------------------------
 
@@ -226,9 +246,9 @@ INSERT INTO `sewa_ruang` (`idTransaksi`, `idRuang`) VALUES
 
 CREATE TABLE `transaksi` (
   `idTransaksi` int(11) NOT NULL,
-  `tanggal_transaksi` date NOT NULL,
-  `waktu_awal` int(11) NOT NULL,
-  `waktu_akhir` int(11) NOT NULL,
+  `tanggal_transaksi` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `waktu_awal` int(2) NOT NULL,
+  `waktu_akhir` int(2) NOT NULL,
   `total_transaksi` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -237,12 +257,17 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`idTransaksi`, `tanggal_transaksi`, `waktu_awal`, `waktu_akhir`, `total_transaksi`) VALUES
-(1, '2019-05-04', 15, 18, 200000),
-(2, '2019-05-04', 1, 5, 200000),
-(3, '2019-05-04', 1, 2, 50000),
-(4, '2019-05-04', 15, 17, 200000),
-(5, '2019-05-04', 15, 17, 670000),
-(6, '2019-05-04', 12, 14, 875000);
+(1, '2019-05-04 12:10:21', 4, 5, 120000),
+(2, '2019-05-04 12:18:32', 5, 7, 170000),
+(3, '2019-05-04 12:19:11', 1, 3, 170000),
+(4, '2019-05-04 12:20:33', 1, 4, 220000),
+(5, '2019-05-04 12:21:28', 15, 16, 150000),
+(6, '2019-05-04 12:23:35', 1, 4, 1270000),
+(7, '2019-05-04 12:24:14', 7, 9, 670000),
+(8, '2019-05-04 12:26:01', 5, 9, 1600000),
+(9, '2019-05-04 20:21:13', 7, 9, 870000),
+(10, '2019-05-04 20:23:16', 3, 7, 315000),
+(11, '2019-05-04 20:24:24', 1, 7, 3100000);
 
 --
 -- Indexes for dumped tables
@@ -326,7 +351,7 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `idPelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `ruang`
@@ -338,7 +363,7 @@ ALTER TABLE `ruang`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `idTransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idTransaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Constraints for dumped tables
