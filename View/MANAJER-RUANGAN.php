@@ -1,19 +1,14 @@
-<?php 
-	require "../Controller/Connector.php";
-	$query = "SELECT * from ruang";
-
-	//filter
-	$name = "";
-	if (isset($_GET['btnSearch'])) {
-		$name = $_GET['search'];
-		if (isset($name) && $name != "") {
-			$name = $db->escapeString($name);
-            $query .= " WHERE namaRuang LIKE '%$name%'";
-            
-		}
-	}
-
-	$result = $db->executeSelectQuery($query);
+<?php
+    require '../Controller/Connector.php';
+		if (isset($_POST['btnUpdate'])) {
+            $tanggal1 = $_POST['tanggal1'];
+            $tanggal2 = $_POST['tanggal2'];
+            echo $tanggal1;
+            echo $tanggal2;
+            $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+            $db->executeNonSelectedQuery($querySelect);
+            header('Location: ../View/MANAJER-RUANGAN.php');
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -263,10 +258,11 @@
 
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border " id="menu">
-    <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button w3-dark-grey">LIST RUANGAN</a>
+  <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
     <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
-    <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button">TRANSAKSI RUANGAN</a>
-    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button">TRANSAKSI BARANG</a>
+    <a href="MANAJER-TRANSAKSI HARIAN.php" class="w3-bar-item w3-button">TRANSAKSI HARIAN</a>
+    <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button">STATISTIK RUANGAN</a>
+    <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">STATISTIK BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
       <form action="MANAJER-RUANGAN.php">
