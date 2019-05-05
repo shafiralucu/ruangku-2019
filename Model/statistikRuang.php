@@ -3,10 +3,11 @@
 		if (isset($_POST['btnUpdate'])) {
             $namaold = $_POST['namaold'];
             $nama = $_POST['nama'];
-            $jumlah = $_POST['jumlah'];
-            $tarif = $_POST['tarif'];
-			$query = "UPDATE alat SET namaAlat = '$nama' , tarif = '$tarif' ,  jumlah = '$jumlah' WHERE namaAlat = '$namaold'";
+            $kapasitas = $_POST['kapasitas'];
+            $fasilitas = $_POST['fasilitas'];
+            $harga = $_POST['harga'];
+			$query = "UPDATE ruang SET namaRuang = '$nama' , kapasitas = '$kapasitas' ,  fasilitas = '$fasilitas' , tarif = '$harga' WHERE namaRuang = '$namaold'";
             $db->executeNonSelectedQuery($query);
-            header('Location: ../View/ADMIN-BARANG.php');
+            header('Location: ../View/ADMIN-RUANGAN1.php');
         }
 ?>
