@@ -2,8 +2,6 @@
     require '../Controller/Connector.php';
     $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi";
     $querySum = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi";
-    $tanggal1 = "";
-    $tanggal2 = "";
     
     if (isset($_POST['btnUpdate'])) {
              $tanggal1 = $_POST['tanggal1'];
