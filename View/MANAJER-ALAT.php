@@ -2,27 +2,7 @@
     require '../Controller/Connector.php';
     $querySelect = "SELECT * FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi";
 
-    $qWaktuAwal = "SELECT waktu_awal FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi 
-    INNER JOIN alat ON sewa_alat.idAlat = alat.idAlat WHERE transaksi.idTransaksi = sewa_alat.idTransaksi";
-
-    $qWaktuAkhir = "SELECT waktu_akhir FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi 
-    INNER JOIN alat ON sewa_alat.idAlat = alat.idAlat WHERE transaksi.idTransaksi = sewa_alat.idTransaksi";
-    
-    $resultWaktuAwal = $db->executeNonSelectedQuery($qWaktuAwal);
-    $resultWaktuAkhir = $db->executeNonSelectedQuery($qWaktuAkhir);
-
-    $temp1="";
-      while ($row=mysqli_fetch_row($resultWaktuAwal))
-      {
-        $temp1 = $row[0];
-      }
-    $temp2="";
-      while ($row=mysqli_fetch_row($resultWaktuAkhir))
-      {
-        $temp2 = $row[0];
-      }
-
-      $durasi = $temp2 - $temp1;
+    $queryGetDurasi = "SELECT durasi FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi INNER JOIN alat ON alat.idAlat = sewa_alat.idAlat";
 		if (isset($_POST['btnUpdate'])) {
             $tanggal1 = $_POST['tanggal1'];
             $tanggal2 = $_POST['tanggal2'];
@@ -31,6 +11,13 @@
             $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
         }   
         $result = $db->executeSelectQuery($querySelect);
+        $resultDurasi = $db->executeNonSelectedQuery($queryGetDurasi);
+
+        $resDurasi="";
+        while ($row=mysqli_fetch_row($resultDurasi))
+        {
+            $resDurasi = $row[0];
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -319,7 +306,6 @@
             <th>Jumlah</th>
             <th>Status Booking</th>
             <th>Durasi</th>
-            <th>Waktu Akhir</th>
             
             <?php 
               foreach ($result as $key => $row) {
@@ -330,8 +316,7 @@
                 echo "<td>".$row['tarif']."</td>";
                 echo "<td>".$row['jumlah']."</td>";
                 echo "<td>".$row['status_booking']."</td>";
-                echo "<td>".$row['waktu_awal']."</td>";
-                echo "<td>".$row['waktu_akhir']."</td>";
+                echo "<td>".$row['durasi']."</td>";
                 echo "</tr>";
               }
             ?>
