@@ -1,44 +1,16 @@
 <?php
     require '../Controller/Connector.php';
-    $querySelect = "SELECT * FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi";
-    $queryGetDurasi = "SELECT durasi FROM transaksi INNER JOIN sewa_ruang ON sewa_ruang.idTransaksi = transaksi.idTransaksi INNER JOIN ruang ON ruang.idRuang = sewa_ruang.idRuang";
-            
-    //query get harga ruangan
-            $getNamaRuang = "SELECT namaRuang FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi";
-            $resultNama = $db->executeNonSelectedQuery($getNamaRuang);
-            $resNama="";
-            while ($row=mysqli_fetch_row($resultNama))
-            {
-            $resNama = $row[0];
-            }
 
-            $qGetHargaRuangan = "SELECT tarif FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi WHERE namaRuang = '$resNama'";
-            $resultHargaRuangan = $db->executeNonSelectedQuery($qGetHargaRuangan);
-            $resHarga="";
-            while ($row=mysqli_fetch_row($resultHargaRuangan))
-            {
-                $resHarga =$row[0];
-            }
-
-            
+             $getNamaRuang = "SELECT tanggal_transaksi, ruang.idRuang, imagesRuang, namaRuang, kapasitas, fasilitas, durasi, SUM(durasi*tarif) as total FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi GROUP BY namaRuang";
+             $query = $db->executeSelectQuery($getNamaRuang);
 
 		if (isset($_POST['btnUpdate'])) {
             $tanggal1 = $_POST['tanggal1'];
             $tanggal2 = $_POST['tanggal2'];
-            //echo $tanggal1;
-            //echo $tanggal2;
-            $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
-        }   
-        $result = $db->executeSelectQuery($querySelect);
-        $resultDurasi = $db->executeNonSelectedQuery($queryGetDurasi);
-
-        $resDurasi="";
-        while ($row=mysqli_fetch_row($resultDurasi))
-        {
-            $resDurasi = $row[0];
-        }
-
-        $totalT = $resHarga * $resDurasi;
+            $getNamaRuang = "SELECT tanggal_transaksi, idRuang, imagesRuang, namaRuang, kapasitas, fasilitas, durasi, SUM(durasi*tarif) as total FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi GROUP BY namaRuang WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+            
+          }   
+          $result = $db->executeSelectQuery($getNamaRuang);
 ?>
 
 <!DOCTYPE html>
@@ -269,7 +241,7 @@
       cursor: pointer;
     }
     img {
-      width: 300px; 
+      width: 6 00px; 
       height: 300px;
     }
 
@@ -308,6 +280,9 @@
   Tanggal :
   <input type="date" name="transaksi">
 
+<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
+    </div>
     <div class = "w3-container w3-center">
       <img src = "images/graph.jpg">
     </div>
@@ -316,26 +291,26 @@
     <table class="w3-table-all w3-center" id="tabelcust" style="font-family: texts; font-size: 20px;">
       <thead>
         <tr class="w3-dark-grey">
+            <th>Tanggal Transaksi</th>
             <th>Id</th>
             <th>Foto</th>
             <th>Nama</th>
             <th>Kapasitas</th>
             <th>Fasilitas</th>
-            <th>Status Booking</th>
             <th>Durasi</th>
             <th>Total transaksi</th>
         </tr>
         <?php 
               foreach ($result as $key => $row) {
                 echo "<tr>";
+                echo "<td>".$row['tanggal_transaksi']."</td>";
                 echo "<td>".$row['idRuang']."</td>";
                 echo "<td><img src='images/".$row['imagesRuang']."'></td>";
                 echo "<td>".$row['namaRuang']."</td>";
                 echo "<td>".$row['kapasitas']."</td>";
                 echo "<td>".$row['fasilitas']."</td>";
-                echo "<td>".$row['status_booking']."</td>";
                 echo "<td>".$row['durasi']."</td>";
-                echo "<td>".$totalT."</td>";
+                echo "<td>".$row['total']."</td>";
                 echo "</tr>";
               }
             ?>
