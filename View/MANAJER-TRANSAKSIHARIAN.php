@@ -1,36 +1,31 @@
 <?php
-    require '../Controller/Connector.php';
-    $querySelect = "SELECT * FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi";
+    // require '../Controller/Connector.php';
+	// 	if (isset($_POST['btnUpdate'])) {
+    //         $tanggal1 = $_POST['tanggal1'];
+    //         $tanggal2 = $_POST['tanggal2'];
+    //         echo $tanggal1;
+    //         echo $tanggal2;
+    //         $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+    //         $db->executeNonSelectedQuery($querySelect);
+    //         header('Location: ../View/MANAJER-CUSTOMER.php');
+    //     }
+?>
 
-    $qWaktuAwal = "SELECT waktu_awal FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi 
-    INNER JOIN alat ON sewa_alat.idAlat = alat.idAlat WHERE transaksi.idTransaksi = sewa_alat.idTransaksi";
+<?php 
+	require "../Controller/Connector.php";
+	$query = "SELECT * from alat";
 
-    $qWaktuAkhir = "SELECT waktu_akhir FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi 
-    INNER JOIN alat ON sewa_alat.idAlat = alat.idAlat WHERE transaksi.idTransaksi = sewa_alat.idTransaksi";
-    
-    $resultWaktuAwal = $db->executeNonSelectedQuery($qWaktuAwal);
-    $resultWaktuAkhir = $db->executeNonSelectedQuery($qWaktuAkhir);
+	//filter
+	$name = "";
+	if (isset($_GET['btnSearch'])) {
+		$name = $_GET['search'];
+		if (isset($name) && $name != "") {
+			$name = $db->escapeString($name);
+            $query .= " WHERE namaAlat LIKE '%$name%'";      
+		}
+	}
 
-    $temp1="";
-      while ($row=mysqli_fetch_row($resultWaktuAwal))
-      {
-        $temp1 = $row[0];
-      }
-    $temp2="";
-      while ($row=mysqli_fetch_row($resultWaktuAkhir))
-      {
-        $temp2 = $row[0];
-      }
-
-      $durasi = $temp2 - $temp1;
-		if (isset($_POST['btnUpdate'])) {
-            $tanggal1 = $_POST['tanggal1'];
-            $tanggal2 = $_POST['tanggal2'];
-            //echo $tanggal1;
-            //echo $tanggal2;
-            $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
-        }   
-        $result = $db->executeSelectQuery($querySelect);
+    $result = $db->executeSelectQuery($query);
 ?>
 <!DOCTYPE html>
 <html>
@@ -170,10 +165,6 @@
     table {
       border: none;
     }
-    img {
-      width: 300px; 
-      height: 300px;
-    }
 
     @font-face {
       font-family: header;
@@ -279,22 +270,22 @@
 
   <!-- navigation bar -->
   <div class="w3-bar w3-white w3-border" id="menu">
-  <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
+    <a href="MANAJER-RUANGAN.php" class="w3-bar-item w3-button">LIST RUANGAN</a>
     <a href="MANAJER-BARANG.php" class="w3-bar-item w3-button">LIST BARANG</a>
     <a href="MANAJER-TRANSAKSIHARIAN.php" class="w3-bar-item w3-button">TRANSAKSI HARIAN</a>
     <a href="MANAJER-CUSTOMER.php" class="w3-bar-item w3-button">STATISTIK RUANGAN</a>
     <a href="MANAJER-ALAT.php" class="w3-bar-item w3-button w3-dark-grey">STATISTIK BARANG</a>
     <a href="OPERATOR-HOME.php" class="w3-bar-item w3-button" style="float: right;">LOGOUT</a>
     <div class="search-container">
-      <form action="MANAJER-ALAT.php" method = "POST">
+      <form action="MANAJER-TRANSAKSIHARIAN.php" method = "POST">
         <input type="text" placeholder="Search.." name="search">
-        <button type="submit" name="btnSearch"><i class="fa fa-search"></i></button>
+        <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>
   </div>
 
   <br>
-  <form action="MANAJER-ALAT.php" style="float:left; margin-left: 5%;" method="POST">
+  <form action="../Model/statistikAlat.php" style="float:left; margin-left: 5%;" method="POST">
   Tanggal :
   <input type="date" name="tanggal1">
   <p> Sampai</p>
@@ -303,7 +294,7 @@
   <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
         <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
       </div>
- <br><br>
+</form> <br><br>
 
     <div class = "w3-container w3-center">
       <img src = "images/graph3.jpg" style="width: 20%; height: 20%">
@@ -318,9 +309,6 @@
             <th>Tarif</th>
             <th>Jumlah</th>
             <th>Status Booking</th>
-            <th>Durasi</th>
-            <th>Waktu Akhir</th>
-            
             <?php 
               foreach ($result as $key => $row) {
                 echo "<tr>";
@@ -330,14 +318,10 @@
                 echo "<td>".$row['tarif']."</td>";
                 echo "<td>".$row['jumlah']."</td>";
                 echo "<td>".$row['status_booking']."</td>";
-                echo "<td>".$row['waktu_awal']."</td>";
-                echo "<td>".$row['waktu_akhir']."</td>";
                 echo "</tr>";
               }
             ?>
-            </form>
     </table>
-    
   </div>
 
 
