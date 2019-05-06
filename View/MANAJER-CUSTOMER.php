@@ -2,15 +2,23 @@
     require '../Controller/Connector.php';
 
              $getNamaRuang = "SELECT tanggal_transaksi, ruang.idRuang, imagesRuang, namaRuang, kapasitas, fasilitas, durasi, SUM(durasi*tarif) as total FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi GROUP BY namaRuang";
-             $query = $db->executeSelectQuery($getNamaRuang);
+             //$query = $db->executeSelectQuery($getNamaRuang);
+             $querySum = "SELECT SUM(durasi*tarif) FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi";
 
 		if (isset($_POST['btnUpdate'])) {
             $tanggal1 = $_POST['tanggal1'];
             $tanggal2 = $_POST['tanggal2'];
-            $getNamaRuang = "SELECT tanggal_transaksi, idRuang, imagesRuang, namaRuang, kapasitas, fasilitas, durasi, SUM(durasi*tarif) as total FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi GROUP BY namaRuang WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
-            
+            $getNamaRuang = "SELECT tanggal_transaksi, ruang.idRuang, imagesRuang, namaRuang, kapasitas, fasilitas, durasi, SUM(durasi*tarif) as total FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi GROUP BY namaRuang";
+            $querySum = "SELECT SUM(durasi*tarif) FROM ruang INNER JOIN sewa_ruang ON ruang.idRuang = sewa_ruang.idRuang INNER JOIN transaksi ON sewa_ruang.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
           }   
           $result = $db->executeSelectQuery($getNamaRuang);
+          $result2 = $db->executeNonSelectedQuery($querySum);
+
+          $resSumTransaksi="";
+          while ($row=mysqli_fetch_row($result2))
+         {
+             $resSumTransaksi = $row[0];
+         }
 ?>
 
 <!DOCTYPE html>
@@ -271,7 +279,7 @@
   </div>
 
   <br>
-  <form action="MANAJER-CUSTOMER.php" style="float:left; margin-left: 5%;">
+  <form action="MANAJER-CUSTOMER.php" style="float:left; margin-left: 5%;" method="POST">
   <div class = "w3-center">
     Tanggal :
     <input type="date" name="tanggal1">
@@ -314,9 +322,18 @@
       </thead>
       </form>
     </table>
+
+    <div class = "w3-center">
+        <h2>Total Pendapatan Ruangan dari Tanggal</h2>
+        <h3>
+        <?php 
+            $tanggal1 = $_POST['tanggal1'];
+            $tanggal2 = $_POST['tanggal2'];
+             echo $tanggal1 . " sampai dengan " . $tanggal2 . " = " . $resSumTransaksi;
+        ?>
+        </h3>
   </div>
-
-
+  </div>
 
   <div class="w3-container w3-black">
     <h5>Ruangku. Collaborate to create. </h5>

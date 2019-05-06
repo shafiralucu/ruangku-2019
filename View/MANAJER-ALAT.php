@@ -1,23 +1,21 @@
 <?php
     require '../Controller/Connector.php';
     $querySelect = "SELECT alat.idAlat, imagesAlat, namaAlat, alat.tarif,jumlah, durasi , SUM(durasi*tarif) as total FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi GROUP BY namaAlat";
-
-    //$queryGetDurasi = "SELECT durasi FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi INNER JOIN alat ON alat.idAlat = sewa_alat.idAlat";
+    $querySum = "SELECT SUM(durasi*tarif) FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi";
 		if (isset($_POST['btnUpdate'])) {
             $tanggal1 = $_POST['tanggal1'];
             $tanggal2 = $_POST['tanggal2'];
-            //echo $tanggal1;
-            //echo $tanggal2;
             $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
+            $querySum = "SELECT SUM(durasi*tarif) FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
         }   
         $result = $db->executeSelectQuery($querySelect);
-        //$resultDurasi = $db->executeNonSelectedQuery($queryGetDurasi);
+        $result2 = $db->executeNonSelectedQuery($querySum);
 
-        // $resDurasi="";
-        // while ($row=mysqli_fetch_row($resultDurasi))
-        // {
-        //     $resDurasi = $row[0];
-        // }
+          $resSumTransaksi="";
+          while ($row=mysqli_fetch_row($result2))
+         {
+             $resSumTransaksi = $row[0];
+         }
 ?>
 <!DOCTYPE html>
 <html>
@@ -322,6 +320,16 @@
             </form>
     </table>
     
+    <div class = "w3-center">
+        <h2>Total Pendapatan Alat dari Tanggal</h2>
+        <h3>
+        <?php 
+            $tanggal1 = $_POST['tanggal1'];
+            $tanggal2 = $_POST['tanggal2'];
+             echo $tanggal1 . " sampai dengan " . $tanggal2 . " = " . $resSumTransaksi;
+        ?>
+        </h3>
+  </div>
   </div>
 
 
