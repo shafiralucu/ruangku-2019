@@ -272,20 +272,17 @@
 
   <br>
   <form action="MANAJER-CUSTOMER.php" style="float:left; margin-left: 5%;">
-  Tanggal :
-  <input type="date" name="transaksi">
-
-<p style="float: left; margin-top: -0.01%; margin-left: 2%;">Sampai</p>
-
-  Tanggal :
-  <input type="date" name="transaksi">
-
-<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-            <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
+  <div class = "w3-center">
+    Tanggal :
+    <input type="date" name="tanggal1">
+    <p> Sampai</p>
+    Tanggal :
+    <input type="date" name="tanggal2">
+    <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+            <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate" style = "width=30%;">Update Statistik</button>
     </div>
-    <div class = "w3-container w3-center">
-      <img src = "images/graph.jpg">
-    </div>
+  </div>
+ 
 
   <div class="w3-container" style="margin: 3%;">
     <table class="w3-table-all w3-center" id="tabelcust" style="font-family: texts; font-size: 20px;">

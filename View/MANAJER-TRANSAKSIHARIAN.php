@@ -3,6 +3,9 @@
     $querySelect = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi";
     $querySum = "SELECT * FROM pelanggan INNER JOIN melakukan ON pelanggan.idPelanggan = melakukan.idPelanggan INNER JOIN transaksi ON melakukan.idTransaksi = transaksi.idTransaksi";
     
+    $tanggal1;
+    $tanggal2;
+    
     if (isset($_POST['btnUpdate'])) {
              $tanggal1 = $_POST['tanggal1'];
              $tanggal2 = $_POST['tanggal2'];
@@ -18,6 +21,8 @@
              $resSumTransaksi = $row[0];
          }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -189,11 +194,16 @@
 
 
     h2 {
-      font-family: texts2;
+      font-family: texts;
       font-size: 30px;
       color: #373737;
       margin-top: 40px;
-      margin-bottom: 40px;
+    }
+
+    h3 {
+      font-family: texts;
+      font-size: 30px;
+      color: #373737;
     }
 
     h5 {
@@ -276,6 +286,7 @@
   </div>
 
   <br>
+  <div class = "w3-center">
   <form action="MANAJER-TRANSAKSIHARIAN.php" style="float:left; margin-left: 5%;" method="POST">
   <div class = "w3-center">
     Tanggal :
@@ -284,11 +295,11 @@
     Tanggal :
     <input type="date" name="tanggal2">
     <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
-            <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate">Update Statistik</button>
+            <button class="w3-button w3-block w3-dark-grey w3-section w3-padding" type="submit" name="btnUpdate" style = "width=30%;">Update Statistik</button>
     </div>
   </div>
 
-    <div class="w3-container" style="margin: 3%;">
+   <!-- <div class="w3-container" style="margin: 3%;"> -->
     <table class="w3-table w3-bordered w3-center">
     <tr>
             <th>Id Pelanggan</th>
@@ -318,18 +329,18 @@
               }
             ?>
 </form> <br><br>
- </div>
-    </table>
-  </div>
-
+</table>
+ <!-- </div> -->
+ 
   <div class = "w3-center">
         <h2>Total Pendapatan Tanggal</h2>
+        <h3>
         <?php 
-            
             $tanggal1 = $_POST['tanggal1'];
             $tanggal2 = $_POST['tanggal2'];
-             echo $tanggal1 . " sampai dengan " . $tanggal2 . " = " . "\n" . $resSumTransaksi;
-              ?>
+             echo $tanggal1 . " sampai dengan " . $tanggal2 . " = " . $resSumTransaksi;
+        ?>
+        </h3>
   </div>
 
 
