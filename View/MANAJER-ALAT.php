@@ -1,8 +1,8 @@
 <?php
     require '../Controller/Connector.php';
-    $querySelect = "SELECT * FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi";
+    $querySelect = "SELECT alat.idAlat, imagesAlat, namaAlat, alat.tarif,jumlah, durasi , SUM(durasi*tarif) as total FROM alat INNER JOIN sewa_alat ON alat.idAlat = sewa_alat.idAlat INNER JOIN transaksi ON sewa_alat.idTransaksi = transaksi.idTransaksi GROUP BY namaAlat";
 
-    $queryGetDurasi = "SELECT durasi FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi INNER JOIN alat ON alat.idAlat = sewa_alat.idAlat";
+    //$queryGetDurasi = "SELECT durasi FROM transaksi INNER JOIN sewa_alat ON sewa_alat.idTransaksi = transaksi.idTransaksi INNER JOIN alat ON alat.idAlat = sewa_alat.idAlat";
 		if (isset($_POST['btnUpdate'])) {
             $tanggal1 = $_POST['tanggal1'];
             $tanggal2 = $_POST['tanggal2'];
@@ -11,13 +11,13 @@
             $querySelect .= " WHERE tanggal_transaksi >= '$tanggal1' AND tanggal_transaksi <= '$tanggal2'";
         }   
         $result = $db->executeSelectQuery($querySelect);
-        $resultDurasi = $db->executeNonSelectedQuery($queryGetDurasi);
+        //$resultDurasi = $db->executeNonSelectedQuery($queryGetDurasi);
 
-        $resDurasi="";
-        while ($row=mysqli_fetch_row($resultDurasi))
-        {
-            $resDurasi = $row[0];
-        }
+        // $resDurasi="";
+        // while ($row=mysqli_fetch_row($resultDurasi))
+        // {
+        //     $resDurasi = $row[0];
+        // }
 ?>
 <!DOCTYPE html>
 <html>
@@ -304,9 +304,8 @@
             <th>Nama</th>
             <th>Tarif</th>
             <th>Jumlah</th>
-            <th>Status Booking</th>
             <th>Durasi</th>
-            
+            <th>Total transaksi</th>
             <?php 
               foreach ($result as $key => $row) {
                 echo "<tr>";
@@ -315,8 +314,8 @@
                 echo "<td>".$row['namaAlat']."</td>";
                 echo "<td>".$row['tarif']."</td>";
                 echo "<td>".$row['jumlah']."</td>";
-                echo "<td>".$row['status_booking']."</td>";
                 echo "<td>".$row['durasi']."</td>";
+                echo "<td>".$row['total']."</td>";
                 echo "</tr>";
               }
             ?>
